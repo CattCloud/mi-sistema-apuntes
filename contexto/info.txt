@@ -1,0 +1,19 @@
+Tomar apuntes me toma mucho tiempo y es agotador
+Aunque si mentalmente siento que me funciona considero que puedo automatizarlo
+Talvez es parte de mi el entender conceptos antes de la practica por eso no
+eh cambiado de metodologia pero esta situacion tambien ah hecho que por la
+friccion tenga que posponer estudiar algunos temas, ya que siento que debo tener
+un apunte para todo(pero obviamente no siempre sera asi)
+Otra cosa adicional , es el centralizar todo mi apunte en un solo lugar
+quiero centralizar en un solo lugar porque tener los contenido generados dispersos
+En realidad quiero centralizar todo o mejor aun, la palabra seria automatizar, ahi trabajos de toma de decisiones que quisiera que la IA los tomara como la generacion de prompt, seleccion de temas ,etc
+
+Haber pensaba un flujo completo asi
+1. Generacion de apuntes
+2. Repaso activo con NotebookLM : Generacion de videos o audios
+	
+   
+Ahora tengo claro algo
+- Todavia no hay un frontend , es solo interaccion con el modelo en el editor
+- Reducir la friccion esta ahora en tener a la mano los prompts para: definir el tema, definir el esqueleto,generar contenido de los demas IAs,etc
+Porque tengo que hacerlo manual
