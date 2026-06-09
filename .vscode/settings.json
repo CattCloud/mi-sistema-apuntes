@@ -1,0 +1,11 @@
+{
+  // Markdown Editor (zaaack): fondo blanco del editor WYSIWYG,
+  // independiente del tema oscuro de VSCode.
+  "markdown-editor.useVscodeThemeColor": false,
+  // Nota: el editor corre en Antigravity con Markdown Editor v0.1.9, que NO
+  // soporta customCss (se agregó en 0.1.13+) y en este entorno no se puede
+  // actualizar. Por eso este bloque queda inerte por ahora. Se deja escrito
+  // por si en el futuro se usa una versión >=0.1.13: quitaría el outline/
+  // box-shadow de foco (el "celeste" al hacer clic) y forzaría fondo blanco.
+  "markdown-editor.customCss": ".vditor [contenteditable]:focus,.vditor [contenteditable]:focus-within,.vditor-ir:focus,.vditor-wysiwyg:focus,.vditor-sv:focus{outline:none !important;box-shadow:none !important;background-color:#ffffff !important}"
+}
