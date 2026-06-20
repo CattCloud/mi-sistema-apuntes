@@ -27,7 +27,6 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/manual_apuntes.md`                    | Guía de estilo definitiva md-nativa (fuente de verdad para voz y formato — etapa de generación) |
 | `sistema/metodologia_repaso.md`                | Metodología de la etapa de repaso (recall activo primero, ciclo de 4 pasos, progresión de fricción) |
 | `sistema/prompts/repaso_recall.md`             | Protocolo operativo del repaso v1: cómo el agente corre una sesión de recall conversacional |
-| `repaso/bitacora.md`                           | Registro central de sesiones de repaso + agenda de próximos repasos (la IA lo escribe) |
 | `sistema/prompts/p1_identificar_tema.md`       | Prompt P1: identificación y acotación del tema                                      |
 | `sistema/prompts/p2_esqueleto_estructura.md`   | Prompt P2: esqueleto con códigos de indicación                                      |
 | `sistema/prompts/p3_prompts_ias_externas.md`   | Prompt P3: generación de contenido + autocrítica (fuente única)                     |
@@ -35,7 +34,7 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/prompts/p4_sintesis_estilo_propio.md` | Prompt P4: síntesis progresiva en estilo Tesla                                      |
 | `sistema/mecanismos/mecanismo_apunte_abierto.md`          | Diseño del sistema de adiciones durante/después del armado                          |
 | `sistema/mecanismos/mecanismo_pausa_retomar.md`           | Diseño del mecanismo para pausar/retomar apuntes entre temas sin perder contexto    |
-| `apuntes/[ws]/[tema]/00_indice.md`                     | Entrada del apunte: alcance, estado (EN PROGRESO/PAUSADO/FINALIZADO) y secciones           |
+| `apuntes/[ws]/[tema]/00_indice.md`                     | Entrada y **fuente única** del apunte: alcance, secciones, estado de generación (EN PROGRESO/PAUSADO/FINALIZADO) y estado de repaso (bloque `repaso:` con último/próximo/nivel/reforzar) |
 | `sistema/perfil/yo.md`                         | Perfil personal/emocional del usuario                                               |
 | `sistema/perfil/yo_profesional.md`             | Perfil profesional (rol, stack, objetivos) — P1 lo lee para recomendar temas        |
 | `NOTAS.md`                                     | Ideas y adiciones centralizadas (NO distribuido por carpeta)                        |
@@ -80,6 +79,8 @@ El flujo opera **progresivamente, sección por sección**:
 
 **Pausa y Retomar** (`sistema/mecanismos/mecanismo_pausa_retomar.md`) — interrupciones *entre* apuntes:
 4. **Estado en el `00_indice.md`** (`EN PROGRESO`/`PAUSADO`/`FINALIZADO`) — el índice es el checkpoint; permite retomar sin perder contexto
+
+**Estado de repaso en el `00_indice.md`** — el índice es también la **fuente única** del repaso: cuando un apunte está `FINALIZADO`, su bloque `repaso:` (último/próximo/nivel/reforzar) guarda cuándo toca repasarlo. La agenda *"¿qué repaso hoy?"* se **deriva** de esos campos, no se almacena aparte (ver `sistema/metodologia_repaso.md`).
 
 ## Reglas importantes
 

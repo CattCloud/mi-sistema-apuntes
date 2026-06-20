@@ -106,21 +106,28 @@ Las herramientas son **motores** que llenan los pasos del ciclo. El método mand
 
 ---
 
-## Decisiones pendientes (lo que falta definir)
+## Decisiones de implementación
 
-La metodología está fija; la **implementación** abre preguntas que se resolverán en la siguiente sesión de diseño:
+La metodología está fija. Algunas decisiones de implementación ya se tomaron (v1); otras siguen abiertas.
 
-- [ ] **Persistencia:** ¿el repaso es efímero (solo chat), persistente (mazo de preguntas en `.md` + tracking), o híbrido (bitácora mínima)?
-- [ ] **Modalidades concretas a soportar:** quiz / recall, Feynman, dudas marcadas, repaso conversacional — ¿cuáles primero?
+**Resueltas (v1):**
+
+- [x] **Persistencia → minimalista en el índice.** El estado de repaso (último, próximo, nivel, qué reforzar) vive en un bloque `repaso:` del `00_indice.md` de cada apunte. **Fuente única**: no hay archivo de bitácora ni mazo aparte. Se sobrescribe cada sesión (sin historial acumulado).
+- [x] **Enganche con la generación → on-demand + estado en el índice.** El repaso se dispara cuando el usuario lo pide (*"repasemos X"*) sobre un apunte `FINALIZADO`, no se autodispara. La conexión generación↔repaso es el propio índice: el mismo archivo que marca `estado: FINALIZADO` aloja el estado de repaso.
+- [x] **Espaciado → heurística propia simple.** Tabla flojo/regular/sólido/dominado → intervalo (ver `prompts/repaso_recall.md`). No se delega en Anki todavía.
+- [x] **Agenda → derivada, no almacenada.** *"¿Qué repaso hoy?"* se calcula leyendo `repaso.proximo` de los índices finalizados; no es un documento que se mantenga.
+
+**Pendientes (capas futuras):**
+
+- [ ] **Modalidades adicionales:** dudas marcadas, mazo formal con SRS — ¿cuáles y cuándo.
 - [ ] **Dudas marcadas:** sintaxis para comentar dudas en el `.md` durante la lectura y cómo la IA las resuelve (conecta con `mecanismos/mecanismo_apunte_abierto.md`).
-- [ ] **Enganche con la generación:** ¿cuándo nacen las preguntas de repaso? ¿al cerrar un apunte (P4) o on-demand?
 - [ ] **Herramientas:** confirmar NotebookLM / Anki y cómo se integran (¿manual, MCP, export?).
-- [ ] **Espaciado:** algoritmo propio simple vs delegar en Anki.
+- [ ] **Trazabilidad:** si más adelante se quiere ver la *evolución* (curva de dominio en el tiempo), habrá que pasar del modelo minimalista (último estado) a un log histórico.
 
 ---
 
 ## Relación con el resto del sistema
 
-- **Etapa 2 (Generar):** el repaso consume lo que produce P1–P4. La calidad del apunte condiciona la calidad del repaso.
+- **Etapa 2 (Generar):** el repaso consume lo que produce P1–P4. La calidad del apunte condiciona la calidad del repaso. El **puente** entre ambas etapas es el `00_indice.md`: es el checkpoint de generación (`estado`) **y** el hogar del estado de repaso (`repaso:`) — un solo archivo conecta las dos etapas, sin documentos paralelos.
 - **Etapa 3 (Conectar) y 5 (Recomendar):** dependen de una capa de metadata/índice global que aún no existe. El repaso puede empezar sin ellas (por tema aislado), pero el recomendador las necesitará.
 - **`mecanismo_apunte_abierto.md`:** las "dudas marcadas" del paso 2 son una extensión natural del Apunte Vivo — una duda resuelta que enriquece puede integrarse al apunte.

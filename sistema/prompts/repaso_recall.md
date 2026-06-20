@@ -3,7 +3,7 @@
 > **Etapa:** Repaso (etapa 4 del ciclo de vida del conocimiento)
 > **Metodología:** `sistema/metodologia_repaso.md` (fuente de verdad del *porqué*)
 > **Input:** Un apunte ya escrito (`apuntes/[ws]/[tema]/`)
-> **Output:** Una sesión de recall activo + una entrada en `repaso/bitacora.md`
+> **Output:** Una sesión de recall activo + el bloque `repaso:` actualizado en el `00_indice.md` del apunte
 > **Trigger:** El usuario dice *"repasemos [apunte]"* / *"quiero repasar X"*
 
 ---
@@ -37,6 +37,8 @@ Es el equivalente, para la etapa de **repaso**, de lo que los prompts P1–P4 so
 3. Si el usuario no especifica secciones, repasar el apunte completo, sección por sección, en orden.
 
 > 💡 Si el apunte está incompleto (secciones `⬜` en el índice), repasar solo lo que está `✅` y avisarlo.
+
+> 🔗 **Enganche con generación:** un apunte es candidato a repaso solo si su `estado` es `FINALIZADO`. Si el índice **no** tiene bloque `repaso:`, significa que nunca se repasó (estado derivado: *por repasar*) — es normal en la primera sesión; el bloque se crea al cerrar (Paso 6).
 
 ---
 
@@ -95,25 +97,36 @@ Lo único que hace el v1: si un concepto quedó especialmente flojo, el agente p
 
 ---
 
-## Paso 6: Cerrar la sesión y registrar (bitácora)
+## Paso 6: Cerrar la sesión y registrar (en el índice del apunte)
 
-Al terminar, el agente **escribe en `repaso/bitacora.md`** (lo escribe la IA, no el usuario → fricción casi cero):
+Al terminar, el agente **actualiza el bloque `repaso:` del `00_indice.md` del apunte** (lo escribe la IA, no el usuario → fricción casi cero). Ese bloque es la **fuente única** del estado de repaso y se **sobrescribe** cada sesión (modelo minimalista: solo el último estado, sin historial acumulado).
 
-1. **Agregar una entrada al historial** (la más reciente arriba) con: fecha, apunte, secciones repasadas, modalidad, resultado (qué quedó firme / qué falló), próximo repaso sugerido.
-2. **Actualizar la agenda** ("Próximos repasos") con la nueva fecha para ese apunte.
+El bloque vive en el frontmatter del índice:
+
+```yaml
+repaso:
+  ultimo: 2026-06-19          # fecha de esta sesión
+  proximo: 2026-06-24         # ultimo + intervalo según cómo fue
+  nivel: regular              # flojo | regular | solido | dominado
+  reforzar:                   # qué atacar primero el próximo repaso
+    - modelos stateless
+    - curva de degradación
+```
 
 **Fecha:** usar la fecha actual del contexto.
 
 **Cálculo del próximo repaso** (heurística simple v1 — se reemplazará por un SRS real más adelante):
 
-| Cómo fue la sesión | Próximo intervalo |
-|--------------------|-------------------|
-| **Flojo** (muchos blancos, pistas fuertes) | 1–2 días |
-| **Regular** (recall con pistas leves) | 4–7 días |
-| **Sólido** (recall limpio, pocas pistas) | 2–3 semanas |
-| **Dominado** (2+ sesiones sólidas seguidas) | 1+ mes |
+| Cómo fue la sesión | `nivel` | Próximo intervalo |
+|--------------------|---------|-------------------|
+| **Flojo** (muchos blancos, pistas fuertes) | `flojo` | 1–2 días |
+| **Regular** (recall con pistas leves) | `regular` | 4–7 días |
+| **Sólido** (recall limpio, pocas pistas) | `solido` | 2–3 semanas |
+| **Dominado** (2+ sesiones sólidas seguidas) | `dominado` | 1+ mes |
 
-> 📝 Próximo repaso = fecha de la sesión + intervalo según cómo fue. Es una heurística, no un algoritmo; basta para que el espaciado exista en el v1.
+> 📝 `proximo` = fecha de la sesión + intervalo según `nivel`. Es una heurística, no un algoritmo; basta para que el espaciado exista en el v1.
+
+> 🔑 **No hay archivo de agenda.** La pregunta *"¿qué me toca repasar hoy?"* se **deriva**: leer el campo `repaso.proximo` de cada `00_indice.md` finalizado y filtrar los que ya vencieron. La agenda es una **vista**, no un documento que se mantiene aparte (evita duplicar y desincronizar).
 
 3. **Cierre al usuario** (corto, sin re-pegar todo):
 
@@ -121,7 +134,7 @@ Al terminar, el agente **escribe en `repaso/bitacora.md`** (lo escribe la IA, no
 ✅ Sesión de repaso cerrada — [Apunte]
 Firme: [lo que recordaste bien]
 A reforzar: [lo que falló]
-Próximo repaso sugerido: [fecha]  → registrado en repaso/bitacora.md
+Próximo repaso sugerido: [fecha]  → registrado en el índice del apunte
 ```
 
 ---
@@ -131,5 +144,5 @@ Próximo repaso sugerido: [fecha]  → registrado en repaso/bitacora.md
 - **Recall primero, siempre.** Si el agente se descubre explicando antes de preguntar, se detiene y pregunta.
 - **Una pregunta a la vez**, no cuestionarios masivos.
 - **No castigar el blanco.** Acompañar con pistas, no con juicio.
-- **La bitácora la escribe la IA**, el usuario no llena nada.
+- **El estado de repaso lo escribe la IA** en el índice, el usuario no llena nada.
 - **Sesiones cortas valen.** No exigir repasar el apunte entero; un par de secciones bien recuperadas es una sesión válida.

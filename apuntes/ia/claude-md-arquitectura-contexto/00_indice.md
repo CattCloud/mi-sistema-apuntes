@@ -3,6 +3,15 @@ tema: CLAUDE.md — Arquitectura de Contexto
 workspace: ia
 estado: FINALIZADO
 arquetipo: Constructor Teórico + Documento Técnico
+repaso:
+  ultimo: 2026-06-19
+  proximo: 2026-06-24
+  nivel: regular
+  reforzar:
+    - modelos stateless (por qué existe el system-reminder)
+    - curva de degradación (no "corta" CLAUDE.md, degrada adherencia)
+    - nivel Local (CLAUDE.local.md)
+    - hooks vs .claude/rules (imposición dura)
 ---
 
 # 🤖 CLAUDE.md — Arquitectura de Contexto
