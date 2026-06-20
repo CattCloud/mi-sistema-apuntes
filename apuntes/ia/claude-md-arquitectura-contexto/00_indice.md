@@ -12,6 +12,7 @@ repaso:
     - curva de degradación (no "corta" CLAUDE.md, degrada adherencia)
     - nivel Local (CLAUDE.local.md)
     - hooks vs .claude/rules (imposición dura)
+notebooklm: pendiente
 ---
 
 # 🤖 CLAUDE.md — Arquitectura de Contexto

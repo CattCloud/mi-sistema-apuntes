@@ -68,10 +68,13 @@ Por cada pregunta:
    - **Pista 2:** una pista más fuerte (la mitad de la respuesta, el "empieza por…").
    - **Respuesta:** si aún no sale, dásela completa y clara. El intento fallido + la respuesta inmediata es lo que fija.
 4. **Crédito parcial:** reconoce lo que sí acertó antes de corregir lo que faltó. Nunca "está mal" a secas.
+5. **Calibración 1–10 (opcional, recomendado):** en las respuestas/explicaciones de peso, ponle una nota del 1 al 10 según qué tan **completa y precisa** quedó tu reconstrucción **contra el apunte**, y di qué falta para el 10. Es **calibración, no calificación**: marca dónde estás en el camino (*"vas en 7, te falta X"*), nunca un "reprobaste". La IA sigue eligiendo qué se evalúa (apuntando al `reforzar:`); el número solo mide tu reconstrucción, y luego alimenta el `nivel:` y el `reforzar:` del cierre (Paso 6).
 
 > ⚠️ **Tono:** alentador, nunca de examen que castiga. El blanco no se penaliza — se acompaña. La motivación es parte del diseño (un método que desmotiva se abandona).
 
-**Variante Feynman:** si el usuario explica con sus palabras, escucha la explicación completa, luego señala (a) lo que quedó bien, (b) los huecos o imprecisiones, (c) lo que se saltó. Compara contra el apunte.
+**Variante Feynman:** si el usuario explica con sus palabras, escucha la explicación completa, luego señala (a) lo que quedó bien, (b) los huecos o imprecisiones, (c) lo que se saltó, y (d) una **nota 1–10** de la explicación vs el apunte (misma lógica de calibración del punto 5). Compara contra el apunte.
+
+> 🔸 **Sub-modo "el usuario elige" (on-demand):** por defecto **la IA elige** qué evaluar — así se cubre lo flojo y se evita el sesgo de elegir solo lo cómodo (que reforzaría fortalezas e ignoraría debilidades). Pero si el usuario quiere verificar algo puntual (*"déjame explicarte X que no me cierra"*), corre el Feynman auto-puntuado sobre ese concepto. Es la excepción, no el motor.
 
 ---
 
@@ -89,11 +92,16 @@ Durante el recall pueden pasar dos cosas distintas:
 
 ---
 
-## Paso 5: Consolidación multimodal (diferida en v1)
+## Paso 5: Consolidación multimodal (NotebookLM)
 
-En la metodología, aquí va el premio visual/multimodal (audio, infografía). **En el v1 esto está diferido** — no se genera contenido visual todavía.
+El premio de salida: **audio + video de NotebookLM**, consumidos **después** del recall (nunca antes → evita ilusión de fluidez). El agente no genera el audio/video; redacta los **prompts de Customize** que el usuario pega en NotebookLM. Protocolo completo: `sistema/prompts/repaso_consolidacion_notebooklm.md`.
 
-Lo único que hace el v1: si un concepto quedó especialmente flojo, el agente puede ofrecer un **cierre verbal breve** (un resumen de una línea, una analogía) como consolidación. Nada más.
+Dos momentos donde aplica:
+
+- **Al finalizar el apunte (prep):** generar los prompts base (audio + video) para que el usuario tenga el material listo.
+- **Tras esta sesión:** si el recall reveló huecos nuevos, ofrecer **regenerar el prompt enfatizando el `reforzar:` recién actualizado** — así el próximo audio/video ataca justo lo que falló hoy.
+
+> 💡 La consolidación es **premio, no requisito**. Si el usuario solo quiere recall hoy, no se fuerza; sigue siendo una sesión válida. Si un concepto quedó muy flojo, también vale un cierre verbal breve (una analogía) como mínimo.
 
 ---
 
@@ -115,16 +123,20 @@ repaso:
 
 **Fecha:** usar la fecha actual del contexto.
 
-**Cálculo del próximo repaso** (heurística simple v1 — se reemplazará por un SRS real más adelante):
+**Cálculo del `nivel` y el próximo repaso** (heurística simple v1 — se reemplazará por un SRS real más adelante):
 
-| Cómo fue la sesión | `nivel` | Próximo intervalo |
-|--------------------|---------|-------------------|
-| **Flojo** (muchos blancos, pistas fuertes) | `flojo` | 1–2 días |
-| **Regular** (recall con pistas leves) | `regular` | 4–7 días |
-| **Sólido** (recall limpio, pocas pistas) | `solido` | 2–3 semanas |
-| **Dominado** (2+ sesiones sólidas seguidas) | `dominado` | 1+ mes |
+El `nivel` se **computa desde las notas de calibración** del Paso 3 (promedio de la sesión), no se juzga a ojo. Y los conceptos con **nota baja** son los que entran al `reforzar:`.
+
+| Score promedio | `nivel` | Próximo intervalo |
+|---|---|---|
+| **≤ 5** (blancos o huecos grandes) | `flojo` | 1–2 días |
+| **6–7** (recall con huecos leves) | `regular` | 4–7 días |
+| **8–9** (recall limpio, casi completo) | `solido` | 2–3 semanas |
+| **10** (impecable, y 2+ sesiones seguidas así) | `dominado` | 1+ mes |
 
 > 📝 `proximo` = fecha de la sesión + intervalo según `nivel`. Es una heurística, no un algoritmo; basta para que el espaciado exista en el v1.
+
+> 💡 Si la sesión fue corta y no se puntuó, caer al juicio cualitativo equivalente (blancos→flojo, pistas leves→regular, limpio→sólido).
 
 > 🔑 **No hay archivo de agenda.** La pregunta *"¿qué me toca repasar hoy?"* se **deriva**: leer el campo `repaso.proximo` de cada `00_indice.md` finalizado y filtrar los que ya vencieron. La agenda es una **vista**, no un documento que se mantiene aparte (evita duplicar y desincronizar).
 

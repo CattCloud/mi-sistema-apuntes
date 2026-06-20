@@ -45,8 +45,18 @@ Formato:
 - [ ] Repasar un tema con la IA
 - [ ] Al leer , agregar la capacidad de comentar una seccion donde tienes preguntas para que luego se lo digas a la IA y aclare esos comentarios o los resuelva
 
+### Ideas de `video.md` (7 prompts de estudio con IA) — para etapas futuras
+
+- [ ] **Modalidad "examen de simulacro" (etapa Repaso):** una modalidad *distinta* del recall conversacional — un examen completo en lote, con preguntas trampa, que se responde de corrido y se puntúa al final (resultado + análisis de qué mejorar). Va *después* de estudiar, como ensayo de un examen real. Mantenerlo **abierto/mixto, no opción múltiple** (para no caer en la ilusión de fluidez que el propio video critica). Encaja en las "modalidades adicionales" pendientes de `metodologia_repaso.md`.
+- [ ] **"Plan de estudio / mapa por dificultad" (etapas Conectar + Recomendar, NO repaso):** dado un material o un set de apuntes, generar un esquema de temas/subtemas ordenado de fundamental → complejo, con nivel de dificultad por tema ("GPS del estudio"). Es materia prima para la **etapa 3 (Conectar)** y la **etapa 5 (Recomendar qué estudiar)** del ciclo de vida. Conecta con la visión ya anotada de "que el sistema me recomiende qué me falta estudiar".
+
 ### Pendientes a futuro — NotebookLM / deploy (consolidado de `contexto/notas.txt`)
 
-- [ ] **NotebookLM — definir uso:** hay skills sobre NotebookLM; definir exactamente para qué se necesitan (relacionado con T11 del roadmap).
-- [ ] **MCP Claude ↔ NotebookLM:** ¿existe un MCP que conecte Claude con NotebookLM?
+- [x] **NotebookLM — uso definido:** consolidación multimodal del Paso 3 (audio + video), modo manual; la IA redacta los prompts de Customize. Ver `sistema/prompts/repaso_consolidacion_notebooklm.md`.
+- [ ] **Automatizar NotebookLM (capa futura):** hoy es manual (subir fuentes + pegar prompt + clic). Candidatos evaluados para automatizar (todos browser-automation / MCP, con fragilidades):
+  - `teng-lin/notebooklm-py` — 5.9K instalaciones, el más completo (crear notebooks, ingerir multi-formato, generar artefactos, descargar). ⚠️ bug de auth por cookies en Python 3.13+. Mejor para control total / scripting.
+  - `joeseesun/anything-to-notebooklm` — 515 inst., "cualquier cosa → NotebookLM" (genera podcasts/PPT/mapas mentales). Usa servidor MCP. ⚠️ auditoría de seguridad mixta.
+  - `giuseppe-trisciuoglio/developer-kit@notebooklm` — 1K inst., orientado a RAG/docs. Requiere `notebooklm-mcp-cli`. Mejor como base de conocimiento de proyecto.
+  - Decisión: **no adoptar todavía** (se gana con dolor). Reevaluar cuando el hábito manual esté firme y la fricción de pegar prompts moleste de verdad.
+- [ ] **MCP Claude ↔ NotebookLM:** ¿existe un MCP que conecte Claude con NotebookLM? (cubierto en parte por los candidatos de arriba).
 - [ ] **PUBLICACION: Deploy con GitHub Pages:** publicar los apuntes vía GitHub Pages — pendiente resolver qué pasa con los videos e imágenes de infografías generadas. Ref: https://www.youtube.com/watch?v=rByIDQYu4jQ

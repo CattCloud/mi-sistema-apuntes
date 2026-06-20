@@ -99,7 +99,7 @@ Las herramientas son **motores** que llenan los pasos del ciclo. El método mand
 | Paso del ciclo | Herramienta candidata | Rol |
 |----------------|----------------------|-----|
 | 1. Recuperación activa | La IA (interrogación conversacional) · Anki (tarjetas) | Generar preguntas, corregir, dar pistas |
-| 3. Consolidación multimodal | NotebookLM (audio/video/infografía) | Generar el contenido visual desde el apunte |
+| 3. Consolidación multimodal | **NotebookLM — Audio + Video Overview** (manual) ✅ | El usuario sube el apunte; **la IA redacta los prompts de Customize** (pedagógicos, con personalidad calibrada por arquetipo, enfatizando `reforzar:`). Protocolo: `prompts/repaso_consolidacion_notebooklm.md` |
 | 4. Programación espaciada | Anki / registro con fechas | Algoritmo de repaso espaciado |
 
 > 💡 **Principio:** elegir la herramienta *después* de fijar el método evita amoldar el estudio a la herramienta en vez de al revés.
@@ -116,12 +116,13 @@ La metodología está fija. Algunas decisiones de implementación ya se tomaron 
 - [x] **Enganche con la generación → on-demand + estado en el índice.** El repaso se dispara cuando el usuario lo pide (*"repasemos X"*) sobre un apunte `FINALIZADO`, no se autodispara. La conexión generación↔repaso es el propio índice: el mismo archivo que marca `estado: FINALIZADO` aloja el estado de repaso.
 - [x] **Espaciado → heurística propia simple.** Tabla flojo/regular/sólido/dominado → intervalo (ver `prompts/repaso_recall.md`). No se delega en Anki todavía.
 - [x] **Agenda → derivada, no almacenada.** *"¿Qué repaso hoy?"* se calcula leyendo `repaso.proximo` de los índices finalizados; no es un documento que se mantenga.
+- [x] **Consolidación multimodal (Paso 3) → NotebookLM manual, audio + video.** La IA redacta los prompts de Customize (calibrados por arquetipo, enfocados en `reforzar:`); el usuario los pega y genera. Ver `prompts/repaso_consolidacion_notebooklm.md`.
 
 **Pendientes (capas futuras):**
 
 - [ ] **Modalidades adicionales:** dudas marcadas, mazo formal con SRS — ¿cuáles y cuándo.
 - [ ] **Dudas marcadas:** sintaxis para comentar dudas en el `.md` durante la lectura y cómo la IA las resuelve (conecta con `mecanismos/mecanismo_apunte_abierto.md`).
-- [ ] **Herramientas:** confirmar NotebookLM / Anki y cómo se integran (¿manual, MCP, export?).
+- [ ] **Anki + automatización NotebookLM:** Anki para el espaciado real, y los tools MCP/browser para automatizar NotebookLM (hoy es manual). Candidatos anotados en `NOTAS.md`. Capa futura — se gana con dolor.
 - [ ] **Trazabilidad:** si más adelante se quiere ver la *evolución* (curva de dominio en el tiempo), habrá que pasar del modelo minimalista (último estado) a un log histórico.
 
 ---
