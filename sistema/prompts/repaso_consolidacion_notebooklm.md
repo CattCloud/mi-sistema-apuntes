@@ -102,17 +102,20 @@ Longitud: ~10–14 min, tight. Cierra con un recap de 30s de los puntos difícil
 ## Plantilla — Video Overview
 
 ```
-Audiencia: igual (repaso para retención). Español; tecnicismos en inglés.
+Audiencia: alguien que ya leyó esta nota una vez y necesita RETENERLA.
+Español; tecnicismos en inglés.
 
 Enfoque: apóyate en la estructura visual de la nota — los diagramas, tablas
 y flujos: [visuales clave del apunte]. La narración explica mientras el
 visual muestra (codificación dual).
 
 Cubre la estructura completa de la nota, priorizando (más tiempo y detalle)
-estos puntos: [reforzar: del índice; si no hay, repartir parejo].
+estos puntos: [reforzar: del índice, cada uno con su mini-explicación; si no
+hay, repartir parejo].
 
-Tono: claro y con energía; menos banter que el audio, más "mapa hablado".
-Usa solo las fuentes. Longitud: enfocada.
+Tono: claro y con energía, estilo "mapa visual hablado" — narración apoyada
+en el visual, en formato narrado (no debate). Usa solo las fuentes.
+Longitud: enfocada.
 ```
 
 ---
@@ -137,6 +140,7 @@ Si aún no se generó: `notebooklm: pendiente`.
 
 ## Reglas anti-fricción
 
+- **Cada prompt es autocontenido.** Audio y Video (y cualquier tipo del catálogo) se generan **por separado**; el generador de uno NO ve el otro. Nunca escribir *"igual que el audio"*, *"como arriba"*, *"menos banter que el audio"* — cada caja Customize debe repetir audiencia, foco y los puntos a enfatizar como si fuera la única.
 - **La IA redacta, el usuario pega.** No se automatiza la generación en v1 (los tools MCP/browser son capa futura — anotados en `NOTAS.md`).
 - **Consolidación es premio, no requisito.** Si el usuario solo quiere recall hoy, no se fuerza el audio/video.
 - **Grounded siempre:** dirigir énfasis y tono, nunca pedir hechos fuera de las fuentes.
