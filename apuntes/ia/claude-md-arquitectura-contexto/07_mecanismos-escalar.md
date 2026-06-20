@@ -50,8 +50,6 @@ paths:
 - Mockear servicios externos siempre, nunca llamar APIs reales.
 ```
 
-⚠️ verificar: la sintaxis exacta del frontmatter (campo `paths`) puede variar entre versiones de Claude Code. Confirmar contra la doc oficial actual antes de adoptarlo.
-
 **Cómo funciona:**
 
 - Claude Code revisa los archivos en`.claude/rules/` al arrancar.

@@ -36,6 +36,7 @@ Formato:
 - [ ] **AWS Solutions Architect Associate (SAA)** — Pospuesto. Plan intensivo de 30 días para la certificación. Retomar en el futuro; ahora el foco está en IA.
 - [ ] **Hooks de Claude Code** — Cómo se definen, qué eventos existen (PreToolUse, PostToolUse, Stop, SessionStart), cómo escribir matchers, ejemplos prácticos de scripts (bash/node/python), cómo se integran con linters y CI. Complemento natural del apunte de CLAUDE.md (imposición técnica vs guía blanda).
 - [ ] **Auto memory de Claude Code** — Mecanismo de memoria automática del agente. Por proyecto, persiste entre sesiones, agente decide qué guardar. Profundizar: ubicación exacta, tipos de notas que guarda, política de poda/olvido, límites de tamaño, cómo inspeccionarla. Complemento del apunte de CLAUDE.md.
+
 ---
 
 ## Mejoras al sistema
@@ -48,5 +49,4 @@ Formato:
 
 - [ ] **NotebookLM — definir uso:** hay skills sobre NotebookLM; definir exactamente para qué se necesitan (relacionado con T11 del roadmap).
 - [ ] **MCP Claude ↔ NotebookLM:** ¿existe un MCP que conecte Claude con NotebookLM?
-- [ ] **NotebookLM para limitar contexto:** podría usarse para acotar el contexto de lo que se necesita en cada apunte.
-- [ ] **Deploy con GitHub Pages:** publicar los apuntes vía GitHub Pages — pendiente resolver qué pasa con los videos e imágenes de infografías generadas. Ref: https://www.youtube.com/watch?v=rByIDQYu4jQ
+- [ ] **PUBLICACION: Deploy con GitHub Pages:** publicar los apuntes vía GitHub Pages — pendiente resolver qué pasa con los videos e imágenes de infografías generadas. Ref: https://www.youtube.com/watch?v=rByIDQYu4jQ

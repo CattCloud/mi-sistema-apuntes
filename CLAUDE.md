@@ -2,7 +2,9 @@
 
 ## Qué es este proyecto
 
-Sistema para automatizar la generación de apuntes de programación con IA, replicando mi estilo personal de notas. Los apuntes viven en este repo como **Markdown** (ya no en Notion; ver `sistema/decisiones/decision_final_md_local.md`). El agente orquesta el proceso completo: identifica el tema, propone estructura, genera contenido junto conmigo, y lo redacta en mi estilo **directamente al `.md`**, donde lo ajusto en vivo.
+Sistema para estudiar programación con IA de punta a punta, no solo para tomar apuntes. El objetivo se entiende como un **ciclo de vida del conocimiento**: **generar** apuntes que replican mi estilo → **repasarlos** para retenerlos de verdad → a futuro **conectarlos** y **recomendarme qué estudiar**. Hoy la etapa de **generación** está implementada y la de **repaso** tiene un **v1** funcional (recall conversacional; ver `sistema/metodologia_repaso.md` y `sistema/prompts/repaso_recall.md`); conectar/recomendar/publicar quedan para más adelante.
+
+Los apuntes viven en este repo como **Markdown** (ya no en Notion; ver `sistema/decisiones/decision_final_md_local.md`). En la etapa de generación, el agente orquesta el proceso completo: identifica el tema, propone estructura, genera contenido junto conmigo, y lo redacta en mi estilo **directamente al `.md`**, donde lo ajusto en vivo.
 
 ## Flujo de generación (4 fases)
 
@@ -22,7 +24,10 @@ El flujo opera **progresivamente, sección por sección**:
 
 | Archivo                                        | Propósito                                                                           |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `sistema/manual_apuntes.md`                    | Guía de estilo definitiva md-nativa (fuente de verdad para voz y formato)           |
+| `sistema/manual_apuntes.md`                    | Guía de estilo definitiva md-nativa (fuente de verdad para voz y formato — etapa de generación) |
+| `sistema/metodologia_repaso.md`                | Metodología de la etapa de repaso (recall activo primero, ciclo de 4 pasos, progresión de fricción) |
+| `sistema/prompts/repaso_recall.md`             | Protocolo operativo del repaso v1: cómo el agente corre una sesión de recall conversacional |
+| `repaso/bitacora.md`                           | Registro central de sesiones de repaso + agenda de próximos repasos (la IA lo escribe) |
 | `sistema/prompts/p1_identificar_tema.md`       | Prompt P1: identificación y acotación del tema                                      |
 | `sistema/prompts/p2_esqueleto_estructura.md`   | Prompt P2: esqueleto con códigos de indicación                                      |
 | `sistema/prompts/p3_prompts_ias_externas.md`   | Prompt P3: generación de contenido + autocrítica (fuente única)                     |
