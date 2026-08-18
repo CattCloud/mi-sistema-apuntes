@@ -2,6 +2,7 @@
 
 > **Para qué sirve este archivo:** Contexto profesional del usuario para que el agente (sobre todo en P1) pueda recomendar temas de estudio, decidir el flujo y ajustar el nivel de los apuntes a quién es realmente Erick.
 > **Nota:** Este es el perfil profesional. El perfil personal/emocional está en `yo.md` y es independiente.
+> **Contexto de carrera:** los *porqués* de su decisión (qué es un AI Product Engineer, la burbuja de la IA, estrategia de ingreso) están en `contexto_carrera_ia.md`.
 > **Fuentes:** portafolio (devfolio), GitHub (CattCloud) y resumen consolidado de conversaciones en Gemini.
 
 ---
@@ -59,9 +60,11 @@
 
 ## Objetivos profesionales
 
-- **Foco inmediato:** adquirir conocimiento sólido en **IA** (LLMs, agentes, integración). Es el hueco que está llenando ahora.
-- **Medio plazo:** consolidarse como **AI Product Engineer** (integración de IA al software); adquirir hardware para IA local.
-- **Largo plazo (sin presión aún):** convertirse en **freelancer especializado en desarrollo con IA**. Todavía no tiene claro qué conocimientos requiere ese camino — es un norte, no un plan activo. No empujar temas de "negocio/freelance" todavía; priorizar IA.
+- **Motor principal:** **maximizar ingresos** dentro del desarrollo/programación. Es el driver explícito de sus decisiones de carrera (no la libertad de horarios ni huir de un jefe).
+- **Foco inmediato:** adquirir conocimiento sólido en **IA** (LLMs, agentes, integración). Es el hueco que está llenando ahora — y su palanca #1 de ingreso (habilidad escasa y bien pagada).
+- **Medio plazo:** consolidarse como **AI Engineer / AI Product Engineer** escaso y bien pagado; adquirir hardware para IA local.
+- **Formato de trabajo deseado:** **empleo** (no freelance). Abierto a **trabajo remoto en el extranjero (USD)** o a **cualquier empresa en Perú**, mientras sea desarrollo/programación. Decide el formato según cuál maximice el ingreso.
+- **Freelance — DESCARTADO como meta:** antes lo asumía como su norte, pero aclaró que la parte de negocio (administrar clientes, contratos, vender, cobrar) **no es lo suyo y no quiere dedicarse a eso**. Quiere programar, no llevar un micro-negocio. No proponer temas de "negocio/freelance/ventas"; el camino es volverse valioso y conseguir un buen empleo.
 
 ---
 
@@ -78,5 +81,5 @@
 
 - Temas que más le sirven: **integración de LLMs / agentes de IA, arquitectura de integraciones (APIs, webhooks, CRM), AWS/SAA, full-stack Next.js + Node/Express + Prisma**, y todo lo que apunte a freelance con IA.
 - Asume base sólida de **JS/TS y full-stack** — no hace falta explicar fundamentos de JavaScript o React desde cero salvo que él lo pida.
-- Donde sí conviene profundizar: **IA aplicada, cloud/AWS, y temas de negocio/freelance** (por su meta de independizarse).
+- Donde sí conviene profundizar: **IA aplicada (LLMs/agentes/integración)** como prioridad — es su palanca de ingreso. Cloud/AWS más adelante (pospuesto). **No** proponer temas de negocio/freelance/ventas (descartado como meta; ver Objetivos).
 - Encaja naturalmente con el workspace **IA / LLMs 🤖** y, para arquitectura/protocolos, con **Code 301 🦉** o **Cloud Computing 💭**.

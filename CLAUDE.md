@@ -2,7 +2,7 @@
 
 ## Qué es este proyecto
 
-Sistema para estudiar programación con IA de punta a punta, no solo para tomar apuntes. El objetivo se entiende como un **ciclo de vida del conocimiento**: **generar** apuntes que replican mi estilo → **repasarlos** para retenerlos de verdad → a futuro **conectarlos** y **recomendarme qué estudiar**. Hoy la etapa de **generación** está implementada y la de **repaso** tiene un **v1** funcional (recall conversacional + consolidación multimodal con NotebookLM; ver `sistema/metodologia_repaso.md`, `sistema/prompts/repaso_recall.md` y `sistema/prompts/repaso_consolidacion_notebooklm.md`); conectar/recomendar/publicar quedan para más adelante.
+Sistema para estudiar programación con IA de punta a punta, no solo para tomar apuntes. El objetivo se entiende como un **ciclo de vida del conocimiento**: **generar** apuntes que replican mi estilo → **practicar** construyendo para fijar el criterio → **repasarlos** para retenerlos de verdad → a futuro **conectarlos** y **recomendarme qué estudiar**. Hoy la etapa de **generación** está implementada, la de **repaso** tiene un **v1** funcional (recall conversacional + consolidación multimodal con NotebookLM; ver `sistema/metodologia_repaso.md`, `sistema/prompts/repaso_recall.md` y `sistema/prompts/repaso_consolidacion_notebooklm.md`), y la de **práctica guiada por proyecto** está en implementación (ver `sistema/metodologia_practica_guiada.md`); conectar/recomendar/publicar quedan para más adelante.
 
 Los apuntes viven en este repo como **Markdown** (ya no en Notion; ver `sistema/decisiones/decision_final_md_local.md`). En la etapa de generación, el agente orquesta el proceso completo: identifica el tema, propone estructura, genera contenido junto conmigo, y lo redacta en mi estilo **directamente al `.md`**, donde lo ajusto en vivo.
 
@@ -28,6 +28,12 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/metodologia_repaso.md`                | Metodología de la etapa de repaso (recall activo primero, ciclo de 4 pasos, progresión de fricción) |
 | `sistema/prompts/repaso_recall.md`             | Protocolo operativo del repaso v1: cómo el agente corre una sesión de recall conversacional |
 | `sistema/prompts/repaso_consolidacion_notebooklm.md` | Protocolo del Paso 3: cómo la IA redacta los prompts de Customize de NotebookLM (audio + video) para la consolidación multimodal |
+| `sistema/metodologia_practica_guiada.md`       | Metodología de la etapa de práctica (criterio>memoria, IA instructor no autocompletado, bloques aditivos, pistas escalonadas) |
+| `sistema/prompts/diagnostico_bloque.md`        | Protocolo: generar el diagnóstico Pareto por bloque (just-in-time) antes de practicar |
+| `sistema/prompts/practica_guiada_proyecto.md`  | Protocolo operativo de la práctica: define mini-proyecto, fases, HU con criterios de aceptación, pistas escalonadas (nunca el código) |
+| `sistema/prompts/migracion_notion.md`          | Protocolo: traslado ligero just-in-time de notas de Notion al repo (tier referencia) vía MCP |
+| `contexto/plan_estudio/plan_bloques.md`        | Roadmap (ligero) de los bloques de práctica (B1–B5) y su estado |
+| `practica/[proyecto]/00_proyecto.md`           | Entrada y fuente única de un mini-proyecto de práctica: alcance, fases, estado |
 | `sistema/prompts/p1_identificar_tema.md`       | Prompt P1: identificación y acotación del tema                                      |
 | `sistema/prompts/p2_esqueleto_estructura.md`   | Prompt P2: esqueleto con códigos de indicación                                      |
 | `sistema/prompts/p3_prompts_ias_externas.md`   | Prompt P3: generación de contenido + autocrítica (fuente única)                     |
@@ -82,6 +88,15 @@ El flujo opera **progresivamente, sección por sección**:
 4. **Estado en el `00_indice.md`** (`EN PROGRESO`/`PAUSADO`/`FINALIZADO`) — el índice es el checkpoint; permite retomar sin perder contexto
 
 **Estado de repaso en el `00_indice.md`** — el índice es también la **fuente única** del repaso: cuando un apunte está `FINALIZADO`, su bloque `repaso:` (último/próximo/nivel/reforzar) guarda cuándo toca repasarlo. La agenda *"¿qué repaso hoy?"* se **deriva** de esos campos, no se almacena aparte (ver `sistema/metodologia_repaso.md`).
+
+## Etapa de práctica (Practicar)
+
+Refuerza el conocimiento **construyendo**, no memorizando. Diseño en `sistema/metodologia_practica_guiada.md`; el agente lee los protocolos de `sistema/prompts/` antes de ejecutar.
+
+- **Bloques aditivos (espiral):** se aprende por bloques de tecnologías; cada bloque = un **mini-proyecto** (en `practica/`) que combina las techs del bloque y reutiliza/profundiza las previas. Roadmap en `contexto/plan_estudio/plan_bloques.md`.
+- **Ciclo por bloque:** (0) diagnóstico **Pareto** just-in-time (`diagnostico_bloque.md`) → (1) concepto: **traslado ligero de Notion** (`migracion_notion.md`, tier referencia en `apuntes/[ws]/notion/`) + generación Tesla solo para huecos → (2) práctica guiada (`practica_guiada_proyecto.md`).
+- **Regla de oro:** la IA es **instructor, no autocompletado** — entrega Historias de Usuario con criterios de aceptación y **pistas escalonadas a petición**, **nunca el código**. El alumno desarrolla la lógica (criterio > memoria).
+- **Diagnósticos por bloque** (curados por Pareto) en `contexto/plan_estudio/diagnosticos/`; el `diagnostico_nivel.md` genérico quedó jubilado como motor (conserva las marcas de JS, que se reutilizan).
 
 ## Reglas importantes
 

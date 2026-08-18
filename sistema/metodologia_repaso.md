@@ -14,10 +14,11 @@ El sistema se llama "Mi Sistema de Estudio", pero hasta ahora solo cubría **una
 |---|-------|--------|
 | 1 | Capturar (material fuente) | 🟡 parcial (`_input/`) |
 | 2 | **Generar** apuntes (P1–P4) | ✅ implementado |
-| 3 | Conectar (mapa, prerequisitos, índice global) | ⬜ futuro |
-| 4 | **Repasar** (esta metodología) | 🔄 en diseño |
-| 5 | Diagnosticar / recomendar qué estudiar | ⬜ futuro |
-| 6 | Publicar / consumir (GitHub Pages, móvil) | ⬜ futuro |
+| 3 | **Practicar** (construir para fijar criterio) | 🔄 en implementación (`metodologia_practica_guiada.md`) |
+| 4 | **Repasar** (esta metodología) | ✅ v1 |
+| 5 | Conectar (mapa, prerequisitos, índice global) | ⬜ futuro |
+| 6 | Diagnosticar / recomendar qué estudiar | ⬜ futuro |
+| 7 | Publicar / consumir (GitHub Pages, móvil) | ⬜ futuro |
 
 **Objetivo de la etapa de repaso:** que un apunte ya escrito deje de ser solo lectura y se convierta en conocimiento **retenido**, con la **mínima fricción posible** — porque un método que se abandona no sirve, por bueno que sea.
 

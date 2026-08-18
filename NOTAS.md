@@ -50,6 +50,11 @@ Formato:
 - [ ] **Modalidad "examen de simulacro" (etapa Repaso):** una modalidad *distinta* del recall conversacional — un examen completo en lote, con preguntas trampa, que se responde de corrido y se puntúa al final (resultado + análisis de qué mejorar). Va *después* de estudiar, como ensayo de un examen real. Mantenerlo **abierto/mixto, no opción múltiple** (para no caer en la ilusión de fluidez que el propio video critica). Encaja en las "modalidades adicionales" pendientes de `metodologia_repaso.md`.
 - [ ] **"Plan de estudio / mapa por dificultad" (etapas Conectar + Recomendar, NO repaso):** dado un material o un set de apuntes, generar un esquema de temas/subtemas ordenado de fundamental → complejo, con nivel de dificultad por tema ("GPS del estudio"). Es materia prima para la **etapa 3 (Conectar)** y la **etapa 5 (Recomendar qué estudiar)** del ciclo de vida. Conecta con la visión ya anotada de "que el sistema me recomiende qué me falta estudiar".
 
+- [ ] Revisa esto https://www.reddit.com/r/PromptEngineering/comments/1tz5yit/how_i_built_a_full_knowledge_system_around/
+
+- [ ] Practica actualmente es solo al final de un apunte pero van a haber situaciones donde seran entre un apunte -> De echo van a haber momentos donde se va a comprender mejor con practicas(codigo,visual,manual) luego de un breve teoria  
+
+
 ### Pendientes a futuro — NotebookLM / deploy (consolidado de `contexto/notas.txt`)
 
 - [x] **NotebookLM — uso definido:** consolidación multimodal del Paso 3 (audio + video), modo manual; la IA redacta los prompts de Customize. Ver `sistema/prompts/repaso_consolidacion_notebooklm.md`.
@@ -60,3 +65,4 @@ Formato:
   - Decisión: **no adoptar todavía** (se gana con dolor). Reevaluar cuando el hábito manual esté firme y la fricción de pegar prompts moleste de verdad.
 - [ ] **MCP Claude ↔ NotebookLM:** ¿existe un MCP que conecte Claude con NotebookLM? (cubierto en parte por los candidatos de arriba).
 - [ ] **PUBLICACION: Deploy con GitHub Pages:** publicar los apuntes vía GitHub Pages — pendiente resolver qué pasa con los videos e imágenes de infografías generadas. Ref: https://www.youtube.com/watch?v=rByIDQYu4jQ
+
