@@ -33,6 +33,7 @@ Un módulo del temario se arma con clases de **varias secciones distintas** del 
 4. Paso transcripción + notas crudas al agente
 5. Se genera el apunte del MÓDULO, cubriendo TODAS sus temáticas
 6. Cierre: la evaluación del módulo, sin el video delante
+   (la diseña el temario, no el curso — ver más abajo)
 ```
 
 > ⚠️ **El alcance nunca lo fijan las notas ni la transcripción.** El apunte cubre las temáticas del módulo completas, se hayan mencionado o no en el video. **La prueba:** si el alumno no anota nada, el apunte sale igual de completo — solo menos afinado a él.
@@ -108,11 +109,31 @@ apuntes/[ws]/
     │   ├── transcripcion_sXX.md
     │   └── notas_crudas.md
     ├── 01_[slug].md              ← el apunte (una temática = un archivo)
-    └── 02_[slug].md
+    ├── 02_[slug].md
+    ├── guia_[slug].md            ← procedimiento de referencia, NO se repasa
+    └── 99_cierre.md              ← la evaluación del módulo
 ```
 
 - `_input/` es material de trabajo. No se repasa, no se publica, puede borrarse después.
 - `notion/` es **tier referencia**: se conserva tal cual, no se reescribe.
+
+### Los tres artefactos de un módulo
+
+Dentro de la carpeta del módulo conviven tres cosas distintas, y mezclarlas es lo que ensucia el repaso: el ciclo de recall termina preguntándote por un comando de instalación.
+
+| Artefacto | Archivo | Qué responde | ¿Entra al repaso? | ¿Caduca? |
+|-----------|---------|--------------|:-----------------:|:--------:|
+| **Sección** | `NN_[slug].md` | *¿Qué es y por qué?* — el criterio | ✅ sí, es el material de recall | no |
+| **Guía** | `guia_[slug].md` · `tipo: guía` · `estado: referencia` | *¿Cómo se ejecuta hoy?* — el procedimiento | ❌ se consulta cuando hace falta | sí |
+| **Cierre** | `99_cierre.md` | *¿Lo sabes?* — la demostración | ❌ pero alimenta el `reforzar:` | no |
+
+> 🧪 **El test que decide: ¿esto se pudre?** Si el proveedor cambia una pantalla mañana y el texto queda mal → es **guía**. Si sigue siendo verdad aunque rediseñen toda la consola → es **sección**.
+>
+> **Segundo test, si el primero no basta:** ¿lo meterías en un audio de NotebookLM para repasarlo? Si suena absurdo escucharlo, es guía.
+
+**Cuando uno necesita del otro** —que es lo normal— no se duplica, se enlaza: **la sección explica por qué existe el paso; la guía dice cómo se teclea hoy.** La guía abre declarando qué es y a qué sección pertenece el concepto.
+
+> 📌 Ejemplo vivo: `apuntes/cloud/b3-identidad/guia_cli-instalacion-configuracion.md` — el procedimiento de instalar la CLI, con el concepto (qué es una clave de acceso, por qué importa dónde vive) enlazado a `04_formas-de-entrar`, no repetido.
 
 ### Notas previas: ¿tier referencia o materia prima?
 
@@ -131,6 +152,41 @@ Al regenerar desde materia prima:
 
 ---
 
+## El cierre lo diseña el temario, no el curso
+
+El principio *"el temario manda, el curso alimenta"* aplica al **contenido** del apunte y también —sobre todo— a **cómo se evalúa**. El curso es una fuente de *cómo se ve* la consola; nunca la definición de qué demuestra que dominas el módulo.
+
+> ⚠️ **Si el video muestra una interfaz vieja, el cierre pide el resultado, no la ruta de clics.** *"Que ese servicio pueda escribir en ese bucket y en ningún otro"* sobrevive a cualquier rediseño; *"clic en el botón naranja"* no.
+
+### La vara: un cierre que no se puede fallar no es un cierre
+
+| # | Requisito | Qué descarta |
+|---|-----------|--------------|
+| 1 | **Falible** — existe una respuesta equivocada *plausible* | El recorrido guiado: *"ubica el selector de región"*. Lo ubicas o lo ubicas. |
+| 2 | **Sin el material delante** | La guía disfrazada de evaluación |
+| 3 | **Deja un artefacto o un veredicto** — el `.js` compilado, el rol que funciona, la clasificación justificada | El *"ya lo leí"* |
+| 4 | **La respuesta fácil es tentadora y cara** — *"acceso completo a S3"* funciona, y por eso evalúa | El ejercicio sin costo de oportunidad |
+
+> 🚩 **Síntoma de cierre pobre:** se hace en un par de minutos y se aprueba siempre. Si nunca encuentra nada, no está midiendo nada.
+>
+> Un buen cierre puede aprobarse **y aun así enseñar**: el caso de `arquitectura/m1` salió 5/5 y aun así detectó tres errores de criterio que hoy están en su `reforzar:`.
+
+### La forma del cierre según la ruta
+
+| Ruta | Forma | Qué demuestra | Anti-patrón |
+|------|-------|---------------|-------------|
+| **Criterio** (arquitectura) | Caso de decisión: clasificar, ordenar, justificar con **un solo criterio** | Que decides, no que recitas | Pedir definiciones |
+| **Lenguaje** (TypeScript) | Micro-ejercicio con el compilador + quiz de lectura | Que tu modelo mental coincide con lo que hace la máquina | Escribir código bonito |
+| **Operación** (cloud) | Práctica con estado verificable + caso | Que operas y sabes lo que cuesta | Recorrer pantallas |
+
+### El patrón para una práctica de operación: construir → predecir → romper
+
+1. **Construir** algo con estado observable — no *"ubica la pantalla"* sino *"que este servicio escriba en este bucket y en ningún otro"*.
+2. **Predecir por escrito qué va a pasar, antes de mirar.** ← el paso que convierte un recorrido en evaluación. Es gratis, toma segundos, y es donde se falla.
+3. **Romper a propósito y comparar** con la predicción — quitar el permiso, cambiar de región, apagar el rol. Después, **limpiar el recurso** (que además es la lección de costos).
+
+---
+
 ## Errores que este protocolo previene
 
 | Error | Cómo se ve | Qué lo evita |
@@ -140,6 +196,7 @@ Al regenerar desde materia prima:
 | El apunte es un resumen de las dudas del alumno | Cubre solo lo que él anotó | Las notas calibran profundidad, no cobertura |
 | El apunte se llena de ruido | Historia de la empresa, casos de éxito | La tabla de descarte |
 | El procedimiento se pudre | *"clic en el botón naranja"* | `[CONSOLA]` registra intención, no clics |
+| El cierre lo diseña el curso | Una práctica de clics que se aprueba sola en dos minutos | El cierre lo diseña el temario, y debe poder fallarse |
 | Se estudia en línea recta | 39 horas de video vistas en orden | El sílabo se filtra antes de empezar |
 
 ---

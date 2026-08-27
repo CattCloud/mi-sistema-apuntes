@@ -135,9 +135,11 @@ Comparativa AWS vs Azure vs GCP · modelos de despliegue (public/private/hybrid/
 
 ### 🛠️ Práctica en consola
 
-> Recorrer la consola y ubicar, sin ayuda: el selector de región, dónde se listan los servicios, y dónde se ve la cuenta activa.
+> **Predice antes de mirar.** Haz la lista de los recursos que ya tienes creados —usuario IAM, grupo, política propia, presupuesto, clave de acceso, rol— y marca cuáles **seguirán visibles** al cambiar de región y cuáles **van a desaparecer**. Escribe el porqué de cada uno *antes* de tocar el selector.
 >
-> Cambiar de región y observar qué recursos desaparecen de la vista. Esa desaparición **es** la lección de 1.4.
+> Después cambia de región y compara con tu lista. Por cada fallo, di qué criterio aplicaste mal —global vs. regional—, no *"se me pasó"*.
+>
+> Cierra respondiendo: ¿en qué región estás creando cosas, y cuál de los cuatro criterios de elección la justifica?
 
 ### 🧩 Caso de decisión
 
@@ -195,9 +197,11 @@ Optimización de costos a escala, instancias reservadas, spot, savings plans. Ni
 
 ### 🛠️ Práctica en consola
 
-> Dejar configurada una **alerta de presupuesto de 5 USD** y verificar que llega al correo.
+> **Estima a ciegas, después compara.** Sin abrir la calculadora ni los apuntes: escribe las cuatro unidades de cobro y estima la factura mensual del escenario del caso con el método completo (unidades → volumen → precio → total → forma).
 >
-> Después: abrir la consola de facturación y ubicar cuánto llevas gastado hoy, desglosado por servicio.
+> Después contrasta con la calculadora oficial y con el desglose real de tu cuenta. **Explica cada desviación mayor al 20%** — el número final importa menos que saber por qué te equivocaste.
+>
+> Deja la alerta de presupuesto con sus **dos números** (previsto al 80%, tope 1,5–2×) y di por qué no va en el estimado exacto.
 
 ### 🧩 Caso de decisión
 
@@ -251,6 +255,8 @@ STS, federación, Directory Services, Organizations, IAM a escala de empresa. **
 > Dejar de operar como root: crear tu propio usuario con permisos, activar MFA, y configurar la CLI para que responda como ese usuario.
 >
 > Después: crear un **rol para un servicio** y comprobar que ese servicio puede hacer algo que antes no podía.
+>
+> **Y rómpelo:** quita la política del rol y **predice por escrito qué mensaje vas a ver** antes de volver a intentarlo. Comprueba. Al terminar, borra lo que creaste.
 
 ### 🧩 Caso de decisión
 

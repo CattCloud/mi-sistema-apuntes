@@ -3,7 +3,7 @@ tema: M1 — Por qué TypeScript y cómo corre
 workspace: typescript
 modulo: M1
 temario: contexto/plan_estudio/temario_typescript.md
-estado: FINALIZADO
+estado: FINALIZADO       # generación ✅ (5 secciones). El cierre —micro-ejercicio y quiz— va aparte, en 99_cierre.md
 arquetipo: Constructor Teórico + Flujo Analógico
 ritmo: 🐢
 repaso:

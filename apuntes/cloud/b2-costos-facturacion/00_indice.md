@@ -1,7 +1,7 @@
 ---
 tema: B2 — Costos y facturación
 workspace: cloud
-estado: FINALIZADO
+estado: FINALIZADO       # generación ✅. El cierre —práctica y caso— va aparte, en 99_cierre.md
 arquetipo: Documento Técnico + Constructor Teórico
 modulo: B2
 temario: contexto/plan_estudio/temario_cloud_developers.md
@@ -54,13 +54,11 @@ Excluye: optimización de costos a escala, instancias reservadas, spot, savings 
    - Estimación trabajada: el gestor de correos con IA
    - Dónde pones la alerta y por qué no en el estimado exacto
 
-## Evaluación del módulo
+## Cierre del módulo
 
-Cierra cuando pasan **las dos** (ver temario):
+El módulo **no cierra al terminar las secciones**. Su práctica en consola y su caso viven en su propio archivo:
 
-- 🛠️ **Consola:** ✅ *parcial* (2026-08-22) — presupuesto `alerta-gasto-cero` creado y en buen estado (plantilla de gasto cero: importe 1,00 USD, aviso a 0,01). ⬜ Pendiente ubicar el **desglose por tipo de uso**: Cost Explorer tarda hasta 24 h en preparar los datos tras la primera visita.
-  > ⚠️ **Criterio ajustado:** el temario pide *"verificar que llega el correo"*, pero con gasto cero la alerta no se dispara nunca. Lo verificable hoy es que el presupuesto exista, con su umbral, su tipo (real o previsto) y su destinatario. Que el correo llegue se comprueba en **B4**, con recursos encendidos.
-- 🧩 **Caso:** ✅ *aprobado con correcciones* (2026-08-22) — identificó los tokens como el costo dominante y como el que no es del proveedor de nube. Corregido en sesión: (a) faltaron cómputo y almacenamiento en la lista de conceptos; (b) los costos **fijos** no escalan con el volumen, así que la factura crece ×16 y no ×20; (c) el gatillo del contexto acumulativo aplica a conversaciones, no a llamadas independientes; (d) la alerta en el estimado exacto produce falsos positivos — van dos números, no uno.
+- [[99_cierre|🧪 Cierre — práctica en consola y caso]] — 🧩 caso ✅ (22-08-2026) · 🛠️ práctica 🔄 a medias
 
 ## Fuentes
 

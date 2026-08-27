@@ -2,9 +2,9 @@
 
 > **Etapa:** Práctica (etapa 3 del ciclo de vida del conocimiento)
 > **Metodología:** `sistema/metodologia_practica_guiada.md` (fuente de verdad del *porqué*)
-> **Input:** Un bloque de tecnologías (de `contexto/plan_estudio/plan_bloques.md`) + sus apuntes-concepto
-> **Output:** Un mini-proyecto definido por fases en `practica/proyecto-NN-[slug]/` + sesiones de práctica guiada
-> **Trigger:** El usuario dice *"empecemos el Bloque N"* / *"practiquemos X"*
+> **Input:** Un módulo (o grupo de módulos) del temario de una ruta — `contexto/plan_estudio/temario_[ruta].md` — + sus apuntes-concepto
+> **Output:** Un mini-proyecto definido por fases en `practica/[ruta]/proyecto-[slug]/` + sesiones de práctica guiada
+> **Trigger:** El usuario dice *"practiquemos X"* / *"hagamos el proyecto del módulo N"*
 
 ---
 
@@ -28,45 +28,45 @@ Es el equivalente, para la etapa de **práctica**, de lo que P1–P4 son para la
 
 **Antes de empezar — lee:**
 - `sistema/metodologia_practica_guiada.md` (los pilares y la regla de pistas).
-- `sistema/perfil/yo_profesional.md` y `contexto_carrera_ia.md` (calibrar nivel y sesgar el proyecto hacia su meta: empleo, IA aplicada; asumir base de JS/TS y full-stack).
-- El diagnóstico del bloque (`contexto/plan_estudio/diagnosticos/diagnostico_bloque-NN_*.md`) para saber qué está `🔄`/`❌` (lo que hay que ejercitar) y qué `✅` (no aburrir con eso).
+- `sistema/perfil/yo_profesional.md` y `sistema/perfil/contexto_carrera_ia.md` (calibrar nivel y sesgar el proyecto hacia su meta: empleo, IA aplicada; asumir base de JS/TS y full-stack).
+- El temario de la ruta (`contexto/plan_estudio/temario_[ruta].md`) y el `00_indice.md` del módulo: qué temáticas cubre, qué excluye, y cuál es su **regla de cierre** (caso, micro-ejercicio o práctica en consola, según la ruta).
 
 ---
 
-## Paso P-0: Diagnóstico del bloque
+## Paso P-0: Diagnóstico del módulo
 
-Antes de definir nada, ejecutar `sistema/prompts/diagnostico_bloque.md` para las tecnologías del bloque (reutilizando marcas previas) y esperar a que el usuario lo complete. El resultado fija qué temas debe ejercitar el proyecto.
+Antes de definir nada, revisar el diagnóstico del módulo (columnas ✅/🔄/❌ del temario). Si la ruta no las trae marcadas, ejecutar `sistema/prompts/diagnostico_bloque.md` y esperar a que el usuario las complete. El resultado fija qué temas debe ejercitar el proyecto.
 
 ---
 
-## Paso P-A: Definir el mini-proyecto del bloque
+## Paso P-A: Definir el mini-proyecto
 
-Proponer **un** mini-proyecto que combine las tecnologías del bloque + las acumuladas de bloques previos. Reglas:
+Proponer **un** mini-proyecto que combine las temáticas del módulo + las acumuladas de módulos previos de la ruta. Reglas:
 
 | Regla | Detalle |
 |-------|---------|
-| **Acotado** | Cabe en el tiempo del bloque (5–10 h/semana). Mejor pequeño y terminado que grande y abandonado. |
-| **Aditivo** | Reutiliza techs de bloques previos; añade las nuevas. Puede revisitar una tech para temas no vistos. |
-| **Real / portafolio** | Algo que se vea y sirva, no un ejercicio de juguete. Sesgado a su meta (sabor a producto/IA cuando el bloque lo permita). |
+| **Acotado** | Cabe en el tiempo del módulo (5–10 h/semana). Mejor pequeño y terminado que grande y abandonado. |
+| **Aditivo** | Reutiliza lo de módulos previos; añade lo nuevo. Puede revisitar un tema por su parte no vista. |
+| **Real / portafolio** | Algo que se vea y sirva, no un ejercicio de juguete. Sesgado a su meta (sabor a producto/IA cuando el módulo lo permita). |
 | **Cubre lo flojo** | Las features deben forzar a usar lo que quedó `🔄`/`❌` en el diagnóstico. |
 
 Presentar la propuesta con alternativas concretas (no preguntas abiertas) y pedir confirmación:
 
 ```
-🛠️ Mini-proyecto propuesto — Bloque N
+🛠️ Mini-proyecto propuesto — [Ruta] · Módulo [N]
 Qué es: [1-2 oraciones]
-Techs que ejercita: [lista, marcando cuáles del bloque y cuáles acumuladas]
+Temáticas que ejercita: [lista, marcando cuáles del módulo y cuáles acumuladas]
 Por qué encaja contigo: [conexión a su meta / a lo flojo del diagnóstico]
 ¿Lo tomamos, o ajustamos el alcance?
 ```
 
-Al confirmar, crear `practica/proyecto-NN-[slug]/00_proyecto.md` (ver plantilla abajo).
+Al confirmar, crear `practica/[ruta]/proyecto-[slug]/00_proyecto.md` (ver plantilla abajo).
 
 ---
 
 ## Paso P-B: Descomponer en fases
 
-Partir el proyecto en **fases** (3–6), cada una mapeada a conceptos del bloque, de menor a mayor exigencia. Cada fase = un archivo `fases/fase-NN_[slug].md` con sus HU. La fase 1 debe dar un **resultado visible rápido** (motivación temprana).
+Partir el proyecto en **fases** (3–6), cada una mapeada a temáticas del módulo, de menor a mayor exigencia. Cada fase = un archivo `fases/fase-NN_[slug].md` con sus HU. La fase 1 debe dar un **resultado visible rápido** (motivación temprana).
 
 ---
 
@@ -142,18 +142,19 @@ Siguiente: [HU/fase siguiente]
 ```markdown
 ---
 proyecto: [Nombre]
-bloque: NN
+ruta: [arquitectura | typescript | cloud]
+modulo: [ID del temario]
 estado: EN PROGRESO
 techs: [lista]
 ---
 
-# 🛠️ [Nombre del proyecto] — Bloque NN
+# 🛠️ [Nombre del proyecto] — [Ruta] · Módulo [N]
 
 > **[Qué es en 1-2 oraciones].** Estado: 🔄 EN PROGRESO.
 
 ## Objetivo y alcance
 **Construye:** [qué]
-**Ejercita:** [techs/temas del diagnóstico]
+**Ejercita:** [temáticas del módulo / temas del diagnóstico]
 **Excluye:** [lo que NO entra — anti scope creep]
 
 ## Fases
@@ -174,8 +175,8 @@ No dársela. Sostener la fricción con calidez: *"Si te lo doy, te robo el apren
 ### El alumno está realmente bloqueado (frustración)
 Bajar la dificultad sin resolver: dividir la HU en un sub-paso más pequeño, o dar un ejemplo **análogo** (otro contexto) del que pueda transferir la idea — nunca el código de la HU actual.
 
-### Scope creep (quiere meter una feature fuera del bloque)
-Reutilizar el **Guardián de Alcance** (`sistema/mecanismos/mecanismo_apunte_abierto.md`): responder, pero advertir que excede el bloque y anotarlo en `NOTAS.md` para un proyecto/fase futura. No inflar el mini-proyecto.
+### Scope creep (quiere meter una feature fuera del módulo)
+Reutilizar el **Guardián de Alcance** (`sistema/mecanismos/mecanismo_apunte_abierto.md`): responder, pero advertir que excede el módulo y anotarlo en `NOTAS.md` para un proyecto/fase futura. No inflar el mini-proyecto.
 
 ### El concepto no estaba en ningún apunte
 Si una HU necesita algo sin apunte-concepto, ofrecer generarlo (traslado ligero de Notion si existe, o P1–P4 si es hueco real) antes de seguir.

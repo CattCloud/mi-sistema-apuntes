@@ -65,12 +65,11 @@ Excluye: STS, federación, Directory Services, Organizations, IAM a escala de em
    - Responsabilidad compartida aplicada a IAM
    - Buenas prácticas — el checklist de cierre
 
-## Evaluación del módulo
+## Cierre del módulo
 
-Cierra cuando pasan **las dos** (ver temario):
+El módulo **no cierra al terminar las secciones**. Su práctica en consola y su caso viven en su propio archivo:
 
-- 🛠️ **Consola:** dejar de operar como root — crear tu usuario con permisos, activar MFA, configurar la CLI para que responda como ese usuario, y crear un **rol para un servicio** comprobando que ese servicio puede hacer algo que antes no podía.
-- 🧩 **Caso:** la propuesta de poner una clave de acceso en el `.env` del servidor — qué está mal, qué hacer en su lugar, si aplica lo mismo al script local, y por qué "acceso completo a S3" es una respuesta cara aunque funcione.
+- [[99_cierre|🧪 Cierre — práctica en consola y caso]] — 🛠️ práctica 🔄 a medias (usuario y CLI ✅) · 🧩 caso ⬜ pendiente
 
 ## Fuentes
 

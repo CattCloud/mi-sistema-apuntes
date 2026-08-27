@@ -1,7 +1,7 @@
 ---
 tema: B1 — Fundamentos de Cloud
 workspace: cloud
-estado: FINALIZADO
+estado: FINALIZADO       # generación ✅. El cierre —práctica y caso— va aparte, en 99_cierre.md
 arquetipo: Constructor Teórico + Documento Técnico
 modulo: B1
 temario: contexto/plan_estudio/temario_cloud_developers.md
@@ -55,12 +55,11 @@ Excluye: comparativa AWS vs Azure vs GCP · modelos de despliegue (public/privat
    - Puntos de presencia (edge locations) — qué son y qué NO son
    - Recorrer la consola: región, servicios, cuenta activa
 
-## Evaluación del módulo
+## Cierre del módulo
 
-Cierra cuando pasan **las dos** (ver temario):
+El módulo **no cierra al terminar las secciones**. Su práctica en consola y su caso viven en su propio archivo:
 
-- 🛠️ **Consola:** ✅ *parcial* — ubicados el selector de región, el listado de servicios y la cuenta activa (cuenta en `us-east-1`). ⬜ Pendiente ver **desaparecer recursos** al cambiar de región: no hay nada creado todavía, se confirma en **B4**.
-- 🧩 **Caso:** ✅ *aprobado* (2026-08-22) — modelos correctos, línea de responsabilidad correcta, y el parche del SO ubicado en IaaS. Matices corregidos en sesión: en PaaS la seguridad no desaparece (dependencias y secretos siguen siendo tuyos) y el código propio es tuyo en todos los modelos donde exista.
+- [[99_cierre|🧪 Cierre — práctica en consola y caso]] — 🧩 caso ✅ (22-08-2026) · 🛠️ práctica ⬜ pendiente
 
 ## Fuentes
 

@@ -44,41 +44,42 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/prompts/p4_sintesis_estilo_propio.md` | Prompt P4: síntesis progresiva en estilo Tesla                                      |
 | `sistema/mecanismos/mecanismo_apunte_abierto.md`          | Diseño del sistema de adiciones durante/después del armado                          |
 | `sistema/mecanismos/mecanismo_pausa_retomar.md`           | Diseño del mecanismo para pausar/retomar apuntes entre temas sin perder contexto    |
+| `apuntes/[ws]/00_indice.md`                    | Índice del **workspace**: tabla de módulos con su estado, ritmo y carpeta + la **regla de cierre** de esa ruta. Es la vista "¿en qué voy?" |
 | `apuntes/[ws]/[tema]/00_indice.md`                     | Entrada y **fuente única** del apunte: alcance, secciones, estado de generación (EN PROGRESO/PAUSADO/FINALIZADO) y estado de repaso (bloque `repaso:` con último/próximo/nivel/reforzar) |
 | `sistema/perfil/yo.md`                         | Perfil personal/emocional del usuario                                               |
 | `sistema/perfil/yo_profesional.md`             | Perfil profesional (rol, stack, objetivos) — P1 lo lee para recomendar temas        |
 | `NOTAS.md`                                     | Ideas y adiciones centralizadas (NO distribuido por carpeta)                        |
-| `contexto/tareas_transicion.md`                | Roadmap T1-T11 con estado de progreso                                               |
+| `contexto/tareas_transicion.md`                | Roadmap T1-T11 del arranque del sistema — **histórico**, no estado vigente          |
 
-## Estado del roadmap
+## Dónde vive el estado
 
-- **T1-T8:** ✅ Completadas (documentación, análisis, manual, prompts de las 4 fases)
-- **T9:** 🔄 En progreso — Prueba end-to-end con tema real
-- **T10-T11:** ⬜ Pendientes (skill del agente, NotebookLM)
+El estado **no se duplica en este archivo** — se lee de los índices, que son la fuente única:
 
-## Estado de T9 (prueba end-to-end)
+| Nivel | Archivo | Qué responde |
+|-------|---------|--------------|
+| Workspace | `apuntes/[ws]/00_indice.md` | En qué módulo voy de esa ruta, cuál sigue, y cuál es su regla de cierre |
+| Apunte | `apuntes/[ws]/[tema]/00_indice.md` | Alcance, secciones escritas, estado (`EN PROGRESO`/`PAUSADO`/`FINALIZADO`), siguiente paso al retomar y el bloque `repaso:` |
 
-- **Tema:** Claude Code — Arquitectura Interna
-- **Estado:** ⏸️ Pausado en P3⇄P4 (Sección 1 de 8; P2 ✅). Fuente de verdad: `apuntes/ia/claude-code-arquitectura/00_indice.md`
-- **Input:** 3 transcripciones de video sobre la arquitectura de Claude Code
-- **P1 aprobada:** El tema se dividió en 2 apuntes:
-  1. "Claude Code — Arquitectura Interna" (query loop, tools, contexto, CLAUDE.md, skills) ← **este primero**
-  2. "Claude Code — Patrones Agénticos y Modo Avanzado" (patrones, sub-agentes, seguridad) ← después
-- **Workspace:** IA / LLMs 🤖
-- **Arquetipo:** Constructor Teórico + Flujo Analógico
-- **Siguiente paso al retomar:** Continuar P3⇄P4 desde la Sección 2 (ver `apuntes/ia/claude-code-arquitectura/00_indice.md`)
+- **Rutas con temario:** `apuntes/arquitectura/` · `apuntes/typescript/` · `apuntes/cloud/` — los temarios viven en `contexto/plan_estudio/`
+- **Apuntes sueltos (sin temario):** `apuntes/ia/`
+- **¿Qué repaso hoy?** Se **deriva** de los campos `repaso.proximo` de los apuntes `FINALIZADO`; no se almacena aparte (ver `sistema/metodologia_repaso.md`)
+- **Al retomar un apunte pausado:** el `00_indice.md` del apunte es el checkpoint — no hace falta más contexto
 
-## Apuntes pausados
+> 📜 **Roadmap T1–T11** (`contexto/tareas_transicion.md`) — histórico del arranque del sistema, no estado vigente. Las 4 fases ya se probaron end-to-end en apuntes reales de las tres rutas, así que **T9 quedó superado en la práctica** (el apunte con el que se iba a probar, "Claude Code — Arquitectura Interna", sigue pausado y ya no bloquea nada). **T11 (NotebookLM)** está cubierto por la consolidación multimodal del repaso v1. **T10 (skill del agente)** sigue pendiente.
 
-| Apunte | Fase al pausar | Checkpoint |
-|--------|----------------|------------|
-| Claude Code — Arquitectura Interna | P2 ✅, en P3⇄P4 (Sección 1 de 8) | `apuntes/ia/claude-code-arquitectura/00_indice.md` |
+## Anatomía de un módulo
 
-## Apuntes completados
+Dentro de la carpeta de un módulo conviven **tres artefactos distintos**. Mezclarlos ensucia el repaso — el recall termina preguntando por un comando de instalación.
 
-| Apunte | Estado | Notas |
-|--------|--------|-------|
-| CLAUDE.md — Arquitectura de Contexto | ✅ Listo | 9 secciones. Ver `apuntes/ia/claude-md-arquitectura-contexto/00_indice.md`. Temas asociados pendientes en NOTAS.md (hooks, auto memory, plantillas por nivel). |
+| Artefacto | Archivo | Qué responde | ¿Repaso? |
+|-----------|---------|--------------|:--------:|
+| **Sección** | `NN_[slug].md` | *¿Qué es y por qué?* — el criterio | ✅ es el material de recall |
+| **Guía** | `guia_[slug].md` (`tipo: guía`) | *¿Cómo se ejecuta hoy?* — el procedimiento | ❌ se consulta |
+| **Cierre** | `99_cierre.md` | *¿Lo sabes?* — la demostración | ❌ alimenta el `reforzar:` |
+
+> 🧪 **El test que decide: ¿esto se pudre?** Si el proveedor cambia una pantalla mañana y el texto queda mal → **guía**. Si sigue siendo verdad → **sección**. La sección explica *por qué* existe el paso; la guía dice *cómo* se teclea hoy. Se enlazan, no se duplican.
+
+> 🎯 **El módulo no cierra al terminar las secciones** — cierra en su `99_cierre.md`. **El cierre lo diseña el temario, nunca el curso**, y tiene que poder fallarse: falible, sin el material delante, y deja un artefacto o un veredicto. Formas por ruta: **caso** (arquitectura) · **micro-ejercicio + quiz** (TypeScript) · **construir → predecir → romper + caso** (cloud). Detalle en `sistema/prompts/integracion_curso_sistema.md`.
 
 ## Mecanismos de flexibilidad
 
@@ -97,11 +98,13 @@ El flujo opera **progresivamente, sección por sección**:
 Refuerza el conocimiento **construyendo**, no memorizando. Diseño en `sistema/metodologia_practica_guiada.md`; el agente lee los protocolos de `sistema/prompts/` antes de ejecutar.
 
 - **Regla de oro:** la IA es **instructor, no autocompletado** — entrega criterios de aceptación y **pistas escalonadas a petición**, **nunca el código**. El alumno desarrolla la lógica (criterio > memoria).
-- **Diagnóstico Pareto just-in-time:** antes de estudiar algo se marca qué se domina (✅), qué está oxidado (🔄) y qué no se sabe (❌). Solo se estudia lo marcado ❌. Protocolo en `sistema/prompts/diagnostico_bloque.md`.
+- **Diagnóstico Pareto just-in-time:** antes de estudiar un módulo se marca qué se domina (✅), qué está oxidado (🔄) y qué no se sabe (❌) en las columnas de su temario. En las rutas con temario ese marcado **calibra la profundidad de cada sección, no filtra la cobertura** — todas las temáticas se escriben. El filtro sí aplica al practicar: se ejercita lo 🔄/❌. Protocolo en `sistema/prompts/diagnostico_bloque.md`.
 - **Concepto:** traslado ligero de Notion (`migracion_notion.md`, tier referencia en `apuntes/[ws]/notion/`) + generación Tesla (P1–P4) solo para los huecos reales.
 - **Evaluación por caso** *(mecanismo nuevo, en prueba)*: para temas de criterio (arquitectura), el cierre no es construir ni recitar — es resolver un **escenario de decisión** y justificar el costo de las alternativas. Ver `contexto/plan_estudio/temario_arquitectura_software.md`.
 
-> ⚠️ **Nota de estado:** la maquinaria de *bloques aditivos B1–B5* y los mini-proyectos en `practica/` fueron eliminados. Se conserva la **técnica** (Pareto, criterio>memoria, IA instructor), no el roadmap. Los prompts `diagnostico_bloque.md` y `practica_guiada_proyecto.md` aún mencionan `plan_bloques.md`, que ya no existe — pendiente de limpiar.
+> ⚠️ **Nota de estado:** la maquinaria de *bloques aditivos B1–B5* fue eliminada. Se conserva la **técnica** (Pareto, criterio>memoria, IA instructor), no el roadmap. Los dos prompts de práctica ya están re-anclados a los **temarios por ruta**: donde decían "bloque" ahora dicen **módulo del temario**, y el diagnóstico se marca en las columnas del propio temario, no en un archivo aparte.
+
+> 📁 **Qué vive en `practica/`:** `practica/[ruta]/[modulo]/` para los ejercicios del módulo (ej. `practica/typescript/m1/ejemplo.ts`, el archivo de partida del micro-ejercicio de M1) · `practica/[ruta]/proyecto-[slug]/` para un mini-proyecto con su `00_proyecto.md` y sus fases.
 
 ## Reglas importantes
 
