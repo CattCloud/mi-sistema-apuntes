@@ -66,3 +66,5 @@ Formato:
 - [ ] **MCP Claude ↔ NotebookLM:** ¿existe un MCP que conecte Claude con NotebookLM? (cubierto en parte por los candidatos de arriba).
 - [ ] **PUBLICACION: Deploy con GitHub Pages:** publicar los apuntes vía GitHub Pages — pendiente resolver qué pasa con los videos e imágenes de infografías generadas. Ref: https://www.youtube.com/watch?v=rByIDQYu4jQ
 
+
+- [ ] **AWS CLI en profundidad (tema propio, fuera del curso):** en B3 el CLI entra solo como *superficie de práctica* — el sitio donde una credencial se vuelve concreta. Lo que queda pendiente y **el curso no cubre**: perfiles múltiples (`--profile`, `~/.aws/config`), scripting y automatización, `--query` con JMESPath, salida en JSON para encadenar comandos, y cuándo el CLI le gana a la consola. Fuente: propia. Decidido el 2026-08-25 al separar B3 de B3b.

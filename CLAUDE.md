@@ -32,8 +32,11 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/prompts/diagnostico_bloque.md`        | Protocolo: generar el diagnóstico Pareto por bloque (just-in-time) antes de practicar |
 | `sistema/prompts/practica_guiada_proyecto.md`  | Protocolo operativo de la práctica: define mini-proyecto, fases, HU con criterios de aceptación, pistas escalonadas (nunca el código) |
 | `sistema/prompts/migracion_notion.md`          | Protocolo: traslado ligero just-in-time de notas de Notion al repo (tier referencia) vía MCP |
-| `contexto/plan_estudio/plan_bloques.md`        | Roadmap (ligero) de los bloques de práctica (B1–B5) y su estado |
-| `practica/[proyecto]/00_proyecto.md`           | Entrada y fuente única de un mini-proyecto de práctica: alcance, fases, estado |
+| `contexto/plan_estudio/temario_arquitectura_software.md` | **Ruta actual (1/3).** Arquitectura de Software (nivel 3): 8 módulos, 37 temáticas. Evaluación por **caso** (criterio, sin código) |
+| `contexto/plan_estudio/temario_typescript.md`  | **Ruta actual (2/3).** TypeScript de cero: 9 módulos + proyecto integrador, 45 temáticas. Evaluación por **micro-ejercicio + quiz de lectura de tipos**; cierra con un cliente tipado de la API de Claude |
+| `contexto/plan_estudio/temario_cloud_developers.md` | **Ruta actual (3/3).** Cloud for Developers (nivel 2): 9 módulos, 47 temáticas. Evaluación por **práctica en consola + caso**. Única ruta apoyada en curso externo — ver `sistema/prompts/integracion_curso_sistema.md` |
+| `sistema/prompts/integracion_curso_sistema.md` | Protocolo curso ↔ sistema: el temario manda, el curso alimenta. Qué se descarta de una transcripción, diapositivas vs. interfaz, notas previas como tier referencia o materia prima |
+| `contexto/plan_estudio/silabo_curso_aws_dva.md` | Sílabo del curso AWS DVA-C02 (Udemy) **filtrado clase por clase**: 39h33 → ~14h. Insumo del temario cloud, no ruta de estudio |
 | `sistema/prompts/p1_identificar_tema.md`       | Prompt P1: identificación y acotación del tema                                      |
 | `sistema/prompts/p2_esqueleto_estructura.md`   | Prompt P2: esqueleto con códigos de indicación                                      |
 | `sistema/prompts/p3_prompts_ias_externas.md`   | Prompt P3: generación de contenido + autocrítica (fuente única)                     |
@@ -93,10 +96,12 @@ El flujo opera **progresivamente, sección por sección**:
 
 Refuerza el conocimiento **construyendo**, no memorizando. Diseño en `sistema/metodologia_practica_guiada.md`; el agente lee los protocolos de `sistema/prompts/` antes de ejecutar.
 
-- **Bloques aditivos (espiral):** se aprende por bloques de tecnologías; cada bloque = un **mini-proyecto** (en `practica/`) que combina las techs del bloque y reutiliza/profundiza las previas. Roadmap en `contexto/plan_estudio/plan_bloques.md`.
-- **Ciclo por bloque:** (0) diagnóstico **Pareto** just-in-time (`diagnostico_bloque.md`) → (1) concepto: **traslado ligero de Notion** (`migracion_notion.md`, tier referencia en `apuntes/[ws]/notion/`) + generación Tesla solo para huecos → (2) práctica guiada (`practica_guiada_proyecto.md`).
-- **Regla de oro:** la IA es **instructor, no autocompletado** — entrega Historias de Usuario con criterios de aceptación y **pistas escalonadas a petición**, **nunca el código**. El alumno desarrolla la lógica (criterio > memoria).
-- **Diagnósticos por bloque** (curados por Pareto) en `contexto/plan_estudio/diagnosticos/`; el `diagnostico_nivel.md` genérico quedó jubilado como motor (conserva las marcas de JS, que se reutilizan).
+- **Regla de oro:** la IA es **instructor, no autocompletado** — entrega criterios de aceptación y **pistas escalonadas a petición**, **nunca el código**. El alumno desarrolla la lógica (criterio > memoria).
+- **Diagnóstico Pareto just-in-time:** antes de estudiar algo se marca qué se domina (✅), qué está oxidado (🔄) y qué no se sabe (❌). Solo se estudia lo marcado ❌. Protocolo en `sistema/prompts/diagnostico_bloque.md`.
+- **Concepto:** traslado ligero de Notion (`migracion_notion.md`, tier referencia en `apuntes/[ws]/notion/`) + generación Tesla (P1–P4) solo para los huecos reales.
+- **Evaluación por caso** *(mecanismo nuevo, en prueba)*: para temas de criterio (arquitectura), el cierre no es construir ni recitar — es resolver un **escenario de decisión** y justificar el costo de las alternativas. Ver `contexto/plan_estudio/temario_arquitectura_software.md`.
+
+> ⚠️ **Nota de estado:** la maquinaria de *bloques aditivos B1–B5* y los mini-proyectos en `practica/` fueron eliminados. Se conserva la **técnica** (Pareto, criterio>memoria, IA instructor), no el roadmap. Los prompts `diagnostico_bloque.md` y `practica_guiada_proyecto.md` aún mencionan `plan_bloques.md`, que ya no existe — pendiente de limpiar.
 
 ## Reglas importantes
 

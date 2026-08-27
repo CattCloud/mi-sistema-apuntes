@@ -208,6 +208,48 @@ Cada código de indicación define qué información debe producir el agente par
 **Resumen del proceso:** 1 oración del flujo completo
 ```
 
+### [CONSOLA] — Procedimiento en interfaz gráfica
+
+> **Cuándo:** temas procedimentales donde el objeto de estudio *es* una interfaz (consola cloud, panel de administración). No aplica a secciones puramente conceptuales.
+>
+> ⚠️ **Regla de durabilidad:** registrar la **intención**, no los clics. *"Adjuntar el rol en Configuration → Permissions"* sobrevive un rediseño; *"clic en el botón naranja de arriba a la derecha"* no.
+
+```
+### [Nombre del procedimiento]
+
+**Antes de empezar:** qué debe existir ya (recursos, permisos, credenciales)
+
+**Dónde:** a qué pantalla se llega y por qué ruta (a nivel de intención)
+
+**Qué configurar:**
+
+| Campo | Valor | Por qué |
+|---|---|---|
+| [campo] | [valor] | [razón — no solo qué, sino por qué ese] |
+
+**⚠️ Trampas:**
+- [Lo que está escondido en otra pestaña o sección "Advanced"]
+- [Lo que rompe silenciosamente si se omite]
+
+**✅ Sabes que salió bien si:** criterio verificable, observable sin adivinar
+```
+
+### [COSTO_SERVICIO] — Modelo de precio
+
+> **Cuándo:** cualquier servicio de pago por uso — cloud, API de LLM, PaaS, base gestionada. Se asigna solo a headings donde hay un servicio con precio; un concepto abstracto no lo lleva.
+
+```
+### Qué cuesta [SERVICIO]
+
+**Qué se cobra:** la unidad real de facturación (request, GB-mes, GB de **salida**, token, hora de cómputo)
+
+**Free tier:** qué cubre exactamente y hasta qué límite — y si caduca
+
+**💸 El gatillo:** qué dispara la factura sin que lo notes (el costo oculto típico de este servicio)
+
+**Estimación concreta:** cuánto sería para un volumen realista del usuario, con el cálculo a la vista
+```
+
 ---
 
 ## Combinaciones de Códigos

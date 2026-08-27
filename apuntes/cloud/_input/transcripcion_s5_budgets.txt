@@ -1,0 +1,66 @@
+CLASE Configuración de AWS Budgets
+(Curso AWS DVA — S5, clase marcada ⭐ como fuente de B2. Grabada en agosto de 2022.)
+
+Muy buenas y bienvenidos a esta clase donde nos vamos a introducir en la gestión de los presupuestos.
+
+Como ya he dicho, en este curso intentaremos no gastar nada, nada de dinero para levantar servicios y para aprender todo lo que necesitamos para obtener nuestro certificado.
+
+Así que lo que vamos a hacer ahora es acceder a nuestro usuario IAM. Que veo aquí. Tengo mi usuario Joan, y lo que vamos a hacer es ir al panel de facturación.
+
+Lo que vamos a ver a continuación es que el usuario necesita permisos para acceder a ver esta información. Por lo tanto, como necesitamos permisos, aunque tengamos políticas de administración, nos falta algo más, pues debemos cambiar primero al usuario root y todo seguido volvemos al usuario para ver este panel de configuración.
+
+Volvamos ahora al usuario root y justo ahora ya estoy en el usuario root. Lo que vamos a hacer ahora es dar permisos a los usuarios para que ellos mismos puedan gestionar todo el tema de la facturación.
+
+Cómo lo puedo hacer? Pues me voy a mi cuenta justo aquí, cuenta. Y voy a bajar. Hasta que vea acceso de los usuarios y los roles de IAM a la información de facturación. Vamos a editar y es una política. Es un permiso que se debe dar aunque el usuario tenga permisos de administración. Vamos a activar y vamos a actualizar. Ahora sí, el acceso de los usuarios o los roles de IAM a la información de facturación está activado.
+
+Por lo tanto, como hemos dicho siempre, en ningún momento hay que pretender operar con el usuario root a no ser que sea necesario, como ha pasado ahora, dar un permiso. Por lo tanto, volvamos al usuario IAM.
+
+Perfecto, ya estamos de vuelta al usuario. Ya hemos visto cómo asignar este permiso. Lo que vamos a hacer ahora es acceder directamente al panel de facturación, al cual antes no teníamos permisos.
+
+Vamos a ver ahora. Ahora sí, perfecto. El usuario ya tiene permisos para entrar y vamos a acceder a ver las facturas.
+
+Yo por el momento no tengo ningún gasto. La experiencia de este curso debe ser totalmente gratuita, así que intento no gastar nada. Este curso se está creando en agosto de 2022. Pues aquí me aparece la fecha máxima donde yo puedo acceder, pero si voy bajando, bajando, bajando, puedo ver hasta la fecha que yo puedo registrar lo que serían facturas, facturas previas.
+
+Como por el momento no he gastado nada, pues me aparecerá aquí vacío. No obstante, en caso de que yo haya gastado justo aquí, me aparecerían todos los detalles y podría ver al final todo lo que se ha gastado pertinentemente a todos los servicios. Por ejemplo, aquí hay una transferencia de datos que ha sido totalmente gratuita, que se han transferido esta cantidad de datos. Justo aquí me gestiona y se me avisa de aquello que se ha consumido tanto por datos, servicios, dinero. Todo se engloba en estos detalles.
+
+Lo que verías aquí en caso de que tú uses los servicios y gastes estos servicios, es decir, que tengas un coste económico, serían todos los servicios desglosados 1 a 1 y verías el por qué has gastado cierta cantidad de dinero.
+
+La intención, como ya he dicho para este certificado, es que no gastemos nada o al menos lo mínimo posible. Así que no te preocupes, podremos hacer este curso sin gastar nada.
+
+Cómo lo podemos hacer? Para estar totalmente seguros, muchas veces veremos que hay servicios que son de pago o algunos que realmente cuestan mucho dinero. Y claro, nos puede asustar decir: ostras, si un día me equivoco y sin querer pues activo un servicio que me requiere un pago muy muy grande, pues hay ese miedo interno.
+
+Pues vamos a generar ahora el establecimiento de un budget que es un presupuesto máximo, el cual vamos a gastar si lo deseamos, no obstante lo podremos manejar como deseemos. Así nos quitamos ese miedo de lo que podría pasar en caso de equivocación.
+
+Cómo lo hacemos? Pues nos vamos a ir a la parte de presupuestos o también conocidos como budget justo aquí. Como ya vemos, aunque la página esté en español, hay muchos términos que aparecen en inglés, así que cuidado con estos términos. Hay que saber distinguir budget = presupuestos.
+
+Vamos a entrar. Y justo aquí tenemos la posibilidad de crear lo que sería un presupuesto. Cómo lo hacemos? Vamos a entrar a crear un presupuesto y vamos a elegir simplemente el presupuesto de costos, el que está ya recomendado. Vamos a ir a siguiente.
+
+Vale, ya estamos en la página de definición de un presupuesto. Vamos a bajar y por aquí vamos a introducir el nombre del presupuesto. Vamos a poner "demo presupuesto".
+
+Todo seguido, vamos a establecer el importe del presupuesto: mensual, semanal, trimestral, anual. Vamos a establecer un presupuesto mensual, lo que podemos gastar cada mes.
+
+Y justo aquí vemos el presupuesto que sea recurrente o a punto de vencer. Por el primer momento vamos a dejarlo recurrente, donde los presupuestos periódicos se renuevan el primer día de cada período de facturación mensual. Porque mensual; si fuera semanal, semanal. Cuando empezamos, por ejemplo, este mismo mes, estábamos en agosto de 2022.
+
+Para agosto de 2022 vamos a generar un presupuesto que sea fijo; el planificado ajusta automáticamente en función de un patrón. Vamos a dejarlo fijo. Vamos a estar seguros de captar una única cantidad.
+
+Qué queremos gastar? Pues un máximo, a lo mejor de 10 dólares. Pues podemos poner 10 dólares tal que así. De acuerdo. Este será el máximo que vamos a gastar en un mes. Poner la cantidad que tú desees.
+
+Si bajamos justo aquí, vemos en qué ámbito los vamos a gastar. A lo mejor queremos gastar estos 10 dólares únicamente en unos servicios. Bueno, mejor decimos: vale, algunos servicios no quiero que tengan ningún costo, ni quiero que se contemple ese presupuesto para algunos servicios. Pues justo aquí lo podría también destacar o filtrar. Lo vamos a dejar como el recomendado: para todos los servicios es aplicable.
+
+Y vamos para abajo. Vamos a ir a siguiente. Y justo ahora me aparecen las alertas.
+
+Qué es esto de las alertas? Pues una alerta o un umbral me va a permitir recibir una notificación que me diga: hey, Joan, estás llegando a tu máximo de presupuesto, o está previsto que cierto día llegues a este máximo o a este porcentaje de tu presupuesto. Quieres añadir más, o ten cuidado con esto. De acuerdo? Es una alerta.
+
+Vamos a agregar alguna alerta y vamos con la primera. Justo aquí vemos que al final podemos establecer lo que serían porcentajes. Es decir, nosotros a lo mejor decidimos gastar únicamente 10 dólares en un mes. Lo que quiero es que cuando lleve el 80% de ese dinero gastado, que serían 8 dólares, se me avise. Por ejemplo, el umbral del 80% de la cantidad presupuestada.
+
+Y cómo debe activarse esta alerta? Pues puede ser o una alerta real, simplemente cuando llegamos al 80%, o una alerta que sea prevista, es decir, con machine learning, con herramientas de inteligencia artificial se prevé cuándo será el día donde vas a llegar a ese porcentaje y te van a avisar. Por ahora dejémoslo como real.
+
+Y justo aquí abajo podemos establecer las direcciones de correo electrónico mediante comas, a las cuales se va a avisar que hemos llegado a cierta cantidad.
+
+Vamos a siguiente si lo deseamos. Pero también podemos agregar más tipos de alerta. Justo aquí podrías agregar una segunda alerta si lo deseas. Puedes agregar una alerta también de tipo previsto y de esta forma vas a prever cuando llegas a cierto porcentaje. Puedes agregar ambas alertas. Por ejemplo, aquí vamos a establecer un 60% de la cantidad presupuestada con un valor previsto, cuando se prevé con herramientas de machine learning que lleguemos ahí.
+
+Vamos a siguiente y ya pasamos al paso cuatro: asociar acciones. Es decir, qué pasa cuando llegamos a esta alerta. Si queremos agregar una acción, lo podemos clicar aquí y justo ahora podemos agregar una acción también aplicando lo que serían los roles de IAM. No hace falta entrar en tanto detalle; simplemente se nos va a notificar en caso de que queramos aplicar una acción de forma automática, es decir, dar unos privilegios y unos permisos a unos servicios para que lo hagan de forma automática. Lo podríamos hacer justo aquí también. Por el momento vamos a saltar este paso.
+
+Y el quinto paso siempre es de revisar todo aquello que hemos hecho. Hemos creado un presupuesto llamado "demo presupuesto", con el periodo mensual que empieza ya en agosto, y con un importe de presupuesto de 10 dólares mensuales. Las alertas son estas de aquí: al 80% de un costo real, y del 60% a un costo previsto con herramientas de machine learning.
+
+Vamos a crear el presupuesto. Ya hemos creado nuestro primer presupuesto. No tengas miedo, ahora seguro que no gastamos más de 10 dólares porque es nuestro presupuesto máximo, y vemos qué fácil es asignar este tipo de presupuestos.

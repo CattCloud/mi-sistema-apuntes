@@ -189,6 +189,8 @@ Para cada heading, agrega una **indicación breve** de qué tipo de contenido ir
 | `[CÓDIGO]` | Bloque de sintaxis + ejemplo práctico |
 | `[MITO]` | Formato ❌ Mito / ✅ Realidad |
 | `[FASES]` | Proceso por fases numeradas |
+| `[CONSOLA]` | Procedimiento en una interfaz gráfica (consola cloud, panel de administración), registrado a nivel de **intención + trampas**, no de clics |
+| `[COSTO_SERVICIO]` | Modelo de precio de un servicio de pago por uso (cloud, API de LLM, PaaS): qué se cobra, free tier, gatillo de factura, estimación |
 
 **Ejemplo anotado:**
 ```

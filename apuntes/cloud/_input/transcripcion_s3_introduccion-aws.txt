@@ -1,0 +1,568 @@
+CLASE Visión general de la Cloud de AWS
+
+
+Muy buenas y bienvenidas a todos a esta clase.
+
+A continuación vamos a ver un poco más de historia y más características que tiene el CLOU de a doble
+
+vs.
+
+En 2002 se hizo el lanzamiento interno y fue en el 2003 donde la infraestructura de Amazon fue uno de
+
+sus puntos fuertes de la idea al mercado.
+
+Todo seguido.
+
+En 2004 fue el lanzamiento público con SQL, un servicio de colas que veremos en este mismo curso.
+
+En 2006 se hizo un relanzamiento público con ese QS S3 y C dos, que son servicios muy populares actualmente
+
+de Amazon Web Services.
+
+En 2007 se hizo directamente el lanzamiento en Europa y vimos aquí productos y servicios como Dropbox,
+
+Netflix, Airbnb y muchos, muchos otros, como por ejemplo proyectos internos de la NASA.
+
+Todo seguido vamos a ver cuáles son realmente los números que se contemplan en Amazon Web Services.
+
+Pues justo aquí hay diferentes empresas en este mismo sector del cloud, por ejemplo en Microsoft,
+
+Google, IBM, Oracle, Alibaba, Cloud y muchos más.
+
+Pero vamos a hablar directamente de los datos de Amazon Web Services, que lo convierten en el líder
+
+en el cloud en 2019.
+
+Amazon Google tuvo 35.020.000.000 de dólares de ingresos anuales.
+
+Es una barbaridad.
+
+Únicamente en el cloud de Amazon a doble VS representa el 47% del mercado en 2019.
+
+Microsoft es el segundo con el 22%.
+
+Fíjate bien la diferencia en el porcentaje que representa cada uno de estos.
+
+Cada vez más estamos hablando de la adopción de A doble VS.
+
+Es pionero y líder del mercado de Cloud de Amazon Web Services por 9.º año consecutivo.
+
+Todo esto con los datos del 2019 que tenemos aquí con el cuadrante mágico de Gartner.
+
+Y finalmente hay más de 1 millón de usuarios activos actualmente en a doble VC y cada día más y más.
+
+Cuáles son realmente los casos de uso del cloud de Amazon Web Services?
+
+Pues a doble Vs.
+
+Permite crear aplicaciones sofisticadas y muy escalables.
+
+Como ya hemos comentado, es aplicable a un conjunto diverso de industrias, no únicamente a industrias
+
+enfocadas en despliegues de aplicaciones.
+
+No hay industrias enfocadas, a lo mejor al machine learning, al big data, a muchos, muchos datos,
+
+a bases de datos, almacenamiento, a los servidores.
+
+Bueno, cualquier empresa actualmente que tenga una pieza tecnológica, pues ya podría usar Amazon Web
+
+Services, por ejemplo.
+
+Hemos visto ya proyectos como Netflix, Netflix, esa plataforma donde nosotros podemos ver películas
+
+o series, se ha desplegado en A doble o es en el club de Amazon o muchos otros, por ejemplo Activision,
+
+McDonalds, Century Fox y mucho más.
+
+Estos son algunos ejemplos muy famosos actualmente del club de Amazon.
+
+Los casos de uso incluyen Enterprise IT, copias de seguridad y almacenamiento, análisis de big data,
+
+alojamiento de sitios web, aplicaciones móviles, aplicaciones sociales, videojuegos y muchísimo más.
+
+
+
+
+CLASE  Infraestructura global de AWS - Regiones y AZ
+Realmente hablamos de una infraestructura global de Amazon Web Services.
+
+Eso qué significa?
+
+Pues vamos a hablar de diferentes piezas.
+
+Y cuidado aquí, porque todas estas piezas que ahora vamos a comentar que hacen que Amazon sea una infraestructura
+
+global, son muy importantes referentes al examen de certificación del cloud Practitioner.
+
+En primer lugar, vamos a hablar de las regiones de Amazon, las regiones de Amazon.
+
+Vamos a comentarlas porque son muy importantes.
+
+Vamos a ver su término en inglés y su término en español de cada uno de estos conceptos.
+
+En segundo lugar, vemos las zonas de disponibilidad, también conocidas en inglés como Adobe vs Available
+
+It Sounds.
+
+Son las zonas donde nosotros tendremos centros de datos.
+
+Ahora entraremos en detalles en estos conceptos.
+
+Finalmente vamos a ver los centros de datos, los data centers de Amazon Web Services, como ves en
+
+muchas diapositivas.
+
+Ahora el término en inglés y el término en español, para que así lo entiendas perfectamente y en ningún
+
+momento se te escape ningún concepto.
+
+Y bueno, ahora sí vamos a ver las Edge, location o puntos de presencia de Amazon.
+
+Estos cuatro conceptos son súper importantes en el entorno de la infraestructura de Amazon.
+
+Por qué?
+
+Pues veremos a medida que avancemos esta misma clase y en el curso que Amazon te va a permitir a ti
+
+disminuir, por ejemplo, la latencia, estar más cerca de tus usuarios o tener tu aplicación desplegada
+
+en diferentes regiones del mundo para evitar así una catástrofe.
+
+Imagínate que tenemos un centro de datos de Amazon donde está ejecutándose nuestro servicio y por mala
+
+suerte mañana hay un incendio en ese centro de datos.
+
+Claro, si todas las máquinas se ven afectadas, obviamente podríamos tener un problema, pero Amazon
+
+es una infraestructura global que tiene la posibilidad de replicarse y escalar a nivel mundial.
+
+Tiene centros de datos distribuidos por todo el mundo y es aquello donde vamos con estos conceptos.
+
+Justo ahora vamos a ver un poquito en la infraestructura de Amazon Web Services.
+
+Justo ahora vamos a ver esos conceptos que acabamos de mencionar que serían las regiones, las regiones,
+
+sin entrar en detalle.
+
+Justo aquí vemos una definición tiene el concepto de una región que es una ubicación física en todo
+
+el mundo, donde agrupamos centros de datos.
+
+Luego tenemos zonas de disponibilidad.
+
+Una zona de disponibilidad también abreviada por Z del inglés, es uno o más centros de datos.
+
+Pues justo aquí puedes encontrar muchas definiciones que te vienen muy bien, incluso la localización
+
+de cada uno de estos, ya sean de regiones o redes de borde las location.
+
+Justo ahora empezaremos por el primer término, las regiones de Amazon, que son Amazon Web Services.
+
+Es decir, hay regiones en todo el mundo.
+
+Justo ahora ves aquí diferentes puntitos que marcan las regiones que tienen Amazon y cada vez más y
+
+más son las regiones disponibles.
+
+Los nombres de las regiones pueden ser como los que ves a continuación o es East uno West tres, pues
+
+en referencia de donde se sitúen es por ejemplo para Estados Unidos, para Europa, etc Justo aquí vemos
+
+una lista extensa de todos aquellos servicios, tanto para Estados Unidos, para África, para Asia,
+
+para Canadá, para Europa.
+
+Hay regiones distribuidas por todo el mundo, una región que es pues una región, es un grupo de centros
+
+de datos.
+
+La mayoría de los servicios de Amazon Web Services son de ámbito regional.
+
+Ahora sí, cómo elegimos una región de Amazon Web Services?
+
+Es cuando nosotros queramos desplegar un servicio, cómo elegimos la región donde queremos desplegarlo.
+
+Pues si necesitas lanzar una nueva aplicación donde lo hacemos.
+
+En Estados Unidos.
+
+Latinoamérica.
+
+Europa.
+
+Por Asia.
+
+Pues vamos a ver algunos puntos que son relevantes en cuanto a elegir una región.
+
+En primer lugar, el cumplimiento de los requisitos legales y de gobernanza de datos en función del
+
+sitio donde nosotros debemos desplegar un servicio, pues deberemos afrontar los requisitos legales
+
+y de gobernanza de datos de ese mismo sitio.
+
+La proximidad a los clientes.
+
+Eso hará que tengamos una latencia u otra los servicios disponibles en una región, los nuevos servicios
+
+y las nuevas funciones no están disponibles en todas las regiones, así que es algo a tener muy en cuenta.
+
+Y finalmente, los precios.
+
+Los precios varían de una región a otra y son transparentes.
+
+En la página de precios del servicio no tendrás ninguna sorpresa.
+
+Ahí lo puedes ver todo con detalle.
+
+Ahora sí, pasemos al segundo concepto.
+
+Las zonas de disponibilidad de a doble VS.
+
+Cada región tiene muchas zonas de disponibilidad.
+
+Normalmente tres.
+
+El mínimo es tres y el máximo es seis.
+
+El ejemplo de cómo se puede escribir una zona de disponibilidad es el que ves a continuación a Sudeste
+
+2AA y Sudeste 2BAP Guión Sudeste dos C.
+
+Estos son los típicos nombres de zonas de disponibilidad de Amazon Web Services.
+
+Justo aquí vamos a ver una región.
+
+Vamos a ver la región de Amazon Web Services y tenemos una zona de disponibilidad.
+
+Cada forma de disponibilidad es también llamada a Z.
+
+Es uno o varios centros de datos discretos con alimentación, red y conectividad redundantes.
+
+Es decir, dentro de una zona de disponibilidad vamos a encontrar de uno o varios centros de datos.
+
+Y en una región hay muchas zonas de disponibilidad.
+
+Normalmente hay tres, pues estas zonas de disponibilidad se permiten conectar unas con otras.
+
+Están separadas, eso sí, de modo que se pueden aislar de catástrofes, ya sea un incendio, un terremoto,
+
+pero a la vez están conectadas con redes de banda ancha, de alto ancho de banda y latencia ultra baja.
+
+Pues aquí vemos la primera zona de disponibilidad que tiene centros de datos, pues vemos que estos
+
+centros de datos al final se pueden conectar en una misma región, que son las zonas de disponibilidad.
+
+Ahora sí vamos a ver los puntos de presencia de Amazon webseries también llamados Location en inglés.
+
+Amazon tiene 216 puntos de presencia, 105 puntos de presencia y 11 de cachés regionales en 84 ciudades
+
+de 42 países.
+
+De acuerdo con esto, veamos algunos datos.
+
+Ahora sí, para qué sirven?
+
+Pues el contenido se entrega a los usuarios finales con menor latencia.
+
+Vamos a poner un ejemplo.
+
+Nosotros vemos Netflix y yo puedo ver Netflix desde España.
+
+Entonces, si yo debo acceder a las películas almacenadas en servidores en Estados Unidos, pues eso
+
+tendrá una latencia diferente que si los servidores están en Europa, porque si están en Europa están
+
+más cerca de mi casa y así puedo acceder más rápido.
+
+Pues estos son los puntos de presencia.
+
+Sirven para acercar el contenido a los usuarios.
+
+Hay, como vemos, cientos de puntos de presencia distribuidos por todo el mundo.
+
+Justo ahora vemos la distribución en puntos, ya sean azules o lilas, questions o multiple age location
+
+o incluso por región H cachés.
+
+Así que justo en este mapa, que incluso te dejo la URL, descárgate las diapositivas y accede a esta
+
+URL, verás con detalle estos puntos de presencia.
+
+Y ahora sí, vamos a finalizar con un tour por la consola de Amazon Web Services.
+
+Este curso se enfoca en la parte teórica, pero también en la parte práctica, así que no te preocupes
+
+porque haremos todo lo que explicamos de una forma también muy práctica.
+
+Amazon WebService cuenta con servicios globales, por ejemplo el Identity and Access Management, el
+
+IAM, el cual veremos muchísimo y tendremos una sección específica, el RUT 53 que es un servicio DNS,
+
+el Cloud Front, que es una red de entrega de contenido que nos acerca el contenido a donde nosotros
+
+estamos o el Wave, que es un firewall de aplicaciones web, nos sirve para protegernos.
+
+La mayoría de los servicios de Amazon Web Services son de ámbito regional.
+
+Como hemos dicho.
+
+Como cuáles?
+
+Pues Amazon DC2, que es un servicio de infraestructura como servicio Elastic Bienestar que es enfocado
+
+a la plataforma como servicio Landa, el famoso Landa que es una función como servicio o.
+
+Ese servicio para machine learning que es de software como servicio.
+
+Aquí hemos visto varios de estos.
+
+Seguramente vamos a acceder a esta tabla de regiones y se nos va a abrir este enlace donde podremos
+
+ver cada una de estas regiones y los servicios ofrecidos.
+
+Cuáles son los servicios ofrecidos?
+
+Hay cientos actualmente y vamos a ver muchos, muchos de estos.
+
+En este curso de certificación.
+
+Puedes acceder al que tú quieras y ver con detalle información de estos servicios.
+
+Como ves, por ejemplo el famoso landa.
+
+Clicando encima.
+
+Pues justo aquí vemos la información de Landa.
+
+Vemos los casos de uso, etc.
+
+Así que a doble vs también tienen su propia documentación y te animo en todo momento a que accedas a
+
+ella.
+
+
+
+CLASE Recorrido por la consola y los servicios de AWS
+
+Muy buenas y bienvenidos a todos a esta clase.
+
+En esta clase vamos a hacer un tour por la consola, por el dashboard de Adobe CVS.
+
+Es muy importante que reflejemos toda la teoría que estemos explicando en este curso con la manera más
+
+práctica posible.
+
+Así que vamos a combinar en este curso tanto la forma teórica como la forma práctica.
+
+No te preocupes, si la teoría no entiendes algo, lo verás muy reflejado en las partes prácticas.
+
+Así que una vez dentro, estemos en nuestra cuenta.
+
+Como ya ves, aquí aparece mi nombre de usuario.
+
+Pues vamos a ver algunos aspectos muy destacados.
+
+Justo al lado de mi nombre de usuario verás otro nombre, en mi caso, norte de Virginia.
+
+No hace falta sea el mismo nombre el cual te aparezca a ti.
+
+Ahora te explico que significa esto.
+
+Si vemos el desplegable, lo que vemos aquí son las regiones donde se encuentra presente Amazon Web
+
+Services.
+
+Cada una de estas regiones puede estar en Estados Unidos, en África, Asia, Pacífico, Canadá, Europa,
+
+Oriente Medio, América del Sur, etc Como ves, aquí cada región tiene un nombre asignado aquí.
+
+África Sub uno App est uno.
+
+En función de la región tenemos un nombre.
+
+Obviamente yo estoy en norte de Virginia, en Estados Unidos.
+
+No obstante, yo resido en España.
+
+Eso significa que no hace falta que estemos físicamente en una región para usar los servicios de esa
+
+región.
+
+Es muy importante el término de regiones, porque cada vez que vayamos a levantar servicios, pues algunos
+
+servicios no están presentes en todas las regiones y los precios también cambian.
+
+Así que siempre nos vamos a asegurar de qué servicios están presentes en la región que nosotros elijamos
+
+y que precios tienen esos servicios para cada región.
+
+Me puedes preguntar, pero Joan, en función de qué elijo yo una región u otra?
+
+Pues bueno, si tú tienes usuarios más de Estados Unidos, pues te va a interesar también que los usuarios
+
+estén muy cerca de tus servicios para así de incrementar la latencia que puedan tener en función de
+
+muchas características que puedas ver tú en tu producto o en tu servicio.
+
+Pues vas a elegir una región u otra.
+
+Eso sí, para este curso vayamos a elegir una en concreto, que será la que vamos a usar en particular.
+
+Justo en esa región vamos a desplegar los servicios regionales.
+
+Y cómo podemos acceder a sus servicios?
+
+Pues en la parte izquierda.
+
+Justo aquí veo un desplegable que me selecciona por categorías, varios servicios, por ejemplo, si
+
+quiere, si quiero, servicios de Administración de Costos de Amazon Web Services.
+
+Pues si clico encima de aquí, cuáles son los servicios de administración de costos como servicios de
+
+almacenamiento?
+
+Pues justo aquí los tengo de análisis, pues están bien agrupados aquí por categorías.
+
+No obstante, a lo mejor me interesa acceder a uno en concreto, Por ejemplo, el RUT 53.
+
+Ahora veo los servicios que tiene este nombre.
+
+53 Y además de esto veo que también aparecen características, características, blogs, documentación,
+
+artículos de conocimiento y market place.
+
+Todo esto lo veremos muy reflejado en este curso.
+
+Fíjate algo en la documentación que hay un montón de artículos referente únicamente a un servicio.
+
+No dudes en ningún momento a acceder a verla y a nutrirte de toda la documentación presente en Amazon
+
+Web Services.
+
+Qué más podemos ver en el dashboard?
+
+Pues podemos ver que la página de inicio de la consola está la parte de visitado recientemente.
+
+Estos son los servicios que hemos recibido que hemos visitado recientemente.
+
+En mi caso F2 Road, 53 Gadgets y Cloud Watch.
+
+No obstante, los podría buscar por aquí y acceder a ellos.
+
+Pero si yo accedo directamente justo aquí encima, pues ya accede al servicio que yo había visitado
+
+recientemente.
+
+Hay algo en particular sobre este servicio?
+
+Root 53 que quiero comentar y es que fíjate bien que ahora ya no me sale norte Virginia, sino que me
+
+aparece global.
+
+Por qué global?
+
+Encima no me da la opción de elegir ninguna región.
+
+Todo esto está bloqueado.
+
+Pues bueno, esto es una excepción que ocurre con muy pocos servicios.
+
+Y es que hay algunos servicios que no entienden de regiones, son globales.
+
+No hace falta que elijamos una región en particular, sino que funcionan a nivel global.
+
+Ruta 53 es un caso específico de este tipo de servicios.
+
+No obstante, hay otros como por ejemplo F2.
+
+Que si nos vamos a ver.
+
+F2 Qué veremos?
+
+Pues?
+
+Norte de Virginia ahora aparece.
+
+Por eso entendemos que este servicio regional no es global.
+
+Cuidado con esto.
+
+Siempre usemos la misma región.
+
+No la cambiemos porque a lo mejor creamos una instancia de F2 para una región y luego cambiamos de región
+
+y ya no vemos esa instancia.
+
+Esas instancias funcionan por regiones, no a nivel global.
+
+Entendiendo esto, volvamos al panel de control anterior, el cual tenía en la parte de visitado recientemente
+
+información de bienvenida de Amazon Web Services para empezar, para certificarse, etc, etcétera.
+
+Y ahora si en la parte inferior veo la parte de a doble vs health y costo y uso esta parte realmente
+
+importante y más cuando damos un paso más allá, más profesional y empezamos ya a pagar por la computación
+
+en la nube.
+
+Justo aquí nos aparecerá pues el despliegue de aquello que estamos gastando, de los servicios que estamos
+
+usando, etc.
+
+Siempre hay que controlar muy bien aquello que estamos gastando y ya yendo a la parte inferior nos aparecen
+
+más información a la hora de crear una solución o un servicio o Trust Advisor, que será un servicio
+
+muy importante que veremos también reflejado en este curso.
+
+Justo aquí veo la página de inicio, pero hay mucho más por conocer en este curso sobre este dashboard
+
+de Amazon Web Services.
+
+Qué vamos a ver ahora?
+
+Vamos a pasar a ver la infraestructura global, que es información muy, muy valiosa que siempre hay
+
+que tener en cuenta.
+
+Lo que podemos hacer es buscarlo en Google, simplemente la infraestructura global de Amazon Web Services
+
+y veo en la parte superior un menú y nos vamos a ir a Servicios Regionales de Amazon.
+
+Justo aquí lo que veo es que se me abre una pestaña y veo muchos, muchos servicios.
+
+Estos servicios están agrupados por regiones.
+
+Ahora estoy en la región de América del Sur.
+
+Puedo elegir la región del norte de Virginia en función de la región me van a aparecer unos servicios
+
+u otros.
+
+Así que siempre que elijas una región, asegúrate de que tengas todos los servicios que tú requieres
+
+usar.
+
+Por ello, a veces no nos interesa usar una región en particular, porque los servicios que yo quiero
+
+usar no están presentes, pues como ya he dicho, no hace falta que estemos presentes ahí, sino lo
+
+podemos usar.
+
+Estemos en el sitio que estemos en el mundo, podemos elegir la región que queramos y teniendo en cuenta
+
+esto, siempre es muy, muy relevante elegir una región en función de los servicios que vayamos a usar.
+
+Ahora, si ya hemos hecho un tour por el Dashboard, por el panel de control de Amazon Web Services,
+
+a lo largo de este curso veremos mucho más, pero ahora ya vemos lo primordial a entender ámbito de
+
+regiones, servicios, como acceder a ellos, etc Espero que hayas disfrutado de esta clase y en las
+
+siguientes vamos a continuar aprendiendo muchísimo más.
+
+
+LA CLASE 10 HABLA DE LOS CAMBIOS EN LA INTERFAZ NO ES PEDAGOGICO SINO AVISO
+

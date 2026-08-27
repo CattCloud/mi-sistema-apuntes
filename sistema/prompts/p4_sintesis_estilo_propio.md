@@ -267,7 +267,10 @@ El output final para cada sección sigue este patrón:
 
 **El agente escribe la sección directamente al `.md`** — ya no la mantiene viva en el chat. Por cada sección:
 
-1. Crear el archivo `NN_slug.md` (frontmatter + contenido en estilo Tesla + navegación al pie, ver §7 del manual), con `estado: en progreso`.
+1. Crear el archivo `NN_slug.md` (frontmatter + contenido en estilo Tesla + **bloque de cierre "Lo que debiste llevarte"** + navegación al pie, ver §1.7 y §7 del manual), con `estado: en progreso`.
+
+> 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-5 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `manual_apuntes.md` §1.7.
+
 2. Marcar su entrada en `## Secciones` del `00_indice.md` como `🔄 en progreso`.
 3. Avisar al usuario en el chat **sin re-pegar todo el contenido**:
 

@@ -1,4 +1,4 @@
-# 🚀 Sistema de Generación de Apuntes — Sistema Futuro (v1)
+Reopen Editor With Text EditorV# 🚀 Sistema de Generación de Apuntes — Sistema Futuro (v1)
 
 > Documento que describe cómo **funcionará** el sistema automatizado de generación de apuntes.  
 > Primera versión: sin frontend, interacción vía chat con el Agente de Codificación.  

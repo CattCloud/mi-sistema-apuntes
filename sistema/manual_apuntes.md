@@ -54,7 +54,8 @@ Para separar definición de contexto dentro del mismo quote, usar una **línea d
 ### 1.3 Sin preámbulo, sin conclusión
 
 - Cada archivo de sección empieza directamente con su `#` y su quote. No hay párrafo introductorio.
-- El apunte termina cuando se agota el contenido. No hay sección de "Conclusión", "Resumen" ni "Próximos pasos".
+- **Ninguna sección** cierra con "Conclusión", "Resumen" ni "Próximos pasos". La sección termina cuando se agota su contenido.
+- **Excepción única:** el bloque de cierre **"Lo que debiste llevarte"** al final de cada sección — no es una conclusión que reformula, es un piso de retención. Ver §1.7.
 - Único bloque permitido al cierre del índice: **Fuentes** (links).
 
 ### 1.4 Reescritura total
@@ -64,6 +65,49 @@ Nada lee como copia de documentación oficial o textbook. Todo está procesado a
 ### 1.5 Spanglish controlado
 
 Los tecnicismos fundamentales permanecen en inglés (Working Directory, Access Token, Scope, tool calling, query loop, etc.). Las explicaciones y el contexto van siempre en español. Cada palabra en inglés tiene estatus técnico específico; no es caótico, es estratégico.
+
+### 1.6 Específico, no ambiguo
+
+> 🎯 **Regla del usuario, no negociable.** Un apunte se lee semanas después, sin el hilo de la conversación que lo generó. Todo lo que hoy "se entiende por contexto" mañana no se entiende.
+
+Seis controles, todos verificables:
+
+- **Cada `esto` / `eso` / `las dos` / `ambos` tiene su referente escrito a menos de una línea.** Si el lector tiene que adivinar de qué hablas, reescribe nombrando la cosa. *(Falló: "cuando una de las dos cambie" — ¿los códigos o los módulos?)*
+- **Ningún término se usa antes de definirse**, ni siquiera de paso. Si tiene que aparecer, va con una glosa de una línea y un puntero a dónde se estudia. *(Falló: `interface`, `type`, `<T>` en un temario con piso en cero.)*
+- **Una metáfora no es una explicación.** Se queda si **es** el mecanismo (la puerta de un módulo, la cocina por estaciones); se borra si solo adorna una frase que ya estaba clara. *(Falló: "la costura", "el `if` delator".)*
+- **Las definiciones deben ser aplicables.** Si no sirven para decidir un caso concreto, no son definiciones. Nada de definiciones que dependan de juegos de palabras. *(Falló: "un módulo cohesivo se describe sin usar la palabra *y*".)*
+- **Los ejemplos tienen que aguantar que los piensen.** Un ejemplo inventado a la ligera enseña algo falso o distrae del punto. *(Falló: "el correo de bienvenida que solo se dispara los martes".)*
+- **Encabezados y etiquetas dicen de qué son**, no una metáfora. `Bugs que TypeScript detecta`, no `Lo atrapa`. `Módulo, componente y servicio`, no `Las tres unidades`.
+
+> 💡 **Prueba rápida antes de dar una sección por buena:** léela como si no hubieras tenido la conversación. Cada vez que tengas que completar mentalmente algo con contexto del chat, ahí hay una ambigüedad que corregir.
+
+### 1.7 Bloque de cierre por sección — "Lo que debiste llevarte"
+
+**Cada archivo de sección cierra con un bloque de resumen**, justo antes de la navegación al pie. Es una lista corta de las ideas que debieron sobrevivir a *esa* lectura.
+
+> 🎯 **Idea clave:** no es una conclusión. Una conclusión reformula lo que ya dijiste; esto fija **lo mínimo que debe quedar** si el resto se olvida. Es mejor recordar unas cuantas cosas que ninguna, sobre todo en la primera pasada por un tema nuevo.
+
+Reglas:
+
+- **Va al final del archivo de la sección**, como `##`, antes del separador `---` y los links de navegación. No es un archivo aparte.
+- **Una idea completa por línea, no un título.** `Una decisión es arquitectónica cuando restringe otras decisiones` se recuerda; `Decisión arquitectónica vs de diseño` no dice nada.
+- **Entre 3 y 5 líneas.** Si crece más, deja de ser un piso y vuelve a ser la sección.
+- **Sin enlaces.** El texto completo está justo arriba; enlazar sería ruido.
+- **Se escribe junto con la sección**, no al cerrar el apunte. Cada lectura deja su piso.
+
+Estructura:
+
+```markdown
+## 🎯 Lo que debiste llevarte
+
+> **Si de esta sección solo retienes estas líneas, cumplió su función.**
+
+- [Idea afirmada en una oración]
+- [Idea afirmada en una oración]
+- [Idea afirmada en una oración]
+```
+
+**Conexión con el repaso:** las líneas que no logras recordar sin mirar son exactamente las que alimentan el bloque `reforzar:` del `00_indice.md` (ver `metodologia_repaso.md`).
 
 ---
 
@@ -82,7 +126,7 @@ La jerarquía se expresa con **encabezados estándar** + el **split por archivos
 | Workspace | Emoji |
 |-----------|-------|
 | IA / LLMs | 🤖 |
-| Cloud Computing | 💭 |
+| Cloud Computing | ☁️ |
 | Code 301 (Full Stack) | 🦉 |
 | CSS | 🎨 |
 | GIT | 🐙 |
@@ -285,6 +329,39 @@ sequenceDiagram
 | Protocolo con bifurcaciones | Mermaid |
 | Arquitectura de sistema | Mermaid |
 
+### 5.4 Capturas de interfaz
+
+Una captura **no es un diagrama**. Un diagrama explica un concepto y se dibuja nativo (ASCII o Mermaid); una captura es **evidencia de una interfaz real** en un momento dado. Se usa solo en apuntes con código `[CONSOLA]`, y bajo estas reglas:
+
+**Cuándo vale una captura**
+
+| Sí | No |
+|----|----|
+| La disposición espacial importa (dónde vive cada cosa en la pantalla) | Ilustrar un concepto — eso es un diagrama |
+| Muestra un estado real que sorprende (*"datos no disponibles"*, un aviso, un número propio) | Reemplazar la explicación en texto |
+| Es más corta que describirla en tres párrafos | Documentar cada paso de un asistente (eso envejece y no se lee) |
+
+**Reglas invariables**
+
+- **El texto manda, la imagen acompaña.** El apunte debe entenderse **sin ver la captura**. Si la imagen es imprescindible para seguir el hilo, falta texto.
+- **Toda captura lleva pie de foto en cursiva** que diga qué se está mirando y por qué importa. Sin pie, no entra.
+- **El `alt` describe el contenido**, no dice "captura de pantalla".
+- **Sin datos sensibles.** Recortar o tapar el ID de cuenta, correos, claves y nombres de recursos privados antes de guardarla.
+- **Una captura por pantalla, nunca dos de la misma.** Un procedimiento `[CONSOLA]` de varios pasos puede llevar varias si cada una muestra una pantalla distinta y una decisión distinta. Lo que no entra son dos vistas del mismo sitio, ni una captura que solo repite lo que la anterior ya mostraba.
+
+**Dónde viven**
+
+```text
+apuntes/[ws]/[modulo]/
+├── 01_seccion.md
+└── img/
+    └── 01_slug-descriptivo.png     ← prefijo = número de la sección que la usa
+```
+
+Se referencian con ruta relativa: `![alt](img/01_slug.png)`.
+
+**Durabilidad:** aplica la misma regla que `[CONSOLA]` — la interfaz se rediseña y la captura queda vieja. Por eso el texto registra la **intención** y la captura solo la ilustra. Una captura desactualizada junto a un texto correcto sigue siendo útil; al revés, no.
+
 ---
 
 ## 6. Patrones de Síntesis
@@ -333,11 +410,15 @@ apuntes/[workspace]/[tema]/
 ├── 01_[slug-seccion].md        ← una sección H2 por archivo
 ├── 02_[slug-seccion].md
 ├── …
+├── 99_cierre.md                ← CIERRE: el mecanismo de evaluación del módulo
 └── _input/                     ← material fuente (transcripciones, links), secundario
 ```
 
 - Prefijos numéricos (`01_`, `02_`…) fijan el orden.
 - `00_indice.md` sale primero: es la entrada y la **superficie de control** del apunte.
+- `99_cierre.md` sale último. **No es una temática**: es donde vive el mecanismo que cierra el módulo — el caso (arquitectura), o el micro-ejercicio y el quiz (TypeScript). Lleva frontmatter como cualquier sección, con `seccion: cierre`.
+
+> 🎯 **Por qué en archivo propio y no en el índice:** el `00_indice.md` es la **superficie de control** — metadata, alcance, lista de secciones y estado. Un ejercicio con código a resolver es **contenido**, y meterlo ahí hace que el índice deje de leerse como índice. El índice solo apunta al cierre y muestra su estado.
 
 ### 7.2 Frontmatter por sección
 
@@ -364,12 +445,15 @@ Links clicables (wiki-links de Markdown Memo):
 
 ### 7.4 El `00_indice.md`
 
-Cabecera con metadata (tema, workspace, arquetipo) + **estado del apunte** + **alcance** (incluye/excluye) + **lista ordenada de secciones con su estado** + **Fuentes**. Absorbe el rol del viejo `ESTADO.md`.
+Cabecera con metadata (tema, workspace, arquetipo) + **estado del apunte** + **alcance** (incluye/excluye) + **lista ordenada de secciones con su estado** + **puntero al `99_cierre.md`** con su estado + **Fuentes**. Absorbe el rol del viejo `ESTADO.md`.
+
+> ⚠️ **Es superficie de control, no de contenido.** Enlaces y estados; nunca el material a estudiar ni los ejercicios a resolver. Si algo hay que *hacer*, va en `99_cierre.md`; si hay que *leerlo*, va en su archivo de sección.
 
 ### 7.5 Estados de progreso
 
 - **Apunte:** `EN PROGRESO` · `PAUSADO` (pospuesto a propósito, retomable) · `FINALIZADO`.
 - **Sección (en el índice):** `⬜ pendiente` · `🔄 en progreso` · `✅ finalizada`.
+- Una sección no se marca `✅ finalizada` sin su bloque de cierre "Lo que debiste llevarte" (§1.7).
 - **Pausar** = marcar el apunte `PAUSADO` en el índice. **Retomar** = volver a `EN PROGRESO` y seguir desde la primera sección `⬜`. No hay checkpoint aparte: el índice es el checkpoint.
 
 ---
@@ -379,9 +463,10 @@ Cabecera con metadata (tema, workspace, arquetipo) + **estado del apunte** + **a
 ### Estructura
 - [ ] ¿Cada sección H2 es su propio archivo, abriendo con `#`?
 - [ ] ¿Hay un quote en negrita inmediatamente después de cada heading?
-- [ ] ¿No hay preámbulo ni conclusión?
+- [ ] ¿No hay preámbulo ni conclusión dentro de las secciones?
 - [ ] ¿El `00_indice.md` lista las secciones con su estado?
 - [ ] ¿Frontmatter + navegación prev/next en cada sección?
+- [ ] ¿Cada sección cierra con su bloque `## 🎯 Lo que debiste llevarte` (3-5 ideas afirmadas) antes de la navegación? (§1.7)
 
 ### Voz
 - [ ] ¿Suena a tutor, no a enciclopedia?
