@@ -77,6 +77,10 @@ Seis controles, todos verificables:
 - **Una metáfora no es una explicación.** Se queda si **es** el mecanismo (la puerta de un módulo, la cocina por estaciones); se borra si solo adorna una frase que ya estaba clara. *(Falló: "la costura", "el `if` delator".)*
 - **Las definiciones deben ser aplicables.** Si no sirven para decidir un caso concreto, no son definiciones. Nada de definiciones que dependan de juegos de palabras. *(Falló: "un módulo cohesivo se describe sin usar la palabra *y*".)*
 - **Los ejemplos tienen que aguantar que los piensen.** Un ejemplo inventado a la ligera enseña algo falso o distrae del punto. *(Falló: "el correo de bienvenida que solo se dispara los martes".)*
+- **Ninguna definición se apoya en otro documento.** Un concepto se sostiene **completo donde se define**. Una referencia cruzada puede añadir contexto o señalar dónde se profundiza, pero **nunca puede cargar el significado**. *(Falló: "EC2 es el IaaS de B1, hecho concreto" — si no recuerdas B1, la frase no enseña nada.)*
+  - **La prueba:** tapa la referencia con el dedo. Si la frase deja de explicar, la referencia era estructural y hay que reescribirla.
+  - **Los códigos de módulo no son nombres.** `B1` solo significa algo dentro del temario y mientras lo recuerdes. Cuando se cite, va **con su nombre**: *"→ **B2 · Costos y facturación**"*, no *"→ B2"*.
+  - **Un puntero legítimo va entre paréntesis o en cursiva**, como aparte, nunca en el título ni en el quote-gancho de una sección.
 - **Encabezados y etiquetas dicen de qué son**, no una metáfora. `Bugs que TypeScript detecta`, no `Lo atrapa`. `Módulo, componente y servicio`, no `Las tres unidades`.
 
 > 💡 **Prueba rápida antes de dar una sección por buena:** léela como si no hubieras tenido la conversación. Cada vez que tengas que completar mentalmente algo con contexto del chat, ahí hay una ambigüedad que corregir.
@@ -416,7 +420,7 @@ apuntes/[workspace]/[tema]/
 
 - Prefijos numéricos (`01_`, `02_`…) fijan el orden.
 - `00_indice.md` sale primero: es la entrada y la **superficie de control** del apunte.
-- `99_cierre.md` sale último. **No es una temática**: es donde vive el mecanismo que cierra el módulo — el caso (arquitectura), o el micro-ejercicio y el quiz (TypeScript). Lleva frontmatter como cualquier sección, con `seccion: cierre`.
+- `99_cierre.md` sale último. **No es una temática**: es donde vive el mecanismo que cierra el módulo. Lleva frontmatter como cualquier sección, con `seccion: cierre`. **Las formas disponibles y las reglas para elegirlas están en `sistema/formas_de_cierre.md`** — sobre todo la regla del suelo: un cierre no puede exigir ningún concepto que el temario aún no haya cubierto.
 
 > 🎯 **Por qué en archivo propio y no en el índice:** el `00_indice.md` es la **superficie de control** — metadata, alcance, lista de secciones y estado. Un ejercicio con código a resolver es **contenido**, y meterlo ahí hace que el índice deje de leerse como índice. El índice solo apunta al cierre y muestra su estado.
 

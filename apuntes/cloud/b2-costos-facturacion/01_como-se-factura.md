@@ -23,7 +23,7 @@ El problema no es la factura. Es el modelo mental con el que la lees:
 ❌ **Lo que crees:** "tengo un servidor, entonces pago el precio del servidor".
 ✅ **Lo que pasa:** ese servidor son cuatro cosas alquiladas por separado, y cada una tiene su propio contador.
 
-Ya lo viste en B1: no alquilas una computadora, alquilas **cómputo, almacenamiento y red**, cada uno con su reloj. Apagar el cómputo detiene *un* reloj. Los otros siguen corriendo, porque nunca dependieron de que la máquina estuviera encendida.
+No alquilas una computadora: alquilas **cómputo, almacenamiento y red**, y cada uno tiene su propio contador. Apagar el cómputo detiene *uno*. Los otros siguen corriendo, porque nunca dependieron de que la máquina estuviera encendida.
 
 > 🎯 **Idea clave:** la factura no está desglosada por *cosas que creaste*, sino por **unidades que consumiste**. Por eso una sola cosa produce varias líneas, y por eso apagar no siempre significa dejar de pagar.
 

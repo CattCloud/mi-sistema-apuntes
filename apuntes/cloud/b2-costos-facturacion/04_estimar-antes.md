@@ -5,7 +5,7 @@ seccion: 4
 titulo: "Estimar antes de desplegar"
 estado: finalizada
 prev: 03_gatillo-factura-sorpresa
-next: null
+next: 99_cierre
 ---
 
 # ☁️ Estimar antes de desplegar
@@ -176,4 +176,4 @@ Esa es tu cifra de referencia mientras dure el plan. Fíjate en lo que dice al l
 - Cada línea de costo crece de una forma distinta —proporcional, fija, acumulativa o escalonada— y por eso el concepto que domina tu factura hoy puede no ser el que la domine cuando el producto funcione.
 
 ---
-[[03_gatillo-factura-sorpresa|← anterior]] · [[00_indice|índice]]
+[[03_gatillo-factura-sorpresa|← anterior]] · [[00_indice|índice]] · [[99_cierre|cierre →]]

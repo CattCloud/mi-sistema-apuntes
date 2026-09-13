@@ -3,7 +3,7 @@ tema: B3 — Identidad
 workspace: cloud
 seccion: 5
 titulo: "Rol vs usuario — la identidad sin contraseña"
-estado: en progreso
+estado: finalizada
 prev: 04_formas-de-entrar
 next: 06_proteger-la-cuenta
 ---

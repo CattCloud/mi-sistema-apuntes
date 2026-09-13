@@ -76,7 +76,7 @@ Los dos casos anteriores dependen de decisiones tuyas. Este no, y por eso es el 
 
 - **Un endpoint público sin límite de peticiones.** Si tu API llama a un modelo por cada petición y cualquiera puede llamarla, el costo de tu producto lo decide un desconocido.
 - **Un bucle.** El caso clásico: una función se dispara cuando aparece un archivo en un bucket, y esa función escribe un archivo en el mismo bucket. Se llama a sí misma, para siempre, a toda velocidad.
-- **Una clave filtrada.** Ya lo viste en B1: para el proveedor, quien usa una credencial válida eres tú. El consumo del atacante es tu consumo.
+- **Una clave filtrada.** Para el proveedor, quien usa una credencial válida **eres tú**: el acceso es legítimo desde su punto de vista, y el consumo del atacante se factura a tu cuenta.
 - **Un scraper.** Alguien descarga tus archivos en masa. Tú pagas la **salida de datos** de cada descarga.
 
 > ⚠️ **Importante — la alerta te avisa, no te frena.** Un bucle puede gastar en dos horas lo que una alerta diaria detecta al día siguiente. Contra este tipo de gasto, lo que sirve son **límites duros**: tope de concurrencia, límite de peticiones por cliente, tamaño máximo. La alerta es para enterarte; el límite es para que no ocurra.

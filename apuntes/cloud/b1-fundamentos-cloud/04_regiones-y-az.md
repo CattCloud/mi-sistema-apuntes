@@ -5,7 +5,7 @@ seccion: 4
 titulo: "Regiones y zonas de disponibilidad"
 estado: finalizada
 prev: 03_responsabilidad-compartida
-next: null
+next: 99_cierre
 ---
 
 # ☁️ Regiones y zonas de disponibilidad
@@ -135,4 +135,4 @@ Cuándo te va a importar de verdad: cuando pongas un CDN delante de tu app, que 
 - Un punto de presencia acerca contenido al usuario final, pero no es una región: tu infraestructura nunca vive ahí.
 
 ---
-[[03_responsabilidad-compartida|← anterior]] · [[00_indice|índice]]
+[[03_responsabilidad-compartida|← anterior]] · [[00_indice|índice]] · [[99_cierre|cierre →]]

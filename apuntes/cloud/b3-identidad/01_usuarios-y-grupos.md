@@ -12,7 +12,7 @@ next: 02_politicas
 
 > **IAM (Identity and Access Management) es el servicio que responde dos preguntas: quién eres y qué puedes hacer.**
 >
-> Es **global** —no tiene región, ya lo viste en B1— y usarlo no cuesta nada. Lo que cuesta caro es usarlo mal.
+> Es **global**: no pertenece a ninguna región, así que no hay que elegir una para usarlo. Y usarlo no cuesta nada — lo que cuesta caro es usarlo mal.
 
 ## El dolor: una sola llave que lo abre todo
 

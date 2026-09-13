@@ -3,7 +3,7 @@ tema: M2 — Tipos básicos e inferencia
 workspace: typescript
 seccion: 2
 titulo: "Inferencia"
-estado: en progreso
+estado: finalizada
 prev: 01_primitivos-y-anotacion
 next: 03_cuando-anotar
 ---

@@ -88,7 +88,7 @@ Los campos, uno por uno:
 | **Resource** | Sí | Sobre qué. Se escribe con el **ARN**, el identificador único de un recurso en AWS |
 | **Condition** | No | Cuándo aplica esta declaración |
 
-> 📝 **ARN** *(Amazon Resource Name)* es la dirección única de cualquier cosa dentro de AWS. Ya lo viste sin saberlo: en la lista de usuarios de la Sección 1 aparecía `arn:aws:iam::128114712749:user/cattcloud`. Se lee por partes — servicio, cuenta, tipo de recurso y nombre.
+> 📝 **ARN** *(Amazon Resource Name)* es la dirección única de cualquier cosa dentro de AWS. Aparece por todas partes sin anunciarse: en la lista de usuarios, cada identidad se muestra como `arn:aws:iam::128114712749:user/cattcloud`. Se lee por partes — servicio, cuenta, tipo de recurso y nombre.
 
 > 🔑 **Un campo que confunde: `Principal`.** En muchos ejemplos verás un campo `Principal` que dice a quién se aplica la política. **No aparece cuando la política se adjunta a un usuario, grupo o rol** — ahí el "quién" es justamente la identidad a la que la pegaste, y ponerlo sería redundante. Solo aparece en las políticas que se pegan **al recurso** (por ejemplo, a un bucket), donde hay que decir explícitamente quién entra. La diferencia es la subsección siguiente.
 

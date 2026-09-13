@@ -35,8 +35,8 @@ Excluye: los `enum` — se mencionan y se explica por qué se usan poco hoy. Sí
 ## Secciones
 
 1. [[01_primitivos-y-anotacion|Primitivos y anotación]] — ✅ `[DEF] [CÓDIGO] [TABLA]` *(temática 2.1)*
-2. [[02_inferencia|Inferencia]] — 🔄 `[DEF] [CÓDIGO] [MITO]` *(temática 2.2)*
-3. Cuándo anotar vs callarse — ⬜ `[TABLA] [CÓDIGO]` *(temática 2.3)*
+2. [[02_inferencia|Inferencia]] — ✅ `[DEF] [CÓDIGO] [MITO]` *(temática 2.2)*
+3. [[03_cuando-anotar|Cuándo anotar vs callarse]] — 🔄 `[TABLA] [CÓDIGO]` *(temática 2.3)*
 4. Arrays y tuplas — ⬜ `[DEF] [CÓDIGO] [TABLA]` *(temática 2.4)*
 5. `any`, `unknown`, `never`, `void` — ⬜ `[DEF] [TABLA] [CÓDIGO]` *(temática 2.5)*
 6. Literal types y `as const` — ⬜ `[DEF] [CÓDIGO]` *(temática 2.6)*

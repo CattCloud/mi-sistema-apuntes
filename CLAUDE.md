@@ -29,6 +29,7 @@ El flujo opera **progresivamente, sección por sección**:
 | `sistema/prompts/repaso_recall.md`             | Protocolo operativo del repaso v1: cómo el agente corre una sesión de recall conversacional |
 | `sistema/prompts/repaso_consolidacion_notebooklm.md` | Protocolo del Paso 3: cómo la IA redacta los prompts de Customize de NotebookLM (audio + video) para la consolidación multimodal |
 | `sistema/metodologia_practica_guiada.md`       | Metodología de la etapa de práctica (criterio>memoria, IA instructor no autocompletado, bloques aditivos, pistas escalonadas) |
+| `sistema/formas_de_cierre.md`                  | **Catálogo de formas de cerrar un módulo** (caso, predicción, auditoría, diagnóstico, consola, micro-ejercicio, quiz, explicación, diseño) + las 4 reglas. La primera: un cierre **no puede exigir un tema que el temario aún no cubrió** |
 | `sistema/prompts/diagnostico_bloque.md`        | Protocolo: generar el diagnóstico Pareto por bloque (just-in-time) antes de practicar |
 | `sistema/prompts/practica_guiada_proyecto.md`  | Protocolo operativo de la práctica: define mini-proyecto, fases, HU con criterios de aceptación, pistas escalonadas (nunca el código) |
 | `sistema/prompts/migracion_notion.md`          | Protocolo: traslado ligero just-in-time de notas de Notion al repo (tier referencia) vía MCP |

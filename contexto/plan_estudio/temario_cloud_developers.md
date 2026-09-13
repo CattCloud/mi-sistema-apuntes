@@ -71,8 +71,9 @@ estado: EN PROGRESO
 |---|--------|:---------:|-------|--------|
 | **B1** | **Fundamentos de Cloud** | 4 | ~24 min | ✅ |
 | **B2** | **Costos y facturación** | 4 | ~12 min | ✅ |
-| **B3** | **Identidad** — quién eres y qué puedes hacer | 5 | ~48 min | ⬜ |
-| B4 | Contenedores y Docker | 6 | ~1 h 30 | ⬜ |
+| **B3** | **Identidad** — quién eres y qué puedes hacer | 5 | ~48 min | ✅ |
+| **B4** | **Cómputo: la máquina virtual** | 5 | ~37 min | ⬜ |
+| B4b | Contenedores y Docker | 6 | ~1 h 09 | ⬜ |
 | B5 | Serverless: funciones y API | 7 | ~2 h 28 | ⬜ |
 | B3b | Secretos — dónde vive una clave *(conserva el 3 por ser la otra mitad de Identidad; se estudia aquí)* | 5 | ~1 h 18 | ⬜ |
 | B6 | Datos: base gestionada y storage | 6 | ~1 h 46 | ⬜ |
@@ -314,7 +315,59 @@ Políticas de claves KMS, CloudHSM, rotación automática avanzada, cifrado en t
 
 ---
 
-## B4 — Contenedores y Docker
+## B4 — Cómputo: la máquina virtual
+
+> El primer módulo con algo encendido. Separado de los contenedores a propósito: son dos preguntas distintas, y el contenedor no se entiende sin haber visto la alternativa.
+
+### 🎯 Pregunta que responde
+
+¿Qué estoy alquilando exactamente cuando levanto un servidor, qué decido al hacerlo, y qué sigue costando cuando lo apago?
+
+### 🚫 Qué NO entra
+
+Tipos de instancia a fondo · opciones de compra (reservadas, spot, savings plans) · SSH y conexión avanzada · EBS, snapshots y AMI propias · balanceadores y auto escalado. **Grupos de seguridad entran solo al mínimo** para poder conectarse; el tema completo es **B7**.
+
+### 📋 Temáticas
+
+| # | Temática | ¿Lo sé? Pregunta de autodiagnóstico | ✅ | 🔄 | ❌ |
+|---|----------|--------------------------------------|:--:|:--:|:--:|
+| 4.1 | **Qué es una instancia y qué alquilas** | ¿Qué cinco cosas eliges al levantar una máquina? | | | |
+| 4.2 | Elegir el tamaño: tipos de instancia | ¿Cómo se lee `m5.2xlarge` y cuál eliges para aprender? | | | |
+| 4.3 | **Lanzar una instancia** | ¿Qué es el par de claves, el user data y por qué hace falta abrir un puerto? | | | |
+| 4.4 | **El ciclo de vida y lo que cuesta** | ¿Qué sigue cobrando con la instancia detenida, y qué cambia al reiniciarla? | | | |
+| 4.5 | **El rol de instancia** | ¿Cómo obtiene credenciales tu app sin que escribas ninguna clave? | | | |
+
+### 📼 Fuentes
+
+| Fuente | Qué aporta | Min |
+|--------|-----------|-----|
+| **S5** — EC2 ✅ *visto* | `Fundamentos de EC2` · `Crear Instancia con datos de usuario - Práctica` · `Tipos básicos de instancia` | ~31 |
+| 📸 **Capturas propias** | La consola actual de EC2 | — |
+| **S5** — `Demostración de roles de instancias EC2` | Alimenta 4.5 | 6 |
+
+> ⚠️ **Cabo suelto que se cierra aquí:** el cierre de **B3** dejó pendiente *"adjuntar un rol a un servicio y verlo funcionar"*, porque el servicio no existía todavía. La temática 4.5 es ese servicio.
+
+### 🛠️ Práctica en consola
+
+> Levantar una instancia que sirva una página web sin conectarse a ella por SSH — usando **user data** para que llegue configurada. Después: detenerla, arrancarla de nuevo y observar qué cambió. Al final, terminarla y comprobar que no quedó nada encendido.
+
+### 🧩 Caso de decisión
+
+> Tu worker de IA tarda entre 30 segundos y 4 minutos por trabajo, y recibe unos 300 trabajos al día repartidos de forma irregular.
+>
+> **1.** Con lo visto hasta aquí, ¿cómo lo desplegarías en una instancia? ¿Una encendida todo el día, o una que se levante y se apague?
+> **2.** ¿Qué te cobran en cada opción, y cuál es más barata a ese volumen?
+> **3.** ¿Qué parte del trabajo sigue siendo tuya en las dos, y qué te gustaría no tener que hacer?
+
+> 💡 **Por qué este caso:** la pregunta 3 no tiene solución dentro de este módulo. Es la que crea la necesidad de **B4b**.
+
+### 📚 Recursos
+
+*(vacío)*
+
+---
+
+## B4b — Contenedores y Docker
 
 > El módulo más transferible del temario. Docker no es de AWS — te lo llevas a cualquier nube, o a ninguna.
 

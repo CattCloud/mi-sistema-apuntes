@@ -1,21 +1,26 @@
 ---
 tema: B3 — Identidad
 workspace: cloud
-estado: EN PROGRESO
+estado: FINALIZADO
 arquetipo: Constructor Teórico + Documento Técnico
 modulo: B3
 temario: contexto/plan_estudio/temario_cloud_developers.md
 repaso:
-  ultimo: null
-  proximo: null
+  ultimo: null                # generado entre el 2026-08-25 y el 2026-09-03
+  proximo: 2026-09-07
   nivel: null
-  reforzar: []
+  reforzar:
+    - un rol lleva DOS políticas: la de confianza (quién lo asume) y la de permisos (qué puede)
+    - entidad no es sinónimo de usuario: es cualquier cosa que puede hacer una llamada y tener permisos
+    - dentro de AWS va un rol; fuera de AWS o en tu propia máquina, clave de acceso
+    - un Deny explícito gana sobre cualquier Allow y no se puede compensar
+    - la clave de acceso es la credencial del acceso programático: la usan la CLI y el SDK por igual
 notebooklm: pendiente
 ---
 
 # ☁️ B3 — Identidad
 
-> **Quién eres y qué puedes hacer.** Cómo se autentica y autoriza algo —una persona o un servicio— ante AWS, y cómo darle exactamente los permisos que necesita y ni uno más. Estado: 🔄 EN PROGRESO · 6 secciones.
+> **Quién eres y qué puedes hacer.** Cómo se autentica y autoriza algo —una persona o un servicio— ante AWS, y cómo darle exactamente los permisos que necesita y ni uno más. Estado: ✅ FINALIZADO · 6 secciones + cierre.
 
 ## Alcance
 
@@ -51,13 +56,13 @@ Excluye: STS, federación, Directory Services, Organizations, IAM a escala de em
    - Crear una clave de acceso: qué te pregunta y por qué
    - Dónde acaba viviendo la credencial
    - Por qué esta es la credencial que más se filtra
-5. [[05_roles|Rol vs usuario — la identidad sin contraseña]] — 🔄 `[DOLOR] [DEF] [ANALOGÍA] [CONSOLA]`
+5. [[05_roles|Rol vs usuario — la identidad sin contraseña]] — ✅ `[DOLOR] [DEF] [ANALOGÍA] [CONSOLA]`
    - El dolor: una clave de acceso guardada en un servidor
    - Qué es un rol y qué es una entidad de confianza
    - Roles para servicios: cuando un servicio actúa en tu nombre
    - Por qué el rol gana: nada que rotar, nada que filtrar
    - Crear un rol para un servicio
-6. Proteger la cuenta: MFA y auditoría — ⬜ `[DOLOR] [TABLA] [CONSOLA]`
+6. [[06_proteger-la-cuenta|Proteger la cuenta: MFA y auditoría]] — ✅ `[DOLOR] [TABLA] [CONSOLA]`
    - El dolor: una contraseña robada y nada más de por medio
    - MFA: qué es y qué dispositivos hay
    - La política de contraseñas
@@ -65,12 +70,9 @@ Excluye: STS, federación, Directory Services, Organizations, IAM a escala de em
    - Responsabilidad compartida aplicada a IAM
    - Buenas prácticas — el checklist de cierre
 
-## Evaluación del módulo
+## Cierre
 
-Cierra cuando pasan **las dos** (ver temario):
-
-- 🛠️ **Consola:** dejar de operar como root — crear tu usuario con permisos, activar MFA, configurar la CLI para que responda como ese usuario, y crear un **rol para un servicio** comprobando que ese servicio puede hacer algo que antes no podía.
-- 🧩 **Caso:** la propuesta de poner una clave de acceso en el `.env` del servidor — qué está mal, qué hacer en su lugar, si aplica lo mismo al script local, y por qué "acceso completo a S3" es una respuesta cara aunque funcione.
+- [[99_cierre|Cierre del módulo — auditoría, predicción y caso]] — ⏸️ **aplazado** hasta después de B4 · hoy solo hay dos identidades que auditar
 
 ## Fuentes
 
