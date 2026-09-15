@@ -39,7 +39,7 @@ estado: EN PROGRESO
 
 **Se evalúa por casos, no por cuestionarios.** Cada módulo cierra con un escenario de decisión: eliges una opción y justificas el costo de las otras. La arquitectura *es* decidir — un cuestionario mide si recitas, un caso mide si decides.
 
-**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` (3-5 ideas afirmadas) — ver `apuntes/AGENTS.md` (A7). Es mejor retener unas cuantas cosas por lectura que apostar todo al cierre del módulo.
+**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` — ver `apuntes/AGENTS.md` (A7). Es mejor retener unas cuantas cosas por lectura que apostar todo al cierre del módulo.
 
 > 💡 **Regla de cierre:** un módulo está ✅ cuando respondes su **caso** sin ayuda. No cuando viste todos los videos. Esa distinción es el punto entero de este archivo.
 

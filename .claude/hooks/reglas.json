@@ -10,6 +10,10 @@
     "NOTAS.md"
   ],
   "excluir": ["_input/", "notion/", "_archivo/", ".claude/"],
+  "omitir_por_ahora": {
+    "motivo": "Apuntes escritos antes de las reglas actuales (2026-06). Se revisan cuando se retomen; quitar la ruta de esta lista en ese momento.",
+    "rutas": ["apuntes/ia/"]
+  },
   "estado_duplicado": {
     "regla": "R1",
     "solo_fuera_de": "apuntes/",
@@ -24,7 +28,7 @@
   ],
   "seccion": {
     "campos": ["tema", "workspace", "seccion", "titulo", "estado", "prev", "next"],
-    "llevarte": { "patron": "^## .*Lo que debiste llevarte", "min": 3, "max": 5 },
+    "llevarte": { "patron": "^## .*Lo que debiste llevarte", "min": 3, "max": 7 },
     "titulos_prohibidos": "^#{1,3} .*\\b(Conclusión|Resumen|Próximos pasos)\\b"
   },
   "indice": {

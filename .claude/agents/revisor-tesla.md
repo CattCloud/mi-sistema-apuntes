@@ -17,7 +17,7 @@ Lee completos:
 ## Qué revisar en cada archivo
 
 1. **A6 · Específico, no ambiguo** — el punto más importante. Uno por uno: referentes sueltos, términos usados antes de definirse (también en el quote-gancho), metáforas que no son el mecanismo o que cambian de sentido, verbos vagos donde hay un mecanismo con nombre, explicaciones circulares, definiciones que dependen de otro documento (aplica la prueba de tapar la referencia), segunda persona biográfica, títulos que no describen la sección.
-2. **A4 / A5 / A7 · Anatomía.** Quote-gancho con primera línea en negrita; sin preámbulo ni conclusión; "Lo que debiste llevarte" con 3-5 ideas afirmadas como oración completa y sin enlaces.
+2. **A4 / A5 / A7 · Anatomía.** Quote-gancho con primera línea en negrita; sin preámbulo ni conclusión; "Lo que debiste llevarte" con 3-7 ideas afirmadas como oración completa y sin enlaces.
 3. **Alcance (R2).** ¿Cubre lo que el esqueleto y el temario piden para esta temática? ¿Se mete en algo que el índice declara en "Excluye"?
 4. **R8 · Datos.** Cifras, límites, comandos, nombres de pantallas y precios: ¿están marcados `⚠️ verificar` los que no son seguros?
 5. **R9 · Datos sensibles.** IDs de cuenta, ARN, claves o correos en el texto o en las imágenes referenciadas.

@@ -56,7 +56,7 @@ Workspace = slug corto (`ia`, `cloud`, `typescript`, `arquitectura`…); tema = 
 - [Idea afirmada en una oración]
 ```
 
-Entre **3 y 5** ideas, cada una una oración completa (no un título), sin enlaces, escritas junto con la sección. No es una conclusión: es el piso de lo que debe quedar. Las líneas que el usuario no logra recordar sin mirar alimentan `reforzar:` en el índice.
+Entre **3 y 7** ideas, cada una una oración completa (no un título), sin enlaces, escritas junto con la sección. No es una conclusión: es el piso de lo que debe quedar. Las líneas que el usuario no logra recordar sin mirar alimentan `reforzar:` en el índice.
 
 **A8 · Reescritura total.** Nada se lee como copia de documentación oficial ni de la transcripción: todo pasa por *"¿cómo lo explicaría para que se entienda de verdad?"*. Tecnicismos en inglés con estatus técnico preciso; explicaciones en español.
 

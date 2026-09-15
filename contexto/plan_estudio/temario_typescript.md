@@ -61,7 +61,7 @@ estado: EN PROGRESO
 
 > ⚠️ **Regla del micro-ejercicio:** **solo puede pedir sintaxis que ese módulo ya enseñó.** Si el ejercicio necesita algo de un módulo posterior, o el código de partida viene dado, o el ejercicio se reformula. Un ejercicio que exige lo que aún no viste no evalúa — frustra.
 
-**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` (3-5 ideas afirmadas) — ver `apuntes/AGENTS.md` (A7).
+**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` — ver `apuntes/AGENTS.md` (A7).
 
 ---
 

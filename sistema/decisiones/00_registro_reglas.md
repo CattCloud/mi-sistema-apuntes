@@ -12,3 +12,5 @@
 | 2026-09-11 | Obsidian queda fuera del sistema; los `.md` se leen en VS Code / Antigravity | `AGENTS.md` (Qué es Tesla) · `README.md` |
 | 2026-09-15 | Arquitectura de reglas en seis piezas | `sistema/decisiones/decision_arquitectura_reglas.md` |
 | 2026-09-15 | El repo es público: ni ID de cuenta, alias, usuarios IAM ni estado de MFA en archivos versionados; los ejemplos usan `123456789012` y los datos de acceso van a `entorno_aws.local.md` | `AGENTS.md` R9 · `.claude/hooks/reglas.json` |
+| 2026-09-15 | "Lo que debiste llevarte" admite de 3 a 7 ideas (antes 3-5; 6-7 es la práctica real y es correcta) | `apuntes/AGENTS.md` A7 |
+| 2026-09-15 | El guardián omite por ahora `apuntes/ia/`, escrito antes de las reglas actuales | `.claude/hooks/reglas.json` (`omitir_por_ahora`) |

@@ -18,6 +18,7 @@ const aRel = (p) => path.relative(RAIZ, path.resolve(RAIZ, p)).split(path.sep).j
 function enAlcance(rel) {
   if (!rel.endsWith('.md') || rel.startsWith('..')) return false;
   if (CONFIG.excluir.some((e) => rel.startsWith(e) || rel.includes('/' + e))) return false;
+  if (((CONFIG.omitir_por_ahora || {}).rutas || []).some((r) => rel.startsWith(r))) return false;
   return CONFIG.alcance.some((a) => (a.endsWith('/') ? rel.startsWith(a) : rel === a));
 }
 

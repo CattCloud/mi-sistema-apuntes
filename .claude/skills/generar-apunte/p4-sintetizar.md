@@ -269,7 +269,7 @@ El output final para cada sección sigue este patrón:
 
 1. Crear el archivo `NN_slug.md` (frontmatter + contenido en estilo Tesla + **bloque de cierre "Lo que debiste llevarte"** + navegación al pie, ver `apuntes/AGENTS.md` A3 y A7), con `estado: en progreso`.
 
-> 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-5 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `apuntes/AGENTS.md` A7.
+> 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-7 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `apuntes/AGENTS.md` A7.
 
 2. Marcar su entrada en `## Secciones` del `00_indice.md` como `🔄 en progreso`.
 3. Avisar al usuario en el chat **sin re-pegar todo el contenido**:
