@@ -96,7 +96,7 @@ Opción B (por nivel):
 
 ### Workspace
 
-Consulta la tabla de workspaces en `manual_apuntes.md` (Sección 2.1) y propón el workspace más apropiado:
+Consulta la tabla de workspaces en `estilo.md` (§2.1) y propón el workspace más apropiado:
 
 | Workspace | Temas típicos |
 |-----------|---------------|
@@ -157,7 +157,7 @@ Consolida todo en una propuesta clara para que el usuario confirme:
 
 ## Paso 6: Crear Carpeta del Apunte
 
-Una vez que el usuario confirme, crear la estructura (ver `manual_apuntes.md` §7):
+Una vez que el usuario confirme, crear la estructura (ver `apuntes/AGENTS.md` A1-A2):
 
 ```text
 apuntes/[workspace]/[tema]/

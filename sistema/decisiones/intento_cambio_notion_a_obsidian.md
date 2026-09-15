@@ -1,6 +1,6 @@
 # 🔀 Intento de cambio: Notion → Obsidian (no completado)
 
-> **Estado:** Intento explorado, no completado. Sistema Tesla sigue apuntando a Notion como destino final.
+> **Estado:** ⏹️ Superado. Fue un intento explorado y no completado; la decisión final fue Markdown local (`decision_final_md_local.md`), y Obsidian quedó fuera del sistema (2026-09-11).
 > **Para qué sirve este documento:** Dar contexto a futuras decisiones sobre la herramienta destino de los apuntes (Notion, Obsidian, otra). Evitar repetir la misma exploración sin necesidad.
 
 ---

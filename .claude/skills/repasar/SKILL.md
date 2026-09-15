@@ -1,3 +1,8 @@
+---
+name: repasar
+description: Conducir una sesión de repaso de un apunte de Tesla (recall a libro cerrado, variante Feynman, calibración 1-10) y registrar el bloque repaso del índice; también responder "¿qué repaso hoy?" y preparar los prompts de NotebookLM. Usar cuando el usuario dice "repasemos X", "quiero repasar", "¿qué me toca repasar?" o pide audio o video de NotebookLM de un apunte.
+---
+
 # Repaso: Recall Conversacional (v1)
 
 > **Etapa:** Repaso (etapa 4 del ciclo de vida del conocimiento)
@@ -83,7 +88,7 @@ Por cada pregunta:
 Durante el recall pueden pasar dos cosas distintas:
 
 - **El usuario no recordaba** algo que sí está en el apunte → es repaso normal, se corrige y sigue.
-- **El apunte no lo explicaba bien** (el usuario pregunta algo que el `.md` no cubre o cubre mal) → esto es una **mejora al apunte**, no solo un repaso. Activa el **mecanismo de Apunte Abierto** (`sistema/mecanismos/mecanismo_apunte_abierto.md`):
+- **El apunte no lo explicaba bien** (el usuario pregunta algo que el `.md` no cubre o cubre mal) → esto es una **mejora al apunte**, no solo un repaso. Activa el **apunte abierto** (`apuntes/AGENTS.md` A11; procedimiento en la skill `generar-apunte`, "Durante: preguntas y adiciones"):
   - Responde la duda con la mejor explicación.
   - Si esa explicación enriquece el apunte (analogía nueva, término sin definir, matiz que faltaba), propón: *"Esto enriquece la sección [X]. ¿La integro al apunte?"*
   - Si excede el alcance → guardián de alcance → NOTAS.md.
@@ -94,7 +99,7 @@ Durante el recall pueden pasar dos cosas distintas:
 
 ## Paso 5: Consolidación multimodal (NotebookLM)
 
-El premio de salida: **audio + video de NotebookLM**, consumidos **después** del recall (nunca antes → evita ilusión de fluidez). El agente no genera el audio/video; redacta los **prompts de Customize** que el usuario pega en NotebookLM. Protocolo completo: `sistema/prompts/repaso_consolidacion_notebooklm.md`.
+El premio de salida: **audio + video de NotebookLM**, consumidos **después** del recall (nunca antes → evita ilusión de fluidez). El agente no genera el audio/video; redacta los **prompts de Customize** que el usuario pega en NotebookLM. Protocolo completo: `consolidacion-notebooklm.md` (en esta carpeta).
 
 Dos momentos donde aplica:
 

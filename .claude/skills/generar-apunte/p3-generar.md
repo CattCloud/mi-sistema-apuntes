@@ -21,7 +21,7 @@ Como eres la única fuente, conservas el valor del contraste haciéndolo **inter
 2. El agente hace un paso de autocrítica sobre ese borrador.
 3. El borrador + la autocrítica pasan a P4 para síntesis inmediata en estilo Tesla.
 
-**Por qué el auto-contraste:** El contraste entre dos fuentes tenía valor (distintos puntos de vista, datos que una veía y otra no), pero procesarlo cargaba al usuario y cansaba. Moviéndolo adentro del agente, el usuario recibe una sola versión ya reconciliada y conserva un único hilo vivo. (El modelo anterior de dos fuentes está documentado en `historial_version_ia_externa.md`.)
+**Por qué el auto-contraste:** El contraste entre dos fuentes tenía valor (distintos puntos de vista, datos que una veía y otra no), pero procesarlo cargaba al usuario y cansaba. Moviéndolo adentro del agente, el usuario recibe una sola versión ya reconciliada y conserva un único hilo vivo. (El modelo anterior de dos fuentes está documentado en `_archivo/sistema/historial_version_ia_externa.md`.)
 
 **Límite honesto del auto-contraste:** Una sola IA criticándose a sí misma comparte sus propios puntos ciegos. Atrapa bien lo incompleto, lo mal explicado y lo internamente inconsistente; atrapa peor los errores donde el agente simplemente está seguro y equivocado. Por eso, en datos que importan (cifras, comandos, sintaxis de APIs, versiones), la autocrítica debe **marcar explícitamente lo que no está 100% seguro** para que el usuario lo verifique.
 

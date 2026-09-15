@@ -31,7 +31,7 @@ estado: EN PROGRESO
 
 **Se recorren todas las temáticas, sin obviar ninguna.** No hay marcado previo ni autodiagnóstico: cada temática se desarrolla completa. La pregunta de cada fila no sirve para filtrar, sirve para saber **qué debes poder responder** cuando la sección esté cerrada.
 
-**Mapeo con el flujo Tesla:** `1 módulo = 1 apunte (carpeta con 00_indice.md)` · `1 temática = 1 archivo de sección`. El temario ya *es* el esqueleto (P2). Ver `manual_apuntes.md` §1.1 — la densidad se maneja partiendo, no plegando.
+**Mapeo con el flujo Tesla:** `1 módulo = 1 apunte (carpeta con 00_indice.md)` · `1 temática = 1 archivo de sección`. El temario ya *es* el esqueleto (P2). Ver `apuntes/AGENTS.md` (A1) — la densidad se maneja partiendo, no plegando.
 
 **Ciclo por módulo:** generar el apunte sección por sección (P3⇄P4) en `apuntes/arquitectura/[modulo]/` → resolver el caso → cerrar.
 
@@ -39,7 +39,7 @@ estado: EN PROGRESO
 
 **Se evalúa por casos, no por cuestionarios.** Cada módulo cierra con un escenario de decisión: eliges una opción y justificas el costo de las otras. La arquitectura *es* decidir — un cuestionario mide si recitas, un caso mide si decides.
 
-**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` (3-5 ideas afirmadas) — ver `sistema/manual_apuntes.md` §1.7. Es mejor retener unas cuantas cosas por lectura que apostar todo al cierre del módulo.
+**Cada sección deja su piso de retención.** El archivo de cada sección cierra con un bloque `## 🎯 Lo que debiste llevarte` (3-5 ideas afirmadas) — ver `apuntes/AGENTS.md` (A7). Es mejor retener unas cuantas cosas por lectura que apostar todo al cierre del módulo.
 
 > 💡 **Regla de cierre:** un módulo está ✅ cuando respondes su **caso** sin ayuda. No cuando viste todos los videos. Esa distinción es el punto entero de este archivo.
 

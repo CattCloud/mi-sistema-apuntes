@@ -1,3 +1,8 @@
+---
+name: integrar-curso
+description: Estudiar un módulo de Tesla apoyado en un curso externo (Udemy, YouTube, docs) sin que el curso tome el control — filtrar el sílabo y las transcripciones contra el temario, decidir qué se descarta, distinguir diapositivas de interfaz y tratar notas previas. Usar cuando el usuario comparte una transcripción, capturas del curso o notas crudas de una clase, o va a empezar un curso nuevo.
+---
+
 # Integración Curso ↔ Sistema
 
 > **Qué es:** el protocolo para estudiar con un curso externo **sin** que el curso tome el control del sistema.
@@ -101,7 +106,7 @@ Es frecuente: un curso de *"Introducción a **AWS**"* no es *"Introducción a **
 ```
 apuntes/[ws]/
 ├── notion/                       ← tier referencia: notas previas migradas tal cual
-│   └── ...                          (ver migracion_notion.md)
+│   └── ...                          (ver skill `migrar-notion`)
 └── [modulo]/
     ├── 00_indice.md              ← esqueleto + códigos + estado
     ├── _input/                   ← insumos crudos, NO son el apunte
@@ -126,7 +131,7 @@ No todas las notas viejas merecen el mismo trato. La pregunta que decide es **si
 > 💡 Una nota escrita para un objetivo distinto **arrastra el alcance de ese objetivo**. Conservarla tal cual reintroduce por la puerta de atrás justo lo que el temario decidió excluir. En ese caso es insumo, no producto.
 
 Al regenerar desde materia prima:
-- Los **diagramas viejos en imagen** (PNG exportados de Notion) se rehacen nativos — ASCII o Mermaid, según `manual_apuntes.md` §5. No se arrastran como adjuntos.
+- Los **diagramas viejos en imagen** (PNG exportados de Notion) se rehacen nativos — ASCII o Mermaid, según `.claude/skills/generar-apunte/estilo.md` §5. No se arrastran como adjuntos.
 - Lo que queda fuera del temario pero valga la pena **no se borra: va a `NOTAS.md`**.
 
 ---

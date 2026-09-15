@@ -1,2 +1,8 @@
 # Config local de Claude Code (permisos personales, no compartible)
 .claude/settings.local.json
+
+# Export de apuntes para NotebookLM (derivado, se regenera desde apuntes/)
+/notebooklm/
+
+# Datos de acceso locales (el repo es público: R9)
+*.local.md

@@ -1,6 +1,6 @@
 # Metodología de Práctica Guiada por Proyecto
 
-> **Propósito:** Definir *cómo* se refuerza un conocimiento construyendo, de forma independiente de la tecnología concreta. Es a la **etapa de práctica** lo que `manual_apuntes.md` es a la generación y `metodologia_repaso.md` al repaso.
+> **Propósito:** Definir *cómo* se refuerza un conocimiento construyendo, de forma independiente de la tecnología concreta. Es el *porqué* de la etapa de práctica; el procedimiento operativo es la skill `practicar`.
 > **Estado:** Metodología definida ✅ · Implementación en curso 🔄 (nueva etapa del sistema).
 > **Fecha de diseño:** 27 de Junio, 2026
 
@@ -115,8 +115,8 @@ La práctica se organiza en **bloques**. Un bloque = un conjunto de tecnologías
 
 - [x] **Forma del proyecto → mini-proyectos aditivos (espiral).** No un monolito; uno por bloque, acumulativo.
 - [x] **Práctica guiada, no copiada → HU + criterios de aceptación; cero código; pistas escalonadas a petición.**
-- [x] **Diagnóstico por bloque, no monolítico → curado por Pareto, just-in-time** antes de cada bloque (`prompts/diagnostico_bloque.md`).
-- [x] **Concepto → traslado ligero de Notion (tier referencia), just-in-time por bloque** (`prompts/migracion_notion.md`); generación Tesla (P1–P4) solo para huecos.
+- [x] **Diagnóstico por bloque, no monolítico → curado por Pareto, just-in-time** antes de cada bloque (`.claude/skills/practicar/diagnostico-pareto.md`).
+- [x] **Concepto → traslado ligero de Notion (tier referencia), just-in-time por bloque** (skill `migrar-notion`); generación Tesla (P1–P4) solo para huecos.
 - [x] **Persistencia minimalista → el estado de práctica vive en el `00_proyecto.md` del mini-proyecto** (no archivo de bitácora aparte), igual que el repaso vive en el índice del apunte.
 - [x] **Ubicación → los mini-proyectos viven en `practica/` (top-level),** porque cruzan varios workspaces/tecnologías.
 
@@ -132,6 +132,6 @@ La práctica se organiza en **bloques**. Un bloque = un conjunto de tecnologías
 
 - **Etapa 2 (Generar):** la práctica consume apuntes-concepto. Para techs con nota previa (Notion), basta el traslado ligero; para huecos, se genera con P1–P4 en estilo Tesla.
 - **Etapa 4 (Repasar):** complementaria. El repaso fija la teoría a libro cerrado; la práctica fija el criterio construyendo. Lo que cuesta en la práctica es candidato natural a repaso.
-- **`mecanismo_apunte_abierto.md`:** el **Guardián de Alcance** se reutiliza tal cual para frenar el scope creep dentro de un proyecto (una feature que se sale del bloque se redirige a `NOTAS.md`, no se mete a la fuerza).
-- **`mecanismo_pausa_retomar.md`:** los estados `EN PROGRESO / PAUSADO / FINALIZADO` y el patrón de pausa/retomar aplican igual al `00_proyecto.md` de cada mini-proyecto.
+- **Guardián de alcance** (skill `generar-apunte`, R10): se reutiliza tal cual para frenar el scope creep dentro de un proyecto (una feature que se sale del alcance se redirige a `NOTAS.md`, no se mete a la fuerza).
+- **Pausa y retomar** (skill `generar-apunte`): los estados `EN PROGRESO / PAUSADO / FINALIZADO` y el patrón de pausa/retomar aplican igual al `00_proyecto.md` de cada mini-proyecto.
 - **Perfil (`yo_profesional.md`, `contexto_carrera_ia.md`):** sesga la definición de cada proyecto hacia su meta (empleo, IA aplicada) y calibra el nivel (no explicar fundamentos que ya domina).

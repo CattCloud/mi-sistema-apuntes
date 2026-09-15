@@ -46,7 +46,7 @@ El objetivo es el mejor apunte posible: la autocrítica es tu red de seguridad d
 
 ## Paso 2: Aplicar la Voz del Manual
 
-Antes de escribir, recuerda las reglas de voz de `manual_apuntes.md` (Sección 3):
+Antes de escribir, recuerda las reglas de voz de `estilo.md` (§3):
 
 ### Persona gramatical
 
@@ -267,9 +267,9 @@ El output final para cada sección sigue este patrón:
 
 **El agente escribe la sección directamente al `.md`** — ya no la mantiene viva en el chat. Por cada sección:
 
-1. Crear el archivo `NN_slug.md` (frontmatter + contenido en estilo Tesla + **bloque de cierre "Lo que debiste llevarte"** + navegación al pie, ver §1.7 y §7 del manual), con `estado: en progreso`.
+1. Crear el archivo `NN_slug.md` (frontmatter + contenido en estilo Tesla + **bloque de cierre "Lo que debiste llevarte"** + navegación al pie, ver `apuntes/AGENTS.md` A3 y A7), con `estado: en progreso`.
 
-> 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-5 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `manual_apuntes.md` §1.7.
+> 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-5 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `apuntes/AGENTS.md` A7.
 
 2. Marcar su entrada en `## Secciones` del `00_indice.md` como `🔄 en progreso`.
 3. Avisar al usuario en el chat **sin re-pegar todo el contenido**:
@@ -292,7 +292,7 @@ Cuando la des por buena, la marco ✅. ¿O prefieres que ajuste algo del conteni
 
 **Si el usuario hace una pregunta sobre el tema** (mecanismo apunte abierto + Apunte Vivo):
 1. Responder la pregunta con la mejor explicación posible.
-2. **Autoevaluar la respuesta** contra los disparadores de Apunte Vivo (ver `sistema/mecanismos/mecanismo_apunte_abierto.md`, sección "Apunte Vivo — detección proactiva"):
+2. **Autoevaluar la respuesta** contra los disparadores de Apunte Vivo (ver `SKILL.md` de esta carpeta, "Durante: preguntas y adiciones"):
    - ¿Contiene analogía / ejemplo real / reformulación más clara que el apunte?
    - ¿Define un término que el apunte usaba sin definir?
    - ¿Conecta el concepto con algo que el usuario ya conoce?

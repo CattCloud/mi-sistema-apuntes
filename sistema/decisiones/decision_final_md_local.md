@@ -1,6 +1,6 @@
 # 📌 Decisión Final — Rediseño del sistema Tesla: de Notion a Markdown local
 
-> **Estado:** 🔄 En construcción. Recopilando y puliendo decisiones ANTES de implementar.
+> **Estado:** ✅ Implementada (ver D2: "Implementación del rediseño COMPLETA"). Documento histórico: las reglas vigentes viven en `AGENTS.md`, `apuntes/AGENTS.md` y `.claude/skills/` (ver `decision_arquitectura_reglas.md`).
 > **Regla:** Las reformas de estructura **seguras e independientes** se aplican incrementalmente con visto bueno del usuario (rename del motor, limpieza, agrupados). Lo que SÍ espera a cerrar el doc: el contenido/formato (manual, prompts) y el **interior de los apuntes** (depende de D1).
 > **Propósito:** Consolidar en un solo lugar TODOS los cambios decididos en esta ola de rediseño, con su estado y sus puntos abiertos.
 > **Relacionado:** `sistema/decisiones/intento_cambio_notion_a_obsidian.md`

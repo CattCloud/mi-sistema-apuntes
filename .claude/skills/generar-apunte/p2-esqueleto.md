@@ -11,15 +11,15 @@
 
 Tienes un tema identificado, su alcance definido, un workspace asignado y un arquetipo sugerido (todo esto viene de P1). Tu trabajo es **construir la jerarquía de headings** que tendrá el apunte.
 
-Cada **H2 del esqueleto será un archivo de sección** (`01_`, `02_`…) que abre con `#`; cada **H3 será una subsección** (`##`) dentro de ese archivo (ver `manual_apuntes.md` §1.1 y §7).
+Cada **H2 del esqueleto será un archivo de sección** (`01_`, `02_`…) que abre con `#`; cada **H3 será una subsección** (`##`) dentro de ese archivo (ver `apuntes/AGENTS.md` A1).
 
-**Antes de empezar:** Lee `manual_apuntes.md` — secciones 1 (Reglas Invariables), 2 (Formato visual md-nativo) y 4 (Arquetipos). Estos son tu marco de referencia.
+**Antes de empezar:** Lee `apuntes/AGENTS.md` (reglas invariables) y `estilo.md` §2 (formato visual md-nativo) y §4 (arquetipos). Estos son tu marco de referencia.
 
 **Principios:**
 - El esqueleto es una propuesta, no un dictado. El usuario puede reordenar, agregar o quitar secciones.
 - Cada heading debe justificar su existencia. Si no aporta, no va.
 - El orden de los headings sigue una lógica didáctica: de lo más básico a lo más complejo, de lo conceptual a lo práctico.
-- Nunca incluir una sección de "Introducción", "Conclusión", "Resumen" ni "Próximos pasos" (Regla 1.3 del manual).
+- Nunca incluir una sección de "Introducción", "Conclusión", "Resumen" ni "Próximos pasos" (A5).
 
 ---
 

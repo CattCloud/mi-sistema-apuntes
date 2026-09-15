@@ -12,10 +12,10 @@ Vamos a **continuar** el apunte del módulo **B4 — Cómputo: la máquina virtu
 En este orden:
 
 1. `contexto/plan_estudio/temario_cloud_developers.md` — el temario. **B4 es el módulo activo.** Fija el alcance: 5 temáticas.
-2. `sistema/manual_apuntes.md` — voz, formato y anatomía. Presta atención especial a **§1.6 (específico, no ambiguo — seis controles verificables)**, §1.7 ("Lo que debiste llevarte"), §5.4 (capturas de interfaz) y §7 (estructura, incluido `99_cierre.md`).
-3. `sistema/formas_de_cierre.md` — **archivo nuevo.** Catálogo de formas de cerrar un módulo y sus cuatro reglas. La primera es innegociable: *un cierre no puede exigir ningún concepto que el temario aún no haya cubierto*.
-4. `sistema/prompts/integracion_curso_sistema.md` — el temario manda, el curso alimenta. La tabla de qué se descarta de una transcripción.
-5. `sistema/prompts/p3_prompts_ias_externas.md` y `p4_sintesis_estilo_propio.md` — generación + autocrítica, y síntesis.
+2. `apuntes/AGENTS.md` — anatomía y redacción de los apuntes. Presta atención especial a **A6 (específico, no ambiguo)**, A7 ("Lo que debiste llevarte"), A9 (imágenes y capturas) y A1-A2 (estructura, incluido `99_cierre.md`). Voz y formato: `.claude/skills/generar-apunte/estilo.md`.
+3. `.claude/skills/cerrar-modulo/SKILL.md` — catálogo de formas de cerrar un módulo y sus cuatro reglas. La primera es innegociable: *un cierre no puede exigir ningún concepto que el temario aún no haya cubierto*.
+4. `.claude/skills/integrar-curso/SKILL.md` — el temario manda, el curso alimenta. La tabla de qué se descarta de una transcripción.
+5. `.claude/skills/generar-apunte/p3-generar.md` y `p4-sintetizar.md` — generación + autocrítica, y síntesis.
 6. `apuntes/cloud/b4-computo-maquina-virtual/00_indice.md` — el estado real del módulo.
 7. `apuntes/cloud/b4-computo-maquina-virtual/01_que-es-una-instancia.md` — **léela entera.** Es el tono, la densidad y el nivel de la Sección 2 en adelante.
 
@@ -58,7 +58,7 @@ Las tres clases de la transcripción son: *Fundamentos de EC2*, *Crear una insta
 
 ### Reglas editoriales — el usuario corrigió estas seis veces esta sesión
 
-Están formalizadas en `manual_apuntes.md` §1.6, pero repito las que más fallaron:
+Están formalizadas en `apuntes/AGENTS.md` (A6), pero repito las que más fallaron:
 
 - **Ningún término se usa antes de definirse.** Ni de paso. Falló con *bucket*, *hipervisor*, *acceso programático*, *entidad*, *CLI*.
 - **Nada de verbos vagos donde hay un mecanismo con nombre.** *"Te rebota"* → *"AWS deniega la acción y responde «no está autorizado»"*. Repetir la palabra técnica exacta es mejor que buscar sinónimos.
@@ -71,7 +71,7 @@ Están formalizadas en `manual_apuntes.md` §1.6, pero repito las que más falla
 ## Convenciones nuevas que el `PROMPT.md` anterior no tenía
 
 - **`99_cierre.md`** — el mecanismo de evaluación vive en su propio archivo, con `seccion: cierre` en el frontmatter. El `00_indice.md` **solo apunta** a él y muestra su estado: es superficie de control, nunca de contenido.
-- **`sistema/formas_de_cierre.md`** — nueve formas de cerrar un módulo (caso, predicción y comprobación, auditoría de artefacto, diagnóstico de fallo, consola, micro-ejercicio, quiz, explicación, diseño en papel). Cada prueba declara **qué mide y por qué esa forma**.
+- **`.claude/skills/cerrar-modulo/`** — nueve formas de cerrar un módulo (caso, predicción y comprobación, auditoría de artefacto, diagnóstico de fallo, consola, micro-ejercicio, quiz, explicación, diseño en papel). Cada prueba declara **qué mide y por qué esa forma**.
 - **Los quizzes se corren en vivo**, una pregunta a la vez, y **nunca se escriben en el apunte**. Los casos sí pueden escribirse: son escenarios de decisión sin respuesta que copiar.
 - **Capturas de interfaz** (§5.4): el texto manda y la imagen acompaña; el apunte debe entenderse sin verlas. Van en `img/` dentro de la carpeta del módulo, con prefijo de sección y pie de foto en cursiva. Sin datos sensibles.
 - **El temario se dividió dos veces** por decisión del usuario: **B3 Identidad** / **B3b Secretos** (se estudia antes de B6), y **B4 Cómputo** / **B4b Contenedores y Docker**.
@@ -84,10 +84,8 @@ Es material real y las secciones se escriben contra ella, no contra ejemplos gen
 |---|---|
 | Cuenta activa | **GreenCloud** *(la anterior, Cattcloud, no se usa)* |
 | Plan | **Plan gratuito nuevo**: 100 USD de crédito, vence el 21/02/2027; el crédito en sí vence el 22/08/2027 |
-| Región de trabajo | `us-east-1` |
-| Alias de cuenta | `estudiocloud` |
-| Usuario IAM | `cattcloud` — **sin `AdministratorAccess`**, solo `AccountManagementFromVercel` y `IAMUserChangePassword` |
-| MFA | ⚠️ **Sin activar**, ni en root ni en el usuario IAM |
+| Región de trabajo | `us-east-2` (Ohio) — ver `sistema/perfil/entorno_aws.md` |
+| Alias, usuario IAM, permisos y MFA | En `sistema/perfil/entorno_aws.local.md` (local, no versionado: el repo es público, R9) |
 | Recursos creados | Ninguno, salvo el presupuesto `alerta-gasto-cero` |
 
 > ⚠️ **Dos bloqueos que hay que resolver antes de la práctica de la Sección 3:** el usuario necesita `AdministratorAccess` para poder crear una instancia, y conviene activar MFA. Recuérdaselo cuando lleguéis ahí, no antes.

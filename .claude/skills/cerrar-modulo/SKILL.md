@@ -1,7 +1,12 @@
+---
+name: cerrar-modulo
+description: Diseñar, correr o registrar el cierre de un módulo de Tesla (99_cierre.md) — caso de decisión, predicción y comprobación, auditoría, diagnóstico de fallo, consola, micro-ejercicio, quiz en vivo, explicación o diseño en papel. Usar cuando se terminan las secciones de un módulo, cuando el usuario dice "hagamos el cierre" o "hagamos el quiz de MX", o al registrar el resultado de una prueba.
+---
+
 # Formas de cierre — cómo se evalúa un módulo
 
 > **Qué es:** el catálogo de formas de cerrar un módulo, y las reglas que decide el sistema (no el curso).
-> **Dónde vive el cierre:** `99_cierre.md` de cada apunte. Ver `manual_apuntes.md` §7.1.
+> **Dónde vive el cierre:** `99_cierre.md` de cada apunte (`apuntes/AGENTS.md` A10). Las preguntas de quiz viven en el temario (T2) y se corren en vivo (R7).
 > **Qué NO es:** ni el repaso (`metodologia_repaso.md`, que mide retención semanas después) ni la práctica guiada por proyecto (`metodologia_practica_guiada.md`, que construye algo largo).
 
 ---
@@ -151,4 +156,4 @@ next: null
 Al resolverlo se anota el resultado aquí y en el bloque `repaso:` del `00_indice.md`.
 ```
 
-> 📝 El `00_indice.md` **solo apunta** al cierre y muestra su estado. El enunciado nunca se duplica ahí: el índice es superficie de control, no de contenido (`manual_apuntes.md` §7.4).
+> 📝 El `00_indice.md` **solo apunta** al cierre y muestra su estado. El enunciado nunca se duplica ahí: el índice es superficie de control, no de contenido (`apuntes/AGENTS.md` A2).

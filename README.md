@@ -1,72 +1,55 @@
 # 🧠 Tesla — Mi Sistema de Estudio
 
-Sistema para generar apuntes de programación con IA, replicando el estilo personal de toma de notas. Los apuntes **viven en este repositorio como Markdown** y se leen/editan en VSCode/Antigravity — ya no en Notion.
+Sistema para estudiar programación con IA como un **ciclo de vida del conocimiento**: generar apuntes en el estilo personal del usuario → practicar construyendo → repasar para retener → (a futuro) conectar y recomendar qué estudiar. Los apuntes viven en este repositorio como **Markdown** y se leen y editan en VS Code / Antigravity.
 
 ---
 
-## ¿Qué hace este sistema?
+## Cómo se usa
 
-En lugar de pasar 1+ hora sintetizando manualmente notas desde cursos y documentación, el agente orquesta el proceso completo: identifica el tema, propone la estructura, genera el contenido (autocriticándose para conservar el contraste sin un segundo hilo) y lo redacta en el estilo personal del usuario **directamente al `.md`**, donde el usuario lo ajusta en vivo.
+1. **Estudiar un tema o un módulo:** dile al agente *"quiero hacer un apunte sobre [tema]"* o *"sigamos con B4"*. Si viene de un temario, el esqueleto ya está hecho; si no, el agente propone tema y alcance (P1) y el esqueleto (P2), y **tú apruebas**.
+2. **Sección por sección:** el agente genera, se autocritica y escribe cada sección **directo al `.md`**, marcando con `⚠️ verificar` lo dudoso. Tú la lees y la ajustas en vivo en el editor.
+3. **Cerrar el módulo:** una evaluación sin el material delante (caso, predicción, consola, micro-ejercicio o quiz en vivo), en `99_cierre.md`.
+4. **Repasar:** *"repasemos X"* o *"¿qué repaso hoy?"*. Recall a libro cerrado; lo que falla queda en el índice del apunte para el próximo repaso.
+5. **Ideas que salen por el camino:** van a `NOTAS.md`; *"procesa mis notas"* las ubica.
+
+**Dónde ver cómo vas:** el `00_indice.md` de cada apunte (y el índice de cada workspace).
+
+> **Herramientas:** lectura con Markdown Preview Enhanced (renderiza Mermaid) · edición WYSIWYG con Markdown Editor (zaaack) · navegación entre archivos con Markdown Memo (`[[wiki-links]]`). Obsidian quedó fuera del sistema.
 
 ---
 
-## Estructura del Repositorio
+## Cómo trabajan los agentes aquí
+
+Las reglas para cualquier agente de IA están en **`AGENTS.md`** (la constitución: 12 reglas). Las reglas de redacción y estructura de los apuntes están en `apuntes/AGENTS.md`, y las de los temarios en `contexto/plan_estudio/AGENTS.md`. Los procedimientos paso a paso (generar, cerrar, repasar, integrar un curso, practicar…) viven en `.claude/skills/`. En Claude Code, además, unos guardianes automáticos revisan cada archivo al guardarlo y un revisor independiente relee lo escrito. El porqué de esta organización: `sistema/decisiones/decision_arquitectura_reglas.md`.
+
+---
+
+## Estructura del repositorio
 
 ```
-mi-sistema-estudio/
-├── README.md  NOTAS.md
+tesla/
+├── AGENTS.md · CLAUDE.md        ← reglas para agentes (constitución · lo propio de Claude)
+├── README.md · NOTAS.md · PROMPT.md
 │
-├── sistema/                  ← EL MOTOR (estilo, prompts, mecanismos, decisiones)
-│   ├── manual_apuntes.md     ← guía de estilo md-nativa (fuente de verdad)
-│   ├── analisis_patrones_apuntes.md
-│   ├── historial_version_ia_externa.md
-│   ├── perfil/              ← yo.md, yo_profesional.md (lo que el sistema sabe del usuario)
-│   ├── prompts/              ← p1..p4 (las 4 fases del flujo)
-│   ├── mecanismos/           ← apunte_abierto, pausa_retomar
-│   └── decisiones/           ← intento_obsidian, decision_final_md_local
+├── .claude/                     ← procedimientos (skills), guardianes (hooks) y revisor
 │
-├── contexto/                 ← documentación del proyecto
-│   ├── *.md (actual, futuro, roadmap, preguntas)
-│   └── assets/               ← imágenes y diagramas
+├── contexto/plan_estudio/       ← ⭐ los temarios de las rutas y el sílabo del curso externo
 │
-└── apuntes/                  ← LOS APUNTES (el output, viven aquí)
-    └── [workspace]/          ← ej. ia/  (un emoji por dominio)
-        ├── 00_indice.md      ← índice del workspace (sus apuntes + estado)
-        └── [tema]/
-            ├── 00_indice.md  ← entrada del apunte: alcance + estado + secciones
-            ├── 01_seccion.md ← una sección por archivo (abre con #)
-            ├── 02_seccion.md
-            └── _input/       ← material fuente (transcripciones, links)
+├── apuntes/                     ← LOS APUNTES
+│   └── [workspace]/             ← arquitectura/ · typescript/ · cloud/ · ia/
+│       ├── 00_indice.md         ← índice del workspace
+│       └── [modulo]/
+│           ├── 00_indice.md     ← alcance, secciones, estado y repaso del apunte
+│           ├── 01_seccion.md    ← una sección por archivo
+│           ├── 99_cierre.md     ← la evaluación del módulo
+│           ├── img/             ← capturas e imágenes de apoyo
+│           └── _input/          ← material fuente (transcripciones, capturas crudas)
+│
+├── sistema/
+│   ├── metodologia_repaso.md · metodologia_practica_guiada.md   ← el porqué
+│   ├── perfil/                  ← quién es el usuario y su entorno AWS
+│   └── decisiones/              ← registro de decisiones y de reglas
+│
+├── practica/                    ← código de práctica
+└── _archivo/                    ← diseño e historial del sistema (solo consulta)
 ```
-
----
-
-## Cómo usar el sistema
-
-1. Dile al agente: *"Quiero hacer un apunte sobre [tema]"* y comparte tu material (PDF, link, transcripción, descripción).
-2. **P1** — identifica tema, alcance, workspace y arquetipo → **tú apruebas**.
-3. **P2** — propone el esqueleto (las secciones) → **tú apruebas**.
-4. **P3 ⇄ P4** — por cada sección: el agente genera el contenido, se autocritica (marca lo dudoso con `⚠️ verificar`) y lo **escribe directo al `.md`** en estilo Tesla; **tú lo lees y ajustas en vivo** en el editor.
-5. El apunte queda en `apuntes/[workspace]/[tema]/`, legible en **Markdown Preview Enhanced**.
-
-> **Herramientas:** lectura = Markdown Preview Enhanced · edición WYSIWYG = Markdown Editor (zaaack) · navegación entre archivos = Markdown Memo.
-
----
-
-## Reglas de la carpeta `apuntes/`
-
-- **Nombrar:** `apuntes/[workspace]/[tema]/`. Workspace = slug corto (`ia`, `cloud`, `css`, `node`, `git`, `js`, `code301`); tema = kebab-case sin el prefijo del workspace.
-- **Un folder por apunte.** El `00_indice.md` es la entrada y la superficie de control (alcance + estado + lista de secciones).
-- **Una sección = un archivo** (`01_…`, `02_…`), que abre con `#`. La navegación prev/next va al pie de cada sección.
-- **Estados** (en el frontmatter del índice): `EN PROGRESO` · `PAUSADO` · `FINALIZADO`.
-- **No mezclar temas** — cada apunte es autocontenido.
-
----
-
-## Estado del proyecto
-
-El sistema se **rediseñó de Notion a Markdown local** (ver `sistema/decisiones/decision_final_md_local.md`). Hecho: estructura del repo, manual de estilo v3.0 md-nativo, prompts P1–P4, mecanismos, y migración de los apuntes existentes. Pendiente: empaquetar el flujo como skill (T10) e integración con NotebookLM (T11).
-
-> **Referencia de estilo:** `sistema/manual_apuntes.md`
-> **Decisiones de diseño:** `sistema/decisiones/decision_final_md_local.md`
-> **Roadmap histórico:** `contexto/tareas_transicion.md`

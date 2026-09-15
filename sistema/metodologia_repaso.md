@@ -1,6 +1,6 @@
 # Metodología de Repaso
 
-> **Propósito:** Definir *cómo* se repasa un tema en este sistema, de forma independiente de las herramientas. Es a la **etapa de práctica/repaso** lo que `manual_apuntes.md` es a la etapa de generación.
+> **Propósito:** Definir *cómo* se repasa un tema en este sistema, de forma independiente de las herramientas. Es el *porqué* de la etapa de repaso; el procedimiento operativo es la skill `repasar`.
 > **Estado:** Metodología definida ✅ · Implementación pendiente ⬜ (nueva etapa del sistema, fuera del roadmap T1–T11 original).
 > **Fecha de diseño:** 19 de Junio, 2026
 
@@ -100,7 +100,7 @@ Las herramientas son **motores** que llenan los pasos del ciclo. El método mand
 | Paso del ciclo | Herramienta candidata | Rol |
 |----------------|----------------------|-----|
 | 1. Recuperación activa | La IA (interrogación conversacional) · Anki (tarjetas) | Generar preguntas, corregir, dar pistas |
-| 3. Consolidación multimodal | **NotebookLM — Audio + Video Overview** (manual) ✅ | El usuario sube el apunte; **la IA redacta los prompts de Customize** (pedagógicos, con personalidad calibrada por arquetipo, enfatizando `reforzar:`). Protocolo: `prompts/repaso_consolidacion_notebooklm.md` |
+| 3. Consolidación multimodal | **NotebookLM — Audio + Video Overview** (manual) ✅ | El usuario sube el apunte; **la IA redacta los prompts de Customize** (pedagógicos, con personalidad calibrada por arquetipo, enfatizando `reforzar:`). Protocolo: `.claude/skills/repasar/consolidacion-notebooklm.md` |
 | 4. Programación espaciada | Anki / registro con fechas | Algoritmo de repaso espaciado |
 
 > 💡 **Principio:** elegir la herramienta *después* de fijar el método evita amoldar el estudio a la herramienta en vez de al revés.
@@ -115,14 +115,14 @@ La metodología está fija. Algunas decisiones de implementación ya se tomaron 
 
 - [x] **Persistencia → minimalista en el índice.** El estado de repaso (último, próximo, nivel, qué reforzar) vive en un bloque `repaso:` del `00_indice.md` de cada apunte. **Fuente única**: no hay archivo de bitácora ni mazo aparte. Se sobrescribe cada sesión (sin historial acumulado).
 - [x] **Enganche con la generación → on-demand + estado en el índice.** El repaso se dispara cuando el usuario lo pide (*"repasemos X"*) sobre un apunte `FINALIZADO`, no se autodispara. La conexión generación↔repaso es el propio índice: el mismo archivo que marca `estado: FINALIZADO` aloja el estado de repaso.
-- [x] **Espaciado → heurística propia simple.** Tabla flojo/regular/sólido/dominado → intervalo (ver `prompts/repaso_recall.md`). No se delega en Anki todavía.
+- [x] **Espaciado → heurística propia simple.** Tabla flojo/regular/sólido/dominado → intervalo (ver skill `repasar`). No se delega en Anki todavía.
 - [x] **Agenda → derivada, no almacenada.** *"¿Qué repaso hoy?"* se calcula leyendo `repaso.proximo` de los índices finalizados; no es un documento que se mantenga.
-- [x] **Consolidación multimodal (Paso 3) → NotebookLM manual, audio + video.** La IA redacta los prompts de Customize (calibrados por arquetipo, enfocados en `reforzar:`); el usuario los pega y genera. Ver `prompts/repaso_consolidacion_notebooklm.md`.
+- [x] **Consolidación multimodal (Paso 3) → NotebookLM manual, audio + video.** La IA redacta los prompts de Customize (calibrados por arquetipo, enfocados en `reforzar:`); el usuario los pega y genera. Ver `.claude/skills/repasar/consolidacion-notebooklm.md`.
 
 **Pendientes (capas futuras):**
 
 - [ ] **Modalidades adicionales:** dudas marcadas, mazo formal con SRS — ¿cuáles y cuándo.
-- [ ] **Dudas marcadas:** sintaxis para comentar dudas en el `.md` durante la lectura y cómo la IA las resuelve (conecta con `mecanismos/mecanismo_apunte_abierto.md`).
+- [ ] **Dudas marcadas:** sintaxis para comentar dudas en el `.md` durante la lectura y cómo la IA las resuelve (conecta con el apunte abierto, `apuntes/AGENTS.md` A11).
 - [ ] **Anki + automatización NotebookLM:** Anki para el espaciado real, y los tools MCP/browser para automatizar NotebookLM (hoy es manual). Candidatos anotados en `NOTAS.md`. Capa futura — se gana con dolor.
 - [ ] **Trazabilidad:** si más adelante se quiere ver la *evolución* (curva de dominio en el tiempo), habrá que pasar del modelo minimalista (último estado) a un log histórico.
 
@@ -132,4 +132,4 @@ La metodología está fija. Algunas decisiones de implementación ya se tomaron 
 
 - **Etapa 2 (Generar):** el repaso consume lo que produce P1–P4. La calidad del apunte condiciona la calidad del repaso. El **puente** entre ambas etapas es el `00_indice.md`: es el checkpoint de generación (`estado`) **y** el hogar del estado de repaso (`repaso:`) — un solo archivo conecta las dos etapas, sin documentos paralelos.
 - **Etapa 3 (Conectar) y 5 (Recomendar):** dependen de una capa de metadata/índice global que aún no existe. El repaso puede empezar sin ellas (por tema aislado), pero el recomendador las necesitará.
-- **`mecanismo_apunte_abierto.md`:** las "dudas marcadas" del paso 2 son una extensión natural del Apunte Vivo — una duda resuelta que enriquece puede integrarse al apunte.
+- **Apunte abierto** (`apuntes/AGENTS.md` A11, skill `generar-apunte`): las "dudas marcadas" del paso 2 son una extensión natural del Apunte Vivo — una duda resuelta que enriquece puede integrarse al apunte.

@@ -2,7 +2,7 @@
 
 > **Etapa:** Práctica (paso 0 del ciclo por bloque)
 > **Metodología:** `sistema/metodologia_practica_guiada.md` (fuente de verdad del *porqué*)
-> **Input:** El bloque a iniciar y sus tecnologías (de `contexto/plan_estudio/plan_bloques.md`)
+> **Input:** Las tecnologías que el usuario va a practicar (`plan_bloques.md` fue retirado)
 > **Output:** Un archivo `contexto/plan_estudio/diagnosticos/diagnostico_bloque-NN_[techs].md` listo para que el usuario lo marque
 > **Trigger:** Se va a arrancar un bloque nuevo (lo dispara el protocolo `practica_guiada_proyecto.md`, paso P-0)
 
@@ -33,7 +33,7 @@ Al seleccionar los temas de cada tecnología, el agente prioriza por dos criteri
 
 ## Paso 1: Leer el bloque y su perfil
 
-1. Leer `contexto/plan_estudio/plan_bloques.md` → qué tecnologías cubre el bloque (nuevas + acumuladas que se profundizan).
+1. Confirmar con el usuario qué tecnologías va a practicar (nuevas + las ya estudiadas que se profundizan).
 2. Leer `sistema/perfil/yo_profesional.md` y `contexto_carrera_ia.md` → calibrar nivel (asume base de JS/TS y full-stack; no diagnostiques fundamentos que ya domina salvo señal contraria) y sesgar hacia empleabilidad/IA.
 3. **Reutilizar marcas previas:** si una tech del bloque ya fue marcada antes (ej. JavaScript en `diagnostico_nivel.md`), **traer esas marcas ya puestas** — no re-preguntar lo ya respondido. Solo se pide lo nuevo.
 

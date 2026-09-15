@@ -2,7 +2,7 @@
 
 > **Etapa:** Repaso — Paso 3 del ciclo (consolidación multimodal / "premio de salida")
 > **Metodología:** `sistema/metodologia_repaso.md` (el *porqué*)
-> **Hermano:** `sistema/prompts/repaso_recall.md` (el recall, Pasos 1–6)
+> **Hermano:** `SKILL.md` de esta carpeta (el recall, Pasos 1–6). Lo reemplazará la skill `notebooklm` cuando esté terminada (plan en `contexto/plan_notebooklm.md`)
 > **Qué produce:** prompts de "Customize" listos para pegar en NotebookLM (Audio Overview + Video Overview)
 > **Modo:** manual — el usuario sube las fuentes y pega los prompts; **la IA solo redacta los prompts**
 

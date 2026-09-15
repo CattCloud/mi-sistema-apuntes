@@ -1,8 +1,15 @@
+---
+name: practicar
+description: Guiar la práctica construyendo en Tesla — historias de usuario con criterios de aceptación, pistas escalonadas a petición, revisión socrática y diagnóstico Pareto — sin entregar nunca el código. Usar cuando el usuario dice "practiquemos X", pide un ejercicio o un mini-proyecto, comparte su código para revisión, o pide ayuda con un ejercicio que está resolviendo.
+---
+
 # Práctica Guiada por Proyecto
+
+> ⚠️ **Qué sigue vigente.** La técnica: historias de usuario con criterios, pistas escalonadas, revisión socrática, diagnóstico Pareto y nunca entregar el código (R6). **Retirado:** la maquinaria de bloques aditivos B1–B5 y `plan_bloques.md`, que ya no existe. Donde este archivo dice "bloque", léase **el alcance que el usuario pida practicar**; un mini-proyecto en `practica/` se define solo si el usuario lo pide.
 
 > **Etapa:** Práctica (etapa 3 del ciclo de vida del conocimiento)
 > **Metodología:** `sistema/metodologia_practica_guiada.md` (fuente de verdad del *porqué*)
-> **Input:** Un bloque de tecnologías (de `contexto/plan_estudio/plan_bloques.md`) + sus apuntes-concepto
+> **Input:** Las tecnologías o el tema que el usuario quiere practicar + sus apuntes-concepto
 > **Output:** Un mini-proyecto definido por fases en `practica/proyecto-NN-[slug]/` + sesiones de práctica guiada
 > **Trigger:** El usuario dice *"empecemos el Bloque N"* / *"practiquemos X"*
 
@@ -35,7 +42,7 @@ Es el equivalente, para la etapa de **práctica**, de lo que P1–P4 son para la
 
 ## Paso P-0: Diagnóstico del bloque
 
-Antes de definir nada, ejecutar `sistema/prompts/diagnostico_bloque.md` para las tecnologías del bloque (reutilizando marcas previas) y esperar a que el usuario lo complete. El resultado fija qué temas debe ejercitar el proyecto.
+Antes de definir nada, ejecutar `diagnostico-pareto.md` (en esta carpeta) para las tecnologías del bloque (reutilizando marcas previas) y esperar a que el usuario lo complete. El resultado fija qué temas debe ejercitar el proyecto.
 
 ---
 
@@ -175,7 +182,7 @@ No dársela. Sostener la fricción con calidez: *"Si te lo doy, te robo el apren
 Bajar la dificultad sin resolver: dividir la HU en un sub-paso más pequeño, o dar un ejemplo **análogo** (otro contexto) del que pueda transferir la idea — nunca el código de la HU actual.
 
 ### Scope creep (quiere meter una feature fuera del bloque)
-Reutilizar el **Guardián de Alcance** (`sistema/mecanismos/mecanismo_apunte_abierto.md`): responder, pero advertir que excede el bloque y anotarlo en `NOTAS.md` para un proyecto/fase futura. No inflar el mini-proyecto.
+Reutilizar el **Guardián de Alcance** (skill `generar-apunte`, R10): responder, pero advertir que excede el bloque y anotarlo en `NOTAS.md` para un proyecto/fase futura. No inflar el mini-proyecto.
 
 ### El concepto no estaba en ningún apunte
 Si una HU necesita algo sin apunte-concepto, ofrecer generarlo (traslado ligero de Notion si existe, o P1–P4 si es hueco real) antes de seguir.

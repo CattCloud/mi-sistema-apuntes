@@ -1,3 +1,8 @@
+---
+name: migrar-notion
+description: Traer notas de Notion al repositorio de Tesla como material de referencia (traslado ligero vía el MCP de Notion, sin reescribir) o como materia prima para un apunte. Usar cuando el usuario pide migrar, traer o consultar sus apuntes viejos de Notion para un tema que va a estudiar o practicar.
+---
+
 # Migración Ligera de Notion (just-in-time por bloque)
 
 > **Etapa:** Práctica (paso 1 del ciclo por bloque — capa concepto)

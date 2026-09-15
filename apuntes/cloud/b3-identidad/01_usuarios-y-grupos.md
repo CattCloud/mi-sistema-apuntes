@@ -97,9 +97,9 @@ Lo que ganas al usarlos es que **el permiso se administra por función, no por p
 Tu cuenta tiene un **ID numérico de 12 dígitos**, y los usuarios IAM entran por una URL que lo contiene. Es funcional y es horrible de recordar:
 
 ```text
-https://128114712749.signin.aws.amazon.com/console
+https://123456789012.signin.aws.amazon.com/console
                 ↓  con alias
-https://estudiocloud.signin.aws.amazon.com/console
+https://mi-alias.signin.aws.amazon.com/console
 ```
 
 El **alias** sustituye esos doce dígitos por un nombre legible. No cambia la seguridad ni los permisos: es una comodidad para que la puerta de tus usuarios tenga nombre.

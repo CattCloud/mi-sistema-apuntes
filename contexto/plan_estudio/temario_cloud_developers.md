@@ -30,7 +30,7 @@ estado: EN PROGRESO
 
 **Se recorren todas las temáticas.** El marcado ✅/🔄/❌ **no filtra** qué se estudia — calibra qué tan profunda va cada sección del apunte.
 
-**Mapeo con el flujo Tesla:** `1 módulo = 1 apunte (carpeta con 00_indice.md)` · `1 temática = 1 archivo de sección`. Ver `manual_apuntes.md` §1.1 — la densidad se maneja partiendo, no plegando.
+**Mapeo con el flujo Tesla:** `1 módulo = 1 apunte (carpeta con 00_indice.md)` · `1 temática = 1 archivo de sección`. Ver `apuntes/AGENTS.md` (A1) — la densidad se maneja partiendo, no plegando.
 
 **Fuentes:**
 
@@ -40,7 +40,7 @@ estado: EN PROGRESO
 | 📓 **Notion previo** | **La capa conceptual que el curso salta** — qué es cloud, IaaS/PaaS/SaaS, servicios core | `apuntes/cloud/_input/notion/` — materia prima, no tier referencia |
 | **El agente** | Todo lo que ninguna de las dos cubre | — |
 
-**Integración con el curso** *(protocolo completo en `sistema/prompts/integracion_curso_sistema.md`)*:
+**Integración con el curso** *(protocolo completo en la skill `integrar-curso`)*:
 
 ```
 1. El temario dice qué secciones del curso ver   ← el temario fija el ALCANCE

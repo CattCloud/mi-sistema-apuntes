@@ -57,7 +57,7 @@ Formato:
 
 ### Pendientes a futuro — NotebookLM / deploy (consolidado de `contexto/notas.txt`)
 
-- [x] **NotebookLM — uso definido:** consolidación multimodal del Paso 3 (audio + video), modo manual; la IA redacta los prompts de Customize. Ver `sistema/prompts/repaso_consolidacion_notebooklm.md`.
+- [x] **NotebookLM — uso definido:** consolidación multimodal del Paso 3 (audio + video), modo manual; la IA redacta los prompts de Customize. Ver `.claude/skills/repasar/consolidacion-notebooklm.md`.
 - [ ] **Automatizar NotebookLM (capa futura):** hoy es manual (subir fuentes + pegar prompt + clic). Candidatos evaluados para automatizar (todos browser-automation / MCP, con fragilidades):
   - `teng-lin/notebooklm-py` — 5.9K instalaciones, el más completo (crear notebooks, ingerir multi-formato, generar artefactos, descargar). ⚠️ bug de auth por cookies en Python 3.13+. Mejor para control total / scripting.
   - `joeseesun/anything-to-notebooklm` — 515 inst., "cualquier cosa → NotebookLM" (genera podcasts/PPT/mapas mentales). Usa servidor MCP. ⚠️ auditoría de seguridad mixta.
