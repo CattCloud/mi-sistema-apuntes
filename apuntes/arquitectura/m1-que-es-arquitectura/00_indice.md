@@ -20,7 +20,7 @@ notebooklm: pendiente
 
 # 🏛️ M1 — Qué es arquitectura (y qué no)
 
-> **Módulo 1 del temario de Arquitectura de Software (nivel 3).** Estado: 🔄 EN PROGRESO · 5 secciones.
+> **Módulo 1 del temario de Arquitectura de Software (nivel 3).** Estado: ✅ CERRADO — caso resuelto 2026-08-21 · 5 secciones.
 >
 > El módulo que evita que compres un curso de SOLID pensando que es arquitectura.
 
