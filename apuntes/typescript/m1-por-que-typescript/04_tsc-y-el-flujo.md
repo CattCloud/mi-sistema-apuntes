@@ -7,8 +7,7 @@ estado: finalizada
 prev: 03_compile-time-vs-runtime
 next: 05_tsconfig-y-strict
 ---
-
-# 🟦 `tsc` y el flujo de trabajo
+# 🟦 Instalacion `tsc` y el flujo de trabajo
 
 > **`tsc` es el compilador de TypeScript: el programa que lee tus archivos `.ts`, los revisa y produce los `.js` que sí se pueden ejecutar.**
 >
@@ -108,10 +107,11 @@ npm install -D typescript   →  tsc queda en node_modules/.bin/
 
 Y hay una conexión que lo aclara del todo: **`npx create-next-app` es el mismo mecanismo**. La diferencia es que ahí no tienes el paquete instalado, así que `npx` lo descarga temporalmente, lo ejecuta y lo descarta.
 
-| Comando | Qué hace `npx` |
-|---------|----------------|
-| `npx tsc` | Ejecuta el `tsc` que ya está en tu `node_modules` |
-| `npx create-next-app` | No lo tienes: lo descarga, lo corre y lo borra |
+
+| Comando               | Qué hace`npx`                                    |
+| --------------------- | ------------------------------------------------- |
+| `npx tsc`             | Ejecuta el`tsc` que ya está en tu `node_modules` |
+| `npx create-next-app` | No lo tienes: lo descarga, lo corre y lo borra    |
 
 **Opción global — disponible en todo el sistema:**
 
@@ -192,10 +192,11 @@ Cuando escribes `npm run dev`, npm busca la clave `dev` y corre lo que diga esa 
 
 Y ese compilador propio hace las fases 2 y 3 (borra los tipos y traduce la sintaxis) pero **no hace la fase 1**: no verifica nada. Es la misma situación de `tsx` del apartado anterior. Entonces la pregunta importante es quién verifica:
 
-| Momento | Quién verifica los tipos |
-|---------|--------------------------|
-| Mientras escribes | **Tu editor**, con su propio TypeScript en segundo plano |
-| `npm run build` | **Next**, que corre la verificación como un paso propio del build |
+
+| Momento           | Quién verifica los tipos                                          |
+| ----------------- | ------------------------------------------------------------------ |
+| Mientras escribes | **Tu editor**, con su propio TypeScript en segundo plano           |
+| `npm run build`   | **Next**, que corre la verificación como un paso propio del build |
 
 En el build lo ves pasar: aparece una línea del tipo *"Checking validity of types"*. Si hay un error de tipo, **el build falla y no se genera nada**. Ahí sí te bloquea.
 
@@ -248,4 +249,5 @@ Ahora bien, correr `tsc` archivo por archivo no escala más allá de un ejercici
 - En tus proyectos nunca escribes `tsc` porque **`npm run dev` ejecuta un script del `package.json`** y el framework trae su propio compilador — que borra tipos pero **no los verifica**. La verificación la hacen tu editor y el paso de `build`.
 
 ---
+
 [[03_compile-time-vs-runtime|← anterior]] · [[00_indice|índice]] · [[05_tsconfig-y-strict|siguiente →]]

@@ -1,0 +1,36 @@
+{
+  "imagenes": {
+    "01_consola-facturacion-inicio.png": "excluir — la barra superior muestra el nombre y el ID de la cuenta (R9)",
+    "02_creditos-detalle.png": "subir",
+    "02_planes-comparativa.png": "subir",
+    "02_upgrade-plan.png": "subir",
+    "03_presupuesto-tipo.png": "subir",
+    "03_presupuesto-plantilla.png": "subir",
+    "03_presupuesto-creado.png": "subir"
+  },
+  "reemplazos": {
+    "01_como-se-factura.md": [
+      ["*Cuenta nueva, sin gasto: el resumen dice \"Datos no disponibles\", el desglose está vacío y el panel de presupuestos pide configuración. Arriba, el banner de créditos del plan gratuito; a la izquierda, las cuatro zonas de la tabla.*", "En una cuenta nueva, sin gasto, la página de inicio de facturación dice \"Datos no disponibles\" en el resumen, el desglose aparece vacío y el panel de presupuestos pide configuración."],
+      [" El tema de root, usuarios y permisos es **B3**; aquí solo", " Aquí solo"],
+      ["Es cómodo y peligroso a la vez — lo retomamos en la Sección 2.", "Es cómodo y peligroso a la vez."]
+    ],
+    "02_free-tier.md": [
+      ["es dinero por trabajo que ya vas a hacer de todas formas en los módulos siguientes.", "es dinero por trabajo que igual vas a hacer mientras aprendes."],
+      ["y viene directamente de la Sección 1:", "y viene directamente de cómo se factura:"],
+      ["con alerta *prevista*, y eso es la Sección 3.", "con alerta *prevista*."],
+      ["el presupuesto de la Sección 3 no es opcional", "un presupuesto con alerta no es opcional"],
+      ["Si en B5 o B9 te topas", "Si te topas"]
+    ],
+    "03_gatillo-factura-sorpresa.md": [
+      ["En la Sección 4 lo multiplicamos por diez mil y deja de parecerlo.", "Multiplicado por diez mil correos son unos 75 USD, y deja de parecerlo."],
+      [", y eso es tema de **B3**.", "."],
+      ["Cuando en B4 empieces", "Cuando empieces"],
+      ["y necesita permisos — **B3**.", "y necesita permisos."]
+    ],
+    "04_estimar-antes.md": [
+      [" Vuelve a esta herramienta después de B4.", ""],
+      [" El primero sigue siendo el método de la sección siguiente.", " El primero sigue siendo estimar cuánto vas a consumir."],
+      ["que hagas en los módulos siguientes se acerca", "se acerca"]
+    ]
+  }
+}

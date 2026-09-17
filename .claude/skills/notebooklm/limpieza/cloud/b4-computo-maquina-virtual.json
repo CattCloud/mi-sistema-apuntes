@@ -1,0 +1,12 @@
+{
+  "imagenes": {
+    "02_familias-de-instancias.png": "subir"
+  },
+  "reemplazos": {
+    "01_que-es-una-instancia.md": [
+      ["Todo lo que verás en el asistente de la Sección 3 es", "Todo lo que pide el asistente de lanzamiento es"],
+      ["Ese punto se trabaja a fondo en la Sección 3, pero conviene", "Conviene"],
+      ["| Sí — y esa es otra trampa, Sección 4 |", "| Sí |"]
+    ]
+  }
+}

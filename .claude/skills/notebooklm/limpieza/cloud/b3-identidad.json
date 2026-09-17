@@ -1,0 +1,63 @@
+{
+  "imagenes": {
+    "01_lista-usuarios.png": "excluir — muestra el nombre de usuario IAM y el ARN con el ID de cuenta (R9)",
+    "01_lista-grupos.png": "subir",
+    "01_panel-iam.png": "excluir — muestra el ID de cuenta y la URL de inicio de sesión que lo contiene (R9)",
+    "01_signin-tipo-usuario.png": "subir",
+    "01_crear-alias.png": "excluir — el título del diálogo lleva el ID de cuenta (R9)",
+    "01_crear-usuario-paso1.png": "subir",
+    "01_crear-grupo.png": "excluir — muestra el nombre de usuario IAM (R9)",
+    "01_signin-iam.png": "excluir — muestra el alias de la cuenta y un correo (R9)",
+    "02_editor-json.png": "subir",
+    "02_lista-politicas.png": "subir",
+    "04_detalle-usuario.png": "excluir — muestra el usuario IAM, el ARN con el ID de cuenta y el estado de MFA (R9)",
+    "04_crear-clave-paso1.png": "subir",
+    "04_crear-clave-paso2.png": "subir",
+    "05_lista-roles.png": "subir",
+    "05_crear-rol-entidad.png": "subir"
+  },
+  "reemplazos": {
+    "01_usuarios-y-grupos.md": [
+      [" Ya te topaste con una en **B2**: activar", " Una de ellas: activar"],
+      ["aunque para eso hay algo mejor que veremos en la Sección 5.", "aunque para eso hay algo mejor: un **rol**, que entrega credenciales temporales."],
+      ["*La lista de usuarios. Cada columna es una pregunta de seguridad: a qué grupos pertenece, si tiene MFA, qué antigüedad tienen sus credenciales y cuándo se usaron por última vez.*", "En la lista de usuarios de IAM, cada columna es una pregunta de seguridad: a qué grupos pertenece el usuario, si tiene MFA, qué antigüedad tienen sus credenciales y cuándo se usaron por última vez."],
+      ["*El Panel de IAM es la pantalla que conviene mirar de vez en cuando: resume qué identidades existen en tu cuenta y qué falta por asegurar.*", "El Panel de IAM conviene mirarlo de vez en cuando: resume qué identidades existen en tu cuenta y qué falta por asegurar."],
+      ["abre un diálogo de un solo campo:", "abre un diálogo de un solo campo, el alias preferido."],
+      ["*El diálogo dice sus reglas de formato, pero no la más importante: el alias es único en todo AWS, no solo en tu cuenta.*", "El diálogo dice sus reglas de formato, pero no la más importante: el alias es único en todo AWS, no solo en tu cuenta."],
+      ["Si aún no hay grupo, se crea aquí mismo:", "Si aún no hay grupo, se crea en ese mismo paso."],
+      ["*Crear el grupo pide tres cosas: cómo se llama, quién entra, y qué puede hacer. Las tres son opcionales salvo el nombre — un grupo puede existir vacío y sin permisos.*", "Crear el grupo pide tres cosas: cómo se llama, quién entra, y qué puede hacer. Las tres son opcionales salvo el nombre — un grupo puede existir vacío y sin permisos."],
+      [" Es la Sección 4.", ""],
+      [" De eso trata la Sección 3.", " Por eso conviene dar solo los permisos que hacen falta."],
+      ["volver a entrar por la URL del alias, con el usuario nuevo:", "volver a entrar por la URL del alias, con el usuario nuevo."],
+      ["*Entrando por la URL del alias, el campo de cuenta llega relleno y solo quedan usuario y contraseña. Abajo, el enlace para volver al acceso con correo de root.*", "Entrando por la URL del alias, el campo de cuenta llega relleno y solo quedan usuario y contraseña."],
+      ["En ese formulario el campo pide", "En el formulario de inicio de sesión de usuario IAM, el campo de usuario pide"],
+      ["Si tu usuario se llama `cattcloud`, ahí va `cattcloud`.", "Si tu usuario se llama `ana`, ahí va `ana`."]
+    ],
+    "02_politicas.md": [
+      ["Si la Sección 1 fue *quién eres*, esta es *qué puedes hacer*.", "Un usuario responde a *quién eres*; una política responde a *qué puedes hacer*."],
+      ["`arn:aws:iam::123456789012:user/cattcloud`", "`arn:aws:iam::123456789012:user/ana`"],
+      [" Las segundas aparecen de verdad en **B6**, cuando tengas un bucket que compartir.", " Las segundas aparecen cuando tienes un bucket que compartir."]
+    ],
+    "03_menor-privilegio.md": [
+      ["| Sección 6 |", "| — |"]
+    ],
+    "04_formas-de-entrar.md": [
+      ["El resumen del usuario ya te dice si tiene alguna:", "El resumen del usuario ya te dice si tiene alguna."],
+      ["*El resumen del usuario responde de un vistazo las tres preguntas de seguridad: si tiene MFA, si tiene claves de acceso, y de dónde le vienen sus permisos — la columna **Adjuntado a través de** distingue lo que llega por grupo de lo que está puesto directamente.*", "El resumen del usuario responde de un vistazo las tres preguntas de seguridad: si tiene MFA, si tiene claves de acceso, y de dónde le vienen sus permisos — la columna **Adjuntado a través de** distingue lo que llega por grupo de lo que está puesto directamente."],
+      [" — y de dónde salen es el tema de la Sección 5.", ", como las que entrega un **rol** a quien lo asume."],
+      ["Aquí va un rol → Sección 5 |", "Aquí va un rol |"],
+      [" El procedimiento completo, para los tres sistemas operativos, está en la guía de referencia: [[guia_cli-instalacion-configuracion|Instalación y configuración de la AWS CLI]].", ""],
+      ["empezó siendo un concepto en la Sección 1, se convirtió", "empezó siendo un concepto, se convirtió"],
+      ["Este es el mismo experimento de la Sección 2, pero desde la terminal. Vale la pena repetirlo aquí porque demuestra", "El mismo experimento se puede hacer en la consola, pero desde la terminal demuestra"],
+      ["Es la herramienta de descubrimiento de la Sección 3, en su formato más cómodo:", "Es la mejor pista para descubrir qué permiso falta, en su formato más cómodo:"],
+      ["el escenario de la factura sorpresa de **B2**, con alguien más al mando.", "una factura sorpresa, con alguien más al mando."],
+      ["— es lo que viene en la Sección 5.", "— es un **rol**."],
+      ["Ahí aparece un término que conviene fijar, porque es la bisagra de todo lo que viene después:", "Ahí aparece un término que conviene fijar:"]
+    ],
+    "05_roles.md": [
+      ["y explica por qué existe el campo `Principal` que quedó pendiente en la Sección 2:", "y explica para qué sirve el campo `Principal` de una política, el que dice a quién se aplica:"],
+      [" Cómo encuentra esas credenciales exactamente es tema de **B3b**.", ""],
+      [", y por eso la Sección 4 no sobra.", "."]
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "reemplazos": {
+    "01_que-es-la-nube.md": [
+      ["El desglose completo es tema de **B2**, pero conviene", "Conviene"]
+    ],
+    "02_modelos-servicio.md": [
+      [" Ubicarla con números es justo lo que hace **B5**.", ""],
+      [" De ahí sale la Sección 3.", ""],
+      ["Vamos a desmontarla ahora, aunque el estudio serio del tema es **B5**.", "Vamos a desmontarla ahora."],
+      ["que se estudian en B5 y que definen", "que definen"]
+    ],
+    "03_responsabilidad-compartida.md": [
+      [" El tema completo es de **B6**; por ahora alcanza con eso.", ""],
+      ["Aquí es donde la Sección 2 y esta se juntan: **son la misma tabla vista dos veces**. Donde antes preguntábamos *\"¿quién administra esta capa?\"*, ahora preguntamos *\"¿quién responde si esta capa falla?\"*. La respuesta es la misma persona.", "Cada modelo de servicio (IaaS, PaaS, SaaS) reparte las capas de una aplicación entre tú y el proveedor. Para cada capa, *\"¿quién la administra?\"* y *\"¿quién responde si falla?\"* tienen **la misma respuesta**: la misma persona."],
+      [" La primera de esas decisiones, la región, es la Sección 4.", " La primera de esas decisiones es la región donde guardas los datos."]
+    ],
+    "04_regiones-y-az.md": [
+      ["— el desglose por servicio de **B2** es donde se cazan.", "— el desglose del gasto por servicio es donde se cazan."],
+      [", que es **B7**. Aquí basta", ". Aquí basta"],
+      ["aunque marque cero. En **B2** se vuelve el centro |", "aunque marque cero |"],
+      [" La versión con recursos la comprobarás en **B4**.", ""]
+    ]
+  }
+}

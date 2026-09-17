@@ -3,7 +3,7 @@ tema: M2 — Tipos básicos e inferencia
 workspace: typescript
 seccion: 3
 titulo: "Cuándo anotar vs callarse"
-estado: en progreso
+estado: finalizada
 prev: 02_inferencia
 next: 04_arrays-y-tuplas
 ---
@@ -30,7 +30,7 @@ function aplicarDescuento(precio: number, porcentaje: number) {
 }
 ```
 
-Ya sabes el porqué: no hay valor del que deducir hasta que alguien llame a la función.
+La razón: no hay valor del que deducir hasta que alguien llame a la función.
 
 ### 2. Variables declaradas sin valor inicial
 
@@ -51,17 +51,19 @@ const items: string[] = []
 // ✅ ahora sí: es una lista de textos que empieza vacía
 ```
 
-⚠️ Pasa el mouse por encima del primer `items` para ver qué tipo le puso TypeScript. Es de los resultados que sorprenden, y depende de si es `const` o `let`.
+El primer `items` (sin anotar) queda con el tipo `any[]` — un array donde TypeScript deja de vigilar qué guardas adentro, el mismo agujero que dejaría cualquier otro `any`. La diferencia con el `let respuesta` del caso 2 es que aquí el vacío no es tan obvio: hay un valor delante (`[]`), así que parece que sí hubo algo de dónde inferir.
 
-El mismo caso con un objeto que arranca vacío o en `null`:
+El mismo caso con una variable que arranca en `null`:
 
 ```ts
-let usuarioActual = null
+let nombreUsuario = null
 // el valor inicial no describe lo que esta variable va a contener
 
-let usuarioActual: Usuario | null = null
-// ✅ ahora sí dice la verdad: a veces hay usuario, a veces no
+let nombreUsuario: string | null = null
+// ✅ ahora sí dice la verdad: a veces hay un nombre, a veces no
 ```
+
+> El `|` es un **tipo unión**: dice que el valor puede ser de cualquiera de los tipos que separa (aquí, `string` o `null`), y admite más de dos (`string | number | boolean`). Las uniones se presentan en la sección 6 de este módulo (Uniones: introducción); aquí solo se usan para anotar el caso "a veces hay valor, a veces no".
 
 > 🎯 **La regla de los tres:** hay que anotar **cuando TypeScript no tiene de dónde deducir**, o cuando lo que tiene delante **le miente**. En todo lo demás, la inferencia gana.
 
@@ -75,18 +77,18 @@ Aunque el retorno se infiera perfectamente, anotarlo cambia **dónde aparece el 
 
 ```ts
 // Sin anotar el retorno
-function resumenPedido(items: Item[]) {
-  return items.length          // ups: querías devolver el resumen, no un conteo
+function resumenPedido(precios: number[]) {
+  return precios.length        // ups: querías devolver el resumen, no un conteo
 }
 
-const resumen = resumenPedido(pedido)
+const resumen = resumenPedido(preciosPedido)
 resumen.total                  // ❌ el error salta AQUÍ, en quien la usa
 ```
 
 ```ts
 // Anotando el retorno
-function resumenPedido(items: Item[]): { total: number; cantidad: number } {
-  return items.length          // ❌ el error salta AQUÍ, dentro de la función
+function resumenPedido(precios: number[]): { total: number; cantidad: number } {
+  return precios.length        // ❌ el error salta AQUÍ, dentro de la función
 }
 ```
 
@@ -97,7 +99,7 @@ function resumenPedido(items: Item[]): { total: number; cantidad: number } {
 Cuando algo cruza de un archivo a otro, la anotación deja escrito el contrato:
 
 ```ts
-export const configPorDefecto: ConfigApp = {
+export const configPorDefecto: { reintentos: number; timeoutMs: number } = {
   reintentos: 3,
   timeoutMs: 5000,
 }

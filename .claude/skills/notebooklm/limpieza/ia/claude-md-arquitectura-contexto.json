@@ -1,0 +1,21 @@
+{
+  "reemplazos": {
+    "01_dolor-que-resuelve.md": [
+      [" Todo lo que veremos después son refinamientos sobre cómo darle al empleado amnésico la mejor hoja informativa posible.", ""]
+    ],
+    "02_que-es-realmente.md": [
+      [" (lo veremos en la siguiente sección)", ""],
+      [" (las veremos más adelante)", ""]
+    ],
+    "03_mecanica-system-reminder.md": [
+      [" (lo veremos más adelante)", ""],
+      [" que también veremos más adelante", ""]
+    ],
+    "04_cuando-se-carga.md": [
+      ["En la sección 1 dijimos que los modelos son funciones sin estado y que cada llamada es independiente.", "Los modelos son funciones sin estado: cada llamada es independiente."]
+    ],
+    "06_carga-perezosa.md": [
+      ["que vimos en la sección anterior resuelven", "de CLAUDE.md resuelven"]
+    ]
+  }
+}

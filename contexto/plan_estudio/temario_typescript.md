@@ -3,7 +3,7 @@ tipo: temario
 tema: typescript
 nivel: de cero a "leo cualquier librería sin bloquearme"
 modulos: 9 + proyecto
-tematicas: 46
+tematicas: 47
 estado: EN PROGRESO
 ---
 
@@ -70,7 +70,7 @@ estado: EN PROGRESO
 | # | Módulo | Temáticas | Ritmo | Estado | Recursos |
 |---|--------|:---------:|:-----:|--------|----------|
 | M1 | Por qué TypeScript y cómo corre | 5 | 🐢 | 🔄 | — |
-| M2 | Tipos básicos e inferencia | 6 | 🏃 | 🔄 | — |
+| M2 | Tipos básicos e inferencia | 7 | 🏃 | ✅ | — |
 | M3 | Objetos y tipado estructural | 6 | 🏃 | ⬜ | — |
 | M4 | Funciones | 4 | 🏃 | ⬜ | — |
 | M5 | Uniones, narrowing y discriminadas | 5 | 🐢 | ⬜ | — |
@@ -152,7 +152,10 @@ Enums (se mencionan y se explica por qué se usan poco hoy). Símbolos y BigInt.
 | 2.3 | Cuándo anotar vs callarse | ¿Por qué anotar de más es tan malo como anotar de menos? |
 | 2.4 | Arrays y tuplas | ¿Cuál es la diferencia real y cuándo usas una tupla? |
 | 2.5 | `any`, `unknown`, `never`, `void` | ¿Qué significa cada uno y por qué `any` desactiva el compilador? |
-| 2.6 | Literal types y `as const` | ¿Qué hace `as const` y por qué cambia el tipo inferido? |
+| 2.6 | Uniones: introducción | ¿Cómo se lee `"a" \| "b" \| "c"` y cuántos de esos valores guarda la variable? |
+| 2.7 | Literal types y `as const` | ¿Qué hace `as const` y por qué cambia el tipo inferido? |
+
+> 🔀 **Cambio de orden (2026-09-16):** la introducción a las uniones sube de M5 a M2 (2.6). Las secciones 2.3 a 2.5 ya usaban `|` con glosas de una línea, y literal types (2.7) y el quiz de M2 lo necesitan como base. Leer y escribir una unión es sintaxis simple (🏃); lo que justifica el 🐢 de M5 es operar con ella y el narrowing, que se quedan allá.
 
 ### 🧪 Micro-ejercicio
 
@@ -301,7 +304,7 @@ Cuando un valor puede ser varias cosas distintas, ¿cómo hago que TypeScript se
 
 | # | Temática | Pregunta que debes poder responder |
 |---|----------|-------------------------------------|
-| 5.1 | Uniones | ¿Qué puedes hacer con `string \| number` antes de distinguir cuál es? |
+| 5.1 | Operar con uniones *(la introducción a `\|` está en 2.6)* | ¿Qué puedes hacer con `string \| number` antes de distinguir cuál es? |
 | 5.2 | **Narrowing** | ¿Cómo sabe TS que dentro del `if` ya es `string`? |
 | 5.3 | Type guards propios (`x is Y`) | ¿Cómo le enseñas a TS a reconocer un tipo tuyo? |
 | 5.4 | **Uniones discriminadas** | ¿Qué es el campo discriminante y por qué lo cambia todo? |

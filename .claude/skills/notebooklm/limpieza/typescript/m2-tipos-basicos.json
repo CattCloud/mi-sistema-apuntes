@@ -1,0 +1,16 @@
+{
+  "reemplazos": {
+    "01_primitivos-y-anotacion.md": [
+      ["El M1 fue sobre la maquinaria: qué hace TypeScript, cuándo lo hace y qué queda al ejecutar. ", ""],
+      ["La razón la verás en la sección siguiente: TypeScript", "La razón: TypeScript"],
+      ["Es coherente con todo el M1: la anotación", "La anotación"],
+      ["Saber cuáles de tus anotaciones sobran — y qué tipo exactamente deduce TypeScript cuando te callas, que a veces no es el que esperas — es lo que viene.", ""]
+    ],
+    "02_inferencia.md": [
+      ["`as const` —, y es la sección 6.", "`as const`."],
+      ["en el **M5**, donde se combinan", "cuando se combinan"],
+      ["Es el `noImplicitAny` de la sección 5 del M1 haciendo su trabajo.", "Es la opción `noImplicitAny` de `tsconfig.json` haciendo su trabajo."],
+      ["Y esa pregunta tiene respuestas concretas — hay lugares donde anotar es obligatorio, otros donde es útil aunque no obligue, y otros donde estorba. Eso es lo que viene.", ""]
+    ]
+  }
+}

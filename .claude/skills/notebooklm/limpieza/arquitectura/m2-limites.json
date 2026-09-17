@@ -1,0 +1,22 @@
+{
+  "reemplazos": {
+    "01_modulo-componente-servicio.md": [
+      ["Es lo que vimos arriba:", "Es el ejemplo de arriba:"],
+      ["— y como vimos en el M1, **flexibilidad", "— y **flexibilidad"],
+      ["Eso depende de qué hace que dos cosas **merezcan vivir juntas** — y eso tiene nombre propio. Es lo que viene.", ""]
+    ],
+    "02_cohesion.md": [
+      ["Y esto conecta con lo de la sección anterior: **un módulo que persigue tres objetivos no puede tener un contrato estable**. Cada vez que cambie uno de los tres, la puerta cambia", "Y hay una consecuencia sobre el **contrato** (lo que un módulo expone hacia afuera): **un módulo que persigue tres objetivos no puede tener un contrato estable**. Cada vez que cambie uno de los tres, el contrato cambia"],
+      [" — es la Sección 4.", "."],
+      ["crea un acoplamiento que no existía — y ese es el tema de la sección siguiente.", "crea un **acoplamiento** que no existía: un cambio en uno obliga a tocar el otro."],
+      ["Ahora bien, la cohesión mira **hacia adentro** de un módulo: qué tan bien pertenecen juntas sus partes. Falta la otra mitad del par — qué tan atado está ese módulo con **los demás**. Eso es lo que viene.", ""]
+    ],
+    "03_acoplamiento.md": [
+      ["porque es el malentendido natural después de leer la sección anterior.", "porque es un malentendido natural: si el acoplamiento cuesta, parecería que lo ideal es tener cero."],
+      ["Es el mismo problema de la sección 1: `tabla.ts`", "El problema es que `tabla.ts`"],
+      ["(Es la prueba de la sección anterior: mira el historial de cambios.)", "(La prueba: mira el historial de cambios.)"],
+      ["Que exista una dirección correcta y una incorrecta para cada flecha es el tema del módulo siguiente (M3).", ""],
+      ["Ahora bien, todo esto describe **qué** buscar en un corte, pero no **por dónde** trazarlo cuando tienes el proyecto en blanco. Y ahí hay dos escuelas que producen resultados opuestos. Eso es lo que viene.", ""]
+    ]
+  }
+}

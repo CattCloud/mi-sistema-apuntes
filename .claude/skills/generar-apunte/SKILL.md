@@ -34,8 +34,8 @@ Reglas que rigen: R1-R5, R8, R10 (`AGENTS.md`) y A1-A12 (`apuntes/AGENTS.md`). E
 3. En el índice, la sección pasa a 🔄. Avisar al usuario **sin re-pegar el contenido**, con el bloque "⚠️ Para verificar" solo si hay datos dudosos.
 4. El usuario lee y ajusta en vivo: **releer el `.md` antes de volver a tocarlo** (R3).
 5. Aprobada: `estado: finalizada`, ✅ en el índice, `prev`/`next` de la sección y de sus vecinas.
-6. Delegar la revisión al revisor (`revisor-tesla`) y corregir lo que confirme.
-7. Siguiente sección. **Nunca varias de golpe.** Si el usuario corrige lo mismo dos veces, aplicarlo a las secciones siguientes y proponer registrarlo con `nueva-regla`.
+6. Delegar la revisión al revisor (`revisor-tesla`) y corregir lo que confirme, reescribiendo el fragmento completo (R5).
+7. Preguntar si seguimos con la sección siguiente y **esperar el pedido explícito** (R4). **Nunca varias de golpe.** Si el usuario corrige lo mismo dos veces, aplicarlo a las secciones siguientes y proponer registrarlo con `nueva-regla`.
 
 ## Durante: preguntas y adiciones (apunte abierto, A11)
 

@@ -39,7 +39,7 @@ let   b = 5    // tipo: number
 
 **No es un error de lectura.** El tipo de `a` es literalmente `5` — no `number`, sino el número cinco y nada más. Se llama **literal type**: un tipo que contiene un único valor posible.
 
-¿Por qué la diferencia? Por una razón que ya conoces de JavaScript:
+¿Por qué la diferencia? Por una regla de JavaScript sobre `const` y `let`:
 
 > 🎯 **Idea clave:** una `const` **nunca se va a reasignar**, así que TypeScript sabe que ese valor será exactamente `5` durante toda la vida del programa. Puede permitirse el tipo más preciso posible. Un `let` sí puede cambiar, así que TypeScript lo **ensancha** al tipo general — `number` — para dejarte espacio.
 
@@ -70,7 +70,7 @@ usuario.rol = "otro"         // ✅ esto JavaScript sí lo permite
 
 Como la propiedad puede cambiar, TypeScript la ensancha a `string`. La `const` protegía la variable, no lo que hay adentro.
 
-> 💡 **Tip:** esa distinción explica una clase entera de errores del tipo *"esperaba tal valor exacto y recibió `string`"*. Cuando aparezca, la pregunta es: **¿el valor está en una `const` directa, o dentro de un objeto?** Hay una forma de decirle a TypeScript que congele también el interior — `as const` —, y es la sección 6.
+> 💡 **Tip:** esa distinción explica una clase entera de errores del tipo *"esperaba tal valor exacto y recibió `string`"*. Cuando aparezca, la pregunta es: **¿el valor está en una `const` directa, o dentro de un objeto?** Hay una forma de pedirle a TypeScript que conserve el tipo exacto también en el interior del objeto, `as const`, y se estudia en la sección 7 (Literal types y `as const`).
 
 ### ¿Y el literal type cambia algo de cómo funciona el `const`?
 
@@ -88,7 +88,7 @@ Y hay algo que conviene aclarar aquí, porque es la confusión natural al ver un
 >
 > Son dos mundos separados que comparten la escritura. Cuando el compilador compara, siempre está en el mundo de los tipos: nunca mira qué guarda la variable al ejecutar, porque para entonces ya no existe nada suyo ahí.
 
-**¿Para qué sirve entonces que el tipo sea `5` y no `number`?** Para que TypeScript pueda exigir un valor exacto en vez de "cualquier número". Eso se vuelve útil de verdad en el **M5**, donde se combinan varios literal types para decir *"esto solo puede ser uno de estos"*. Por ahora basta con que sepas que la precisión extra está ahí y no se pierde.
+**¿Para qué sirve entonces que el tipo sea `5` y no `number`?** Para que TypeScript pueda exigir un valor exacto en vez de "cualquier número". Eso se vuelve útil de verdad al combinar varios literal types para decir *"esto solo puede ser uno de estos"*, que es lo que hacen las secciones 6 (Uniones: introducción) y 7 (Literal types y `as const`) de este módulo. Por ahora basta con que sepas que la precisión extra está ahí y no se pierde.
 
 ## Dónde infiere y dónde no
 

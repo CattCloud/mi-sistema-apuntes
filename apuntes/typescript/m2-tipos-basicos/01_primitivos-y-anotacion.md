@@ -10,11 +10,11 @@ next: 02_inferencia
 
 # 🟦 Primitivos y anotación
 
-El M1 fue sobre la maquinaria: qué hace TypeScript, cuándo lo hace y qué queda al ejecutar. Aquí empieza el lenguaje, y lo primero es la pieza más pequeña de todas — cómo se dice *"esto es un número"*.
-
 > **Una anotación de tipo son los dos puntos y el tipo que van después del nombre: `: number`.**
 >
 > Es prácticamente lo único que TypeScript le agrega a la sintaxis de JavaScript. Todo lo demás que escribas en un `.ts` es JavaScript de siempre.
+
+El M1 fue sobre la maquinaria: qué hace TypeScript, cuándo lo hace y qué queda al ejecutar. Aquí empieza el lenguaje, y lo primero es la pieza más pequeña de todas: cómo se escribe esa anotación para el tipo más simple, *"esto es un número"*.
 
 **Sintaxis:**
 
@@ -59,7 +59,8 @@ Los primitivos son los **ladrillos básicos**, no el inventario completo. Despu�
 | Un primitivo | `string`, `number`, `boolean` | Esta sección |
 | Una **lista** de algo | `string[]` | Sección 4 |
 | Los cuatro **especiales** | `any`, `unknown`, `never`, `void` | Sección 5 |
-| Un **valor exacto** | `"oscuro"`, `5` | Sección 6 |
+| Uno **entre varios tipos** | `string \| null` | Sección 6 |
+| Un **valor exacto** | `"oscuro"`, `5` | Sección 7 |
 | La **forma de un objeto** | `{ nombre: string }` | M3 |
 
 Sí, leíste bien la cuarta fila: **un valor puede ser un tipo**. `let tema: "oscuro"` es válido, y significa *"esta variable solo puede contener ese texto exacto"*. Es raro al principio y tiene su propia sección — por ahora quédate con que existe.

@@ -16,9 +16,9 @@ El usuario es Erick, desarrollador full stack e instructor, en camino a AI Produ
 
 **R3 · Una sección a la vez, escrita en el `.md`.** Generación y síntesis sección por sección (P3⇄P4), nunca varias de golpe. El `.md` es la fuente de verdad y el usuario lo ajusta en vivo: releerlo antes de volver a tocarlo.
 
-**R4 · Aprobar antes de avanzar.** El tema y alcance (P1) y el esqueleto (P2) necesitan confirmación explícita. Todo cambio estructural del sistema (carpetas, reglas, temarios, flujo) se presenta antes de ejecutarse.
+**R4 · Aprobar antes de avanzar.** El tema y alcance (P1) y el esqueleto (P2) necesitan confirmación explícita. Todo cambio estructural del sistema (carpetas, reglas, temarios, flujo) se presenta antes de ejecutarse. Aprobar un paso no autoriza el siguiente: una sección, un cierre o un repaso empiezan solo cuando el usuario lo pide, y un "claro", "listo" o "dale" responde solo a la pregunta que se hizo. *(Falló: se aprobó la sección 5 de M2 y se escribió la 6 sin pedido.)*
 
-**R5 · Específico, no ambiguo.** En todo texto que el usuario lee: ningún término antes de definirse, ningún referente suelto, ninguna definición que dependa de otro documento. Cuando el usuario dice "no entiendo esto", es un defecto de redacción que se corrige en el apunte, no solo en el chat. Controles completos: `apuntes/AGENTS.md` (A6).
+**R5 · Específico, no ambiguo.** En todo texto que el usuario lee: ningún término antes de definirse, ningún referente suelto, ninguna definición que dependa de otro documento. Cuando el usuario dice "no entiendo esto", es un defecto de redacción que se corrige en el apunte, no solo en el chat. Un error no se corrige agregando frases encima, porque eso construye sobre el error: se reescribe desde cero el fragmento que lo contiene, junto con los lugares que lo repiten (tabla, mitos, "Lo que debiste llevarte"); aplica también a lo que confirma el revisor. *(Falló: en M2, `never` se explicó como "la función no termina" y la primera propuesta fue cambiar frases sueltas.)* Controles completos: `apuntes/AGENTS.md` (A6).
 
 **R6 · Instructor, no autocompletado.** En la práctica nunca se entrega el código: historia de usuario con criterios de aceptación, pistas escalonadas solo a petición y revisión socrática.
 

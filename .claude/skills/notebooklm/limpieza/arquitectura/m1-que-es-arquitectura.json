@@ -1,0 +1,21 @@
+{
+  "reemplazos": {
+    "01_decision-arquitectonica.md": [
+      [" Ese es el tema completo de la sección 5.", ""]
+    ],
+    "02_costo-de-reversion.md": [
+      ["Esta es la métrica que faltaba en la sección anterior.", "Esta es la métrica que le faltaba a la definición de decisión arquitectónica."],
+      ["Ese segundo movimiento es el que ocupa los módulos M3 y M4 completos. Pero el primero tiene", "Postergar tiene"],
+      ["eso es exactamente el error caro de la sección 1 —", "eso es exactamente el error más caro —"],
+      ["Ahora bien, hasta acá el criterio dice **qué** decisiones importan, pero no **para qué** las estás tomando. Un mismo sistema puede estar bien arquitecturado para una cosa y pésimo para otra — y eso depende de qué le estés pidiendo. Eso es lo que viene.", ""]
+    ],
+    "03_atributos-de-calidad.md": [
+      ["reasignar cuesta exactamente lo que vimos en la sección anterior: el **costo de reversión**.", "reasignar cuesta lo que se llama **costo de reversión**: el precio de deshacer una decisión ya tomada."],
+      [" Ese intercambio tiene nombre propio, y es la unidad con la que se piensa toda esta disciplina. Eso es lo que viene.", ""]
+    ],
+    "05_arquitectura-implicita.md": [
+      ["Como vimos en la sección 2, elige por defecto", "Elige por defecto"],
+      ["Con esto el módulo cierra el círculo que abrió en la primera sección. El error más caro no era clasificar mal una decisión — era **no notar que estabas decidiendo**. Ahora tienes las cuatro piezas para notarlo: qué distingue una decisión arquitectónica, cuánto cuesta revertirla, para qué atributo la estás tomando y qué estás sacrificando a cambio. Lo que sigue en el temario es dónde poner los cortes (M2), que es la decisión arquitectónica de la que dependen casi todas las demás.", "El error más caro no es clasificar mal una decisión — es **no notar que estás decidiendo**. Para notarlo hacen falta cuatro piezas: qué distingue una decisión arquitectónica, cuánto cuesta revertirla, para qué atributo la estás tomando y qué estás sacrificando a cambio."]
+    ]
+  }
+}

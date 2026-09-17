@@ -1,0 +1,39 @@
+{
+  "reemplazos": {
+    "01_que-problema-resuelve.md": [
+      [", que es el tema de la sección siguiente.", "."],
+      [", y es un tema completo del M2.", "."],
+      [" Ambas cosas se estudian a fondo en el M3.", ""],
+      [" Qué hacer a partir de ese punto es el M8, el módulo más profesional del temario.", " A partir de ese punto, la única protección es comprobar el dato mientras el programa corre."],
+      ["Ahora bien, si toda esta verificación ocurre **antes** de ejecutar y el navegador solo entiende JavaScript, queda una pregunta obvia: ¿qué pasa con los tipos cuando el código finalmente corre? La respuesta sorprende a casi todo el mundo, y es lo que viene.", ""]
+    ],
+    "02_los-tipos-se-borran.md": [
+      ["En la sección anterior quedó pendiente la tercera parte de la analogía del corrector ortográfico: **las marcas rojas no salen impresas**. Con TypeScript pasa exactamente eso, y es la lección entera de este módulo.", "Piensa en el corrector ortográfico de un procesador de texto: subraya en rojo lo mal escrito mientras escribes, pero **las marcas rojas no salen impresas**. Con TypeScript pasa exactamente eso."],
+      ["En la sección 1 escribimos la forma de un objeto suelta, dentro de la propia función:", "La forma de un objeto se puede escribir suelta, dentro de la propia función:"],
+      [" La diferencia entre `interface` y `type`, y cuándo usar cada una, es una temática completa del **M3**. Que un tipo pueda ser *\"esto o esto otro\"* (`\"admin\" | \"cliente\"`) es el **M5**.", ""],
+      [" Es el tema completo de la sección siguiente.", ""],
+      ["Es la contraparte exacta de lo que vimos en la sección 1: `const u: Usuario = await res.json()` **afirma** en vez de comprobar.", "Una línea como `const u: Usuario = await res.json()` **afirma** en vez de comprobar: le pone la etiqueta `Usuario` a lo que llegue, sin revisarlo."]
+    ],
+    "03_compile-time-vs-runtime.md": [
+      ["Esa distinción es la base de dos módulos completos: enseñarle a TypeScript a deducir el tipo a partir de estas comprobaciones es el **M5**, y validar de verdad lo que llega de afuera es el **M8**.", ""],
+      ["Como vimos en la sección 1: `precio - cantidad` compila perfecto.", "Por ejemplo, `return precio - cantidad` cuando debía ser `precio * cantidad` compila perfecto."],
+      ["Ahora bien, hemos hablado todo el tiempo de \"cuando corres `tsc`\" sin haberlo corrido nunca. Qué hace exactamente ese comando, qué produce y cómo se usa en el día a día es lo que viene.", ""]
+    ],
+    "04_tsc-y-el-flujo.md": [
+      ["Es la herramienta que dibuja la frontera de la sección anterior.", "Es la herramienta que dibuja la frontera entre compile time y runtime."],
+      ["Es lo que vimos en la sección 2: al `.js` no llega ni rastro de ellos.", "Al `.js` no llega ni rastro de ellos."],
+      [", que es toda la sección siguiente.", "."],
+      ["Esto ya lo adelantamos en la sección 2 y aquí se ve en acción:", "Así se ve en acción:"],
+      ["Pero se configura, y la configuración es el tema de la sección siguiente.", "Pero eso se configura en el `tsconfig.json`, con la opción `noEmitOnError`."],
+      ["Con esto ya tienes los comandos que necesita el **micro-ejercicio del módulo** — el que cierra M1, con su archivo de partida listo para copiar, en el `00_indice.md`.", ""],
+      ["y eso vive en un archivo de configuración. Eso es lo que viene.", "y eso vive en un archivo de configuración: el `tsconfig.json`."]
+    ],
+    "05_tsconfig-y-strict.md": [
+      ["En la sección anterior compilaste archivo por archivo. Eso funciona", "Compilar archivo por archivo, con `tsc archivo.ts`, funciona"],
+      ["Esa última es la que quedó pendiente de la sección anterior: recuerda que `tsc` por defecto", "Esa última importa porque `tsc` por defecto"],
+      [" — el que apareció en la sección 2 |", " |"],
+      [", y es el M5 completo — por ahora", " — por ahora"],
+      ["Con esto cierra el módulo. Ya sabes qué problema resuelve TypeScript y cuál no, que los tipos se borran, que existen dos momentos con reglas distintas, qué hace `tsc` y cómo se configura. Lo que falta no se lee: **el micro-ejercicio y el quiz están en el `00_indice.md`**, y son los que cierran M1 de verdad.", ""]
+    ]
+  }
+}

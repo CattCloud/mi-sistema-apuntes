@@ -14,3 +14,5 @@
 | 2026-09-15 | El repo es público: ni ID de cuenta, alias, usuarios IAM ni estado de MFA en archivos versionados; los ejemplos usan `123456789012` y los datos de acceso van a `entorno_aws.local.md` | `AGENTS.md` R9 · `.claude/hooks/reglas.json` |
 | 2026-09-15 | "Lo que debiste llevarte" admite de 3 a 7 ideas (antes 3-5; 6-7 es la práctica real y es correcta) | `apuntes/AGENTS.md` A7 |
 | 2026-09-15 | El guardián omite por ahora `apuntes/ia/`, escrito antes de las reglas actuales | `.claude/hooks/reglas.json` (`omitir_por_ahora`) |
+| 2026-09-16 | Aprobar un paso no autoriza el siguiente: sección, cierre o repaso empiezan solo a pedido explícito | `AGENTS.md` R4 · `generar-apunte` paso 7 |
+| 2026-09-16 | Un error en el apunte no se parchea: se reescribe el fragmento completo y los lugares que lo repiten | `AGENTS.md` R5 · `generar-apunte` paso 6 |

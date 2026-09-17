@@ -9,8 +9,8 @@
 | # | Módulo (= apunte) | Temáticas | Ritmo | Estado | Carpeta |
 |---|-------------------|:---------:|:-----:|--------|---------|
 | M1 | Por qué TypeScript y cómo corre | 5 | 🐢 | 📝 Secciones ✅ — falta ejercicio | `m1-por-que-typescript/` |
-| M2 | Tipos básicos e inferencia | 6 | 🏃 | 🔄 EN PROGRESO | `m2-tipos-basicos/` |
-| M3 | Objetos y tipado estructural | 6 | 🏃 | ⬜ | — |
+| M2 | Tipos básicos e inferencia | 7 | 🏃 | ✅ FINALIZADO — cierre parcial, ver `reforzar:` | `m2-tipos-basicos/` |
+| M3 | Objetos y tipado estructural | 6 | 🏃 | 🔄 EN PROGRESO | `m3-objetos-tipado-estructural/` |
 | M4 | Funciones | 4 | 🏃 | ⬜ | — |
 | M5 | Uniones, narrowing y discriminadas | 5 | 🐢 | ⬜ | — |
 | M6 | Genéricos | 5 | 🐢 | ⬜ | — |
