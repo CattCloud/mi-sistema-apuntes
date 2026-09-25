@@ -7,7 +7,7 @@ modulo: B1
 temario: contexto/plan_estudio/temario_cloud_developers.md
 repaso:
   ultimo: null                # aún sin sesión de repaso; generado el 2026-08-22
-  proximo: 2026-08-25
+  proximo: null               # congelado el 2026-09-18: ruta pospuesta. Al retomarla se reprograma
   nivel: null
   reforzar:
     - PaaS no elimina la seguridad — dependencias, secretos y accesos siguen siendo tuyos (fila 🟡)

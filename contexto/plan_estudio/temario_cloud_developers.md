@@ -5,12 +5,14 @@ nivel: 2 — dev que opera lo suyo
 modulos: 9
 tematicas: 47
 video_filtrado: ~13 h (de 39h33 del curso)
-estado: EN PROGRESO
+estado: POSPUESTO            # sin fecha de retomada, decidido el 2026-09-18
 ---
 
 # ☁️ Temario — Cloud for Developers
 
 > Nivel 2: **levantar y operar lo tuyo**. Ni "hago push a Vercel y rezo", ni diseñar VPCs para una empresa.
+
+> ⏸️ **Ruta pospuesta sin fecha (2026-09-18).** B1–B3 quedaron finalizados, B4 pausado a mitad, y los repasos de los tres finalizados están congelados hasta que la ruta se retome. El estado real de cada módulo sigue estando en su `00_indice.md` (R1); esta línea solo dice que la ruta no está activa.
 
 ## Qué es y qué no es
 

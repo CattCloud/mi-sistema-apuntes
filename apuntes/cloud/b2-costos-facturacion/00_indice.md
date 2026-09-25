@@ -7,7 +7,7 @@ modulo: B2
 temario: contexto/plan_estudio/temario_cloud_developers.md
 repaso:
   ultimo: null                # aún sin sesión de repaso; generado el 2026-08-22
-  proximo: 2026-08-26
+  proximo: null               # congelado el 2026-09-18: ruta pospuesta. Al retomarla se reprograma
   nivel: null
   reforzar:
     - los costos fijos no escalan con el volumen: el que domina hoy puede no dominar mañana

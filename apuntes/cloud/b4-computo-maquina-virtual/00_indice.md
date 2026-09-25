@@ -1,7 +1,7 @@
 ---
 tema: B4 — Cómputo: la máquina virtual
 workspace: cloud
-estado: EN PROGRESO
+estado: PAUSADO
 arquetipo: Constructor Teórico + Sintaxis Coder
 modulo: B4
 temario: contexto/plan_estudio/temario_cloud_developers.md
@@ -15,7 +15,7 @@ notebooklm: pendiente
 
 # ☁️ B4 — Cómputo: la máquina virtual
 
-> **Qué estás alquilando exactamente cuando levantas un servidor, qué decides al hacerlo, y qué sigue costando cuando lo apagas.** Estado: 🔄 EN PROGRESO · 5 secciones.
+> **Qué estás alquilando exactamente cuando levantas un servidor, qué decides al hacerlo, y qué sigue costando cuando lo apagas.** Estado: ⏸️ PAUSADO · 2 de 5 secciones terminadas.
 
 ## Alcance
 
@@ -57,6 +57,14 @@ Excluye: tipos de instancia a fondo · opciones de compra (reservadas, spot, sav
 ## Cierre
 
 - [[99_cierre|Cierre del módulo]] — ⬜ pendiente *(se escribe al terminar las secciones)*
+
+## Siguiente paso al retomar
+
+Pausado el 2026-09-18 porque la ruta Cloud quedó pospuesta sin fecha (ver el temario). Pendientes, en orden:
+
+1. Terminar la **Sección 3 — Lanzar una instancia**, que quedó en curso.
+2. Ver la clase *Demostración de roles de instancias EC2* (6 min, S5 del curso DVA) antes de escribir la Sección 5: es su fuente.
+3. Secciones 4 y 5, y recién entonces el cierre.
 
 ## Fuentes
 

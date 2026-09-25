@@ -7,7 +7,7 @@ modulo: B3
 temario: contexto/plan_estudio/temario_cloud_developers.md
 repaso:
   ultimo: null                # generado entre el 2026-08-25 y el 2026-09-03
-  proximo: 2026-09-07
+  proximo: null               # congelado el 2026-09-18: ruta pospuesta. Al retomarla se reprograma
   nivel: null
   reforzar:
     - un rol lleva DOS políticas: la de confianza (quién lo asume) y la de permisos (qué puede)
