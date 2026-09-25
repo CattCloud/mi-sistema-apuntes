@@ -2,7 +2,7 @@
 tipo: temario
 tema: typescript
 nivel: de cero a "leo cualquier librería sin bloquearme"
-modulos: 9 + proyecto
+modulos: 9 en 2 bloques, un proyecto por bloque
 tematicas: 47
 estado: EN PROGRESO
 ---
@@ -38,6 +38,8 @@ estado: EN PROGRESO
 
 **Ciclo por módulo:** generar el apunte sección por sección (P3⇄P4) en `apuntes/typescript/[modulo]/` → micro-ejercicio + quiz → cerrar.
 
+**Ciclo por bloque:** cerrados todos los módulos del bloque → se construye **su proyecto** (skill `practicar`) → recién entonces empieza el bloque siguiente, o se salta a otra ruta y se vuelve después. Ver `contexto/plan_estudio/AGENTS.md` (T7).
+
 **Material externo: opcional y de apoyo.** Videos o docs se anotan en `📚 Recursos` **solo si hicieron falta**. No hay curso que seguir.
 
 **Ritmo, no omisión.** Buena parte de TS es *JavaScript que ya enseñas + una capa que lo describe*. Ahí avanzas rápido. Los módulos marcados 🐢 son los que no tienen análogo en JS: ahí se frena.
@@ -67,21 +69,34 @@ estado: EN PROGRESO
 
 ## 📊 Índice
 
+### Bloque 1 — Describir datos (M1–M5)
+
+> **Qué sabes hacer al terminarlo:** darle forma a datos que tú escribes y distinguir sus casos uno por uno. Cierra en **PB1**.
+
 | # | Módulo | Temáticas | Ritmo | Estado | Recursos |
 |---|--------|:---------:|:-----:|--------|----------|
 | M1 | Por qué TypeScript y cómo corre | 5 | 🐢 | 🔄 | — |
 | M2 | Tipos básicos e inferencia | 7 | 🏃 | ✅ | — |
-| M3 | Objetos y tipado estructural | 6 | 🏃 | ⬜ | — |
+| M3 | Objetos y tipado estructural | 6 | 🏃 | ✅ | — |
 | M4 | Funciones | 4 | 🏃 | ⬜ | — |
 | M5 | Uniones, narrowing y discriminadas | 5 | 🐢 | ⬜ | — |
+| **PB1** | **Proyecto — Aventura de texto tipada** | — | — | ⬜ | — |
+
+### Bloque 2 — Abstraer y validar la frontera (M6–M9)
+
+> **Qué sabes hacer al terminarlo:** escribir código que sirve para cualquier tipo, y confiar en datos que no controlas. Cierra en **MF**.
+
+| # | Módulo | Temáticas | Ritmo | Estado | Recursos |
+|---|--------|:---------:|:-----:|--------|----------|
 | M6 | Genéricos | 5 | 🐢 | ⬜ | — |
 | M7 | Utility types | 5 | 🏃 | ⬜ | — |
 | M8 | La frontera: `unknown` y validación | 5 | 🐢 | ⬜ | — |
 | M9 | Librerías, `.d.ts` y async | 5 | 🏃 | ⬜ | — |
-| **MF** | **Proyecto integrador** | — | — | ⬜ | — |
+| **MF** | **Proyecto integrador — Cliente tipado de la API de Claude** | — | — | ⬜ | — |
 
 > **Ritmo:** 🏃 rápido (es JS con tipos) · 🐢 despacio (salto conceptual sin análogo en JS)
 > **Orden:** secuencial hasta M6. M7–M9 se pueden reordenar por necesidad.
+> **Bloques:** el corte cae en M5 porque es el primer punto donde ya se puede construir algo que funcione. Después de PB1 se puede saltar a otra ruta y volver; dentro del bloque, el orden no se altera (T7).
 
 ---
 
@@ -281,6 +296,18 @@ Clases y modificadores de acceso (`private`, `protected`) — se ven de pasada; 
 > **1.** ¿Qué significa este tipo? → `(cb: (e: Error) => void) => Promise<string>`
 > **2.** ¿Por qué `() => void` acepta una función que sí devuelve algo?
 > **3.** ¿Cuál es el tipo inferido de retorno de `(x: number) => x > 3`?
+> **4.** De estas tres, ¿cuáles compilan? En las que sí, ¿qué tipo tiene `titulo` dentro de la función?
+> ```ts
+> function a(nombre: string, titulo?: string = "x") {}
+> function b(nombre: string, titulo = "x") {}
+> function c(titulo?: string, nombre: string) {}
+> ```
+> **5.** Dada esta función, ¿qué devuelve `buscar("a", 1)`, y por qué no se puede llamar `buscar(true)`?
+> ```ts
+> function buscar(valor: string): string[]
+> function buscar(valor: string, limite: number): string
+> function buscar(valor: string | boolean, limite?: number): string[] | string { /* … */ }
+> ```
 
 ### 📚 Recursos
 
@@ -321,7 +348,7 @@ Cuando un valor puede ser varias cosas distintas, ¿cómo hago que TypeScript se
 > ```
 > Escribe un `switch` que maneje los tres. Ahora **borra un caso** y agrega el chequeo de exhaustividad con `never`. El compilador debe gritarte.
 >
-> *(Esto es literalmente el corazón del proyecto integrador.)*
+> *(Esto es literalmente el corazón de **PB1**, el proyecto con el que cierra este bloque.)*
 
 ### ❓ Quiz de lectura
 
@@ -514,41 +541,104 @@ Publicar tus propios tipos en npm y configuración de `declaration` para librer�
 
 ---
 
-## MF — Proyecto integrador
+## PB1 — Proyecto del bloque 1: aventura de texto tipada
 
-> Donde todo lo anterior se vuelve necesario a la vez. No es un ejercicio decorado: sin estos tipos, el programa no funciona.
+> El primer punto del temario donde ya se puede construir algo que funcione **y que además se juega**. Los tipos no decoran: son lo que impide que el juego quede inconsistente.
 
 ### 🎯 Qué se construye
 
-Un **cliente tipado para la API de Claude**, en Node + TypeScript, **sin frameworks**. Sin UI, sin base de datos. Corre en terminal.
+Un juego de aventura de texto en Node + TypeScript, en terminal: un mapa de habitaciones conectadas, objetos que se recogen, salidas cerradas que se abren con lo que llevas, y un final al que se puede llegar.
 
 ```bash
 $ npm start
-> ¿Qué clima hace en Lima?
-
-🔧 Ejecutando tool: obtener_clima({ ciudad: "Lima" })
-✅ En Lima hay 19°C y está nublado.
+🏚️  Recibidor. Hay polvo en todo. Salidas: norte, este.
+> ir norte
+🔒 La puerta del norte está cerrada con llave.
+> tomar llave
+🎒 Tomaste: llave oxidada.
+> usar llave sobre puerta
+🔓 La puerta cede.
 ```
 
-**Tamaño:** 6–8 archivos, 200–400 líneas.
+**Tamaño:** 4–6 archivos, 150–250 líneas. **Alcance congelado:** 5 o 6 habitaciones y 3 objetos. Más mundo no enseña más TypeScript.
+
+### 🧱 Fases
+
+| # | Fase | Qué queda jugable al terminarla | Qué cobra |
+|---|------|--------------------------------|-----------|
+| 1 | El mundo y moverte por él | Caminas por el mapa y chocas con las paredes | M1 `strict` · M2 las direcciones como literales · M3 `Record`, opcionales y `?.` |
+| 2 | El comando como unión discriminada | El juego entiende varias órdenes, no solo moverse | **M5** uniones discriminadas y `switch` · M4 un handler por comando |
+| 3 | Candados y desenlace | El juego se puede ganar | M2 `as const` · M3 `readonly` · **M5** la unión de salida |
+
+La fase 1 es corta a propósito, para tener resultado visible pronto. Cada fase deja algo que se juega, nunca una capa interna invisible.
+
+### 🎯 Dónde está el peso real
+
+El corazón es la **unión discriminada del comando**: el patrón más rentable de TypeScript en código de aplicación, porque es la misma forma que tienen las acciones de un reducer, las respuestas de una API y los estados de una pantalla.
+
+> 📝 **Sobre `never`:** el chequeo de exhaustividad son tres líneas al final del `switch`, no el tema de la fase. Sirven para que el compilador avise cuando agregas un comando y olvidas manejarlo. `never` casi no se declara en código diario; se usa aquí y se lee en los mensajes de error.
+
+### 🧰 Estrategia: el mundo se escribe a mano
+
+El mapa, los objetos y los textos son **objetos literales tipados dentro de un `.ts`**. No se lee ningún archivo ni ninguna entrada externa.
+
+> ⚠️ **Es a propósito:** leer un JSON de verdad significa recibir algo que no controlas, y eso es `unknown` + validación — **M8**, bloque 2. Aquí todavía no hay con qué hacerlo bien, así que no se finge que sí.
+
+### 🔭 Qué queda fuera, y en qué módulo se arregla
+
+| Limitación de PB1 | Se resuelve en |
+|---|---|
+| El mundo lo escribes tú; no entra nada externo | M8 |
+| Cada handler sirve para un solo comando | M6 |
+| La configuración del juego se pasa entera cada vez | M7 |
+| Nadie interpreta lenguaje natural: los comandos son exactos | MF |
+
+### ⏭️ Cuándo se construye
+
+Al cerrar M5, no antes. En ese momento el agente monta el entorno y el `00_proyecto.md` (skill `practicar`); las historias de usuario se dan en vivo, una por sesión.
+
+### 📚 Recursos
+
+*(vacío)*
+
+---
+
+## MF — Proyecto integrador
+
+> Donde todo lo anterior se vuelve necesario a la vez. No es un ejercicio decorado: sin estos tipos, el programa no funciona. **Arranca desde el código de PB1, no desde cero.**
+
+### 🎯 Qué se construye
+
+Un **cliente tipado para la API de Claude** que le pone intérprete de lenguaje natural al juego de PB1: escribes *"abre la puerta con la llave que recogí"* y el modelo devuelve el `Comando` tipado que tu motor ya sabe ejecutar. Node + TypeScript, sin frameworks, sin UI, sin base de datos.
+
+```bash
+$ npm start
+> abre la puerta con esa llave que recogí
+🔧 Comando interpretado: { tipo: "usar", objeto: "llave", sobre: "puerta" }
+🔓 La puerta cede.
+```
+
+**Tamaño:** 200–400 líneas nuevas sobre las de PB1.
+
+> 💡 **Por qué encaja:** la unión discriminada `Comando` que escribiste en PB1 **es** un esquema de tool use. Al modelo no se le pide texto libre: se le declara el conjunto de comandos válidos y devuelve uno. Eso es exactamente el trabajo de conectar un LLM a un sistema tipado.
 
 ### 🔗 Qué módulo se cobra dónde
 
 | Módulo | Dónde aparece en el proyecto |
 |--------|------------------------------|
-| M1 | `tsconfig` estricto desde el primer commit |
-| M2–M4 | Tipar la config, las opciones y los handlers |
-| **M5** | La respuesta del modelo como unión discriminada: `texto \| tool \| refusal \| error` |
-| **M6** | Registrar tools cuyo input se tipa **solo**, derivado de su schema |
+| M1–M5 | Ya cobrados en **PB1**: el tipo `Comando`, el `switch` exhaustivo y los handlers se heredan tal cual |
+| **M6** | Declarar los comandos como tools cuyo input se tipa **solo**, derivado de su schema |
 | M7 | `Partial` para la config, `Pick` para las opciones públicas |
-| **M8** | La salida del LLM es `unknown` por definición. Zod en la frontera |
+| **M8** | Lo que devuelve el modelo es `unknown` por definición: Zod en la frontera, antes de que llegue al motor del juego |
 | M9 | Leer el `.d.ts` del SDK de Anthropic |
 
-### 🧰 Estrategia: fixtures primero
+### 🧰 Estrategia: tres pasos, uno por limitación
 
-Se construye contra **respuestas guardadas en JSON** — una de texto, una de tool, una de error, una mal formada. Costo cero, sin API key, y puedes provocar los casos raros a propósito.
+Se parte del código de PB1 y se le quitan sus limitaciones en orden:
 
-Al final se cambia "leer del archivo" por "llamar por HTTP" y **no se toca nada más**, porque los tipos ya describen la forma.
+1. **Respuestas guardadas primero.** Antes de llamar a nadie, se trabaja contra respuestas del modelo guardadas en JSON: una válida, una que inventa un comando inexistente y **una mal formada**. Ahí entra Zod: lo que se lee de un archivo es `unknown` y se valida antes de tocar el motor (M8). Costo cero, sin API key, y los casos raros se provocan a propósito.
+2. **Se declaran los comandos como tools** cuyo input se tipa solo (M6) y se derivan las opciones públicas de la config (M7).
+3. **Se cambia "leer del archivo" por "llamar por HTTP"** y **no se toca nada más**, porque los tipos ya describen la forma y la validación ya está en el borde.
 
 > 💡 Ese último paso es un *port/adapter* — el mismo concepto de M3 del temario de arquitectura. Los dos temarios se tocan aquí.
 
