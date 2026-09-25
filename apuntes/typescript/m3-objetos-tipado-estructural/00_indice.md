@@ -3,20 +3,23 @@ tema: M3 — Objetos y tipado estructural
 workspace: typescript
 modulo: M3
 temario: contexto/plan_estudio/temario_typescript.md
-estado: EN PROGRESO
+estado: FINALIZADO
 arquetipo: Sintaxis Coder + Constructor Teórico
 ritmo: 🏃
 repaso:
   ultimo: null
   proximo: null
   nivel: null
-  reforzar: []
+  reforzar:
+    - "La capacidad exclusiva de interface es declararse dos veces y sumar propiedades (declaration merging); extends y las uniones de type no responden esta pregunta (sección 4)"
+    - "Al comparar usuario?.direccion?.calle con usuario.direccion?.calle ?? \"...\", la segunda no protege usuario: se lee con . (punto), no con ?., así que asume que usuario siempre existe (sección 3)"
+    - "\"Al menos\" siempre aplica; excess property checking es una revisión extra que se suma solo en un object literal, no un reemplazo de \"al menos\" (sección 5)"
 notebooklm: pendiente
 ---
 
 # 🟦 M3 — Objetos y tipado estructural
 
-> **Módulo 3 del temario de TypeScript.** Estado: 🔄 EN PROGRESO · 6 secciones · ritmo 🏃.
+> **Módulo 3 del temario de TypeScript.** Estado: ✅ FINALIZADO · 6 secciones · ritmo 🏃.
 >
 > TypeScript no compara nombres, compara **forma**. Ese detalle explica el 90% de sus mensajes de error.
 
@@ -41,11 +44,11 @@ Excluye: clases y modificadores de acceso (`private`, `protected`) — se ven de
 3. [[03_leer-lo-opcional|Leer lo opcional: `?.`, `??` y `!`]] — ✅ `[CÓDIGO] [TABLA]` *(temática 3.3)*
 4. [[04_type-vs-interface|`type` vs `interface`]] — ✅ `[TABLA] [CÓDIGO]` *(temática 3.4)*
 5. [[05_tipado-estructural|Tipado estructural]] — ✅ `[DEF] [CÓDIGO] [MITO]` *(temática 3.5)*
-6. [[06_index-signatures-y-record|Index signatures y `Record`]] — 🔄 `[DEF] [CÓDIGO]` *(temática 3.6)*
+6. [[06_index-signatures-y-record|Index signatures y `Record`]] — ✅ `[DEF] [CÓDIGO]` *(temática 3.6)*
 
 ## Cierre del módulo
 
-Se arma con `cerrar-modulo` al terminar las secciones. Por T6 (ruta TypeScript): micro-ejercicio con el compilador (*excess property checking*) + quiz de lectura en vivo, 4 preguntas. Vive en `99_cierre.md` cuando se cree.
+- [[99_cierre|🧪 Cierre — micro-ejercicio y quiz]] — ✅ superado el 2026-09-17 *(los huecos del quiz están en `reforzar:`)*
 
 ## Fuentes
 
