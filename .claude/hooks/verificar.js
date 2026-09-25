@@ -100,7 +100,7 @@ function revisar(rel) {
   }
 
   if (['seccion', 'cierre', 'guia', 'indice'].includes(tipo)) revisarImagenesYEnlaces(lineas, prosa, abs, aviso);
-  if (tipo === 'seccion') revisarSeccion(lineas, prosa, fm, aviso);
+  if (tipo === 'seccion') revisarSeccion(lineas, prosa, fm, aviso, abs);
   if (tipo === 'indice') revisarIndice(lineas, fm, aviso);
   if (tipo === 'cierre') revisarCierre(lineas, fm, aviso);
   return avisos;
@@ -134,12 +134,27 @@ function revisarImagenesYEnlaces(lineas, prosa, abs, aviso) {
   });
 }
 
-function revisarSeccion(lineas, prosa, fm, aviso) {
+// Los códigos de indicación de una sección viven en la línea que la enlaza desde su 00_indice.md.
+function codigosDeSeccion(abs) {
+  const indice = path.join(path.dirname(abs), '00_indice.md');
+  if (!fs.existsSync(indice)) return [];
+  const base = path.basename(abs, '.md');
+  const linea = fs.readFileSync(indice, 'utf8').split(/\r?\n/).find((l) => l.includes(`[[${base}|`) || l.includes(`[[${base}]]`));
+  if (!linea) return [];
+  return [...linea.matchAll(/\[([A-ZÁÉÍÓÚÑ_]+)(?::[a-z]+)?\]/g)].map((m) => m[1]);
+}
+
+function revisarSeccion(lineas, prosa, fm, aviso, abs) {
   const cfg = CONFIG.seccion;
   for (const c of cfg.campos) if (!(c in fm)) aviso('A3', `falta el campo "${c}" en el frontmatter`);
   const iH1 = lineas.findIndex((l, i) => prosa[i] && /^# /.test(l));
   if (iH1 < 0) aviso('A1', 'falta el título # del archivo');
-  else {
+  else if (codigosDeSeccion(abs).includes('DOLOR')) {
+    // A4, excepción: una sección [DOLOR] abre con el párrafo del problema y el quote va justo después.
+    const iH2 = lineas.findIndex((l, i) => i > iH1 && /^## /.test(l));
+    const apertura = lineas.slice(iH1 + 1, iH2 < 0 ? lineas.length : iH2);
+    if (!apertura.some((l) => l.startsWith('> **'))) aviso('A4', 'sección [DOLOR]: falta el quote con la primera línea en negrita después del párrafo del problema', iH1 + 1);
+  } else {
     const primera = lineas.slice(iH1 + 1).find((l) => l.trim());
     if (!primera || !primera.startsWith('> **')) aviso('A4', 'lo primero después del # no es un quote con la primera línea en negrita', iH1 + 1);
   }

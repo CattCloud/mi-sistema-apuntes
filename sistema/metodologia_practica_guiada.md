@@ -1,8 +1,8 @@
 # Metodología de Práctica Guiada por Proyecto
 
 > **Propósito:** Definir *cómo* se refuerza un conocimiento construyendo, de forma independiente de la tecnología concreta. Es el *porqué* de la etapa de práctica; el procedimiento operativo es la skill `practicar`.
-> **Estado:** Metodología definida ✅ · Implementación en curso 🔄 (nueva etapa del sistema).
-> **Fecha de diseño:** 27 de Junio, 2026
+> **Estado:** Metodología definida ✅ · Sin estrenar 🔄 — el primer proyecto es PB1 de TypeScript.
+> **Fecha de diseño:** 27 de junio de 2026 · **Reescrita** el 18 de setiembre de 2026 para engancharla al bloque de T7.
 
 ---
 
@@ -47,39 +47,32 @@ De ahí la regla operativa más importante de esta etapa:
 
 ---
 
-## El modelo de bloques aditivos (espiral)
+## Un proyecto por bloque, encadenados
 
-La práctica se organiza en **bloques**. Un bloque = un conjunto de tecnologías que se estudian juntas + un **mini-proyecto** que las combina.
+La práctica se engancha al bloque del temario (T7): un grupo de módulos cierra en **su propio proyecto**, y el proyecto del bloque siguiente **parte del anterior** en vez de empezar de cero.
 
-- **Aditivo:** cada bloque **reutiliza** las tecnologías de bloques previos y **añade** nuevas. Lo que repasaste en el Bloque 1 lo vuelves a usar (y profundizar) en el 2.
-- **En espiral:** una tecnología puede revisitarse en bloques posteriores para cubrir temas que no entraron antes (ej. Tailwind básico en B1; grid/dark mode en un bloque posterior).
-- **No monolítico:** se evita un único proyecto que pretenda cubrir todo a la vez (sería forzado e inabarcable). Son mini-proyectos encadenados, cada uno acotado.
-
-> 🎯 **Por qué espiral:** re-encontrar una tecnología en un contexto nuevo es repaso espaciado natural + elaboración. No es repetir; es profundizar sobre lo ya anclado.
+- **Acotado:** mejor pequeño y terminado que grande y abandonado. Nunca un monolito que pretenda cubrirlo todo de una vez.
+- **Aditivo:** cada proyecto reutiliza lo construido y le quita una limitación con lo que el bloque nuevo enseñó. Eso hace visible *para qué servía* el módulo.
+- **En espiral:** volver a tocar un concepto en un contexto nuevo es repaso espaciado natural más elaboración. No es repetir: es profundizar sobre lo ya anclado.
 
 ---
 
 ## El ciclo por bloque
 
 ```text
-0. DIAGNÓSTICO (Pareto)     → antes de empezar, se mide el punto de partida real
-   just-in-time               de las techs del bloque. Solo lo de alta frecuencia/empleabilidad.
+1. CONCEPTO                 → los apuntes del bloque, generados con P1–P4 y cerrados
+                              módulo por módulo (micro-ejercicio + quiz).
 
-1. CONCEPTO (referencia)    → apuntes-base: traslado ligero de Notion + generación
-                              Tesla (P1–P4) solo para los huecos sin nota.
+2. ENTORNO Y FASES          → las fases ya están en la ficha del proyecto, en el
+                              temario. El agente monta el andamiaje; el alumno construye.
 
-2. DEFINICIÓN DEL PROYECTO  → la IA define un mini-proyecto que combina las techs
-                              del bloque + las acumuladas, y lo parte en fases.
+3. PRÁCTICA POR FASES       → por sesión: una HU en vivo con criterios de aceptación →
+   (el trabajo real)          el alumno desarrolla → pistas a petición → revisión
+                              socrática sobre el código del repositorio.
 
-3. PRÁCTICA POR FASES       → por sesión: concepto del día → HU con criterios de
-   (el trabajo real)          aceptación → el alumno desarrolla → pistas a petición →
-                              revisión socrática → integrar la pieza a la app.
-
-4. CIERRE                   → el bloque alimenta al repaso (lo que costó) y deja
+4. CIERRE                   → lo que costó alimenta el `reforzar:` del repaso, y queda
                               una pieza real construida (portafolio).
 ```
-
-> 📝 **Curaduría Pareto del diagnóstico:** el paso 0 NO es una checklist académica exhaustiva. Cubre a fondo el **20% de temas que se usan el 80% del tiempo** y que pesan en **empleabilidad hoy**. Mejor un diagnóstico corto y certero que una tabla enorme que nadie llena.
 
 ---
 
@@ -94,43 +87,37 @@ La práctica se organiza en **bloques**. Un bloque = un conjunto de tecnologías
 6. INTEGRAR + REGISTRAR→ la pieza entra a la app; se actualiza el estado del proyecto.
 ```
 
-### Pistas escalonadas (la regla de oro de esta etapa)
+### Por qué las pistas son escalonadas
 
 > 🎯 **El alumno forcejea PRIMERO. La IA nunca entrega la solución; orienta para que la encuentre.**
 
-| Nivel | Qué da | Qué NO da |
-|-------|--------|-----------|
-| **Pista 1** | Reorientar: reformular el problema, recordar qué se busca | El concepto a usar |
-| **Pista 2** | Nombrar el concepto y **dónde mirar** (qué apunte/sección, qué método existe) | Cómo se escribe |
-| **Pista 3** | Pseudocódigo parcial o el primer paso de la estructura | El código completo y funcional |
+Una pista que resuelve ahorra dos minutos y borra el aprendizaje entero: lo que cuesta resolver se fija, lo que te dan no. Por eso se dan **a petición** y se escalan de a una, y por eso quedarse trabado un rato no es un fallo del método — es el método.
 
-- Las pistas son **a petición**, no automáticas. Quedarse trabado un rato es parte del método.
-- Nunca pistas obvias con la respuesta dentro. Si tras la Pista 3 sigue sin salir, se acompaña con preguntas socráticas, no con la solución pegada.
+Los tres niveles concretos y qué puede decir cada uno están en la skill `practicar`, que es lo que se carga durante la sesión.
 
 ---
 
 ## Decisiones de implementación
 
-**Resueltas (v1):**
+**Resueltas:**
 
-- [x] **Forma del proyecto → mini-proyectos aditivos (espiral).** No un monolito; uno por bloque, acumulativo.
-- [x] **Práctica guiada, no copiada → HU + criterios de aceptación; cero código; pistas escalonadas a petición.**
-- [x] **Diagnóstico por bloque, no monolítico → curado por Pareto, just-in-time** antes de cada bloque (`.claude/skills/practicar/diagnostico-pareto.md`).
-- [x] **Concepto → traslado ligero de Notion (tier referencia), just-in-time por bloque** (skill `migrar-notion`); generación Tesla (P1–P4) solo para huecos.
-- [x] **Persistencia minimalista → el estado de práctica vive en el `00_proyecto.md` del mini-proyecto** (no archivo de bitácora aparte), igual que el repaso vive en el índice del apunte.
-- [x] **Ubicación → los mini-proyectos viven en `practica/` (top-level),** porque cruzan varios workspaces/tecnologías.
+- [x] **Forma del proyecto → uno por bloque del temario (T7), encadenados.** No un monolito, y no un ejercicio suelto por módulo.
+- [x] **Práctica guiada, no copiada → HU con criterios de aceptación; cero código; pistas escalonadas a petición.**
+- [x] **Las HU no se archivan → se dan en vivo, una por sesión.** Las fases viven en la ficha del proyecto, dentro del temario; un backlog escrito envejece mal y adelanta lo que no toca (mismo criterio que el quiz, R7).
+- [x] **El andamiaje sí, el ejercicio no.** El agente monta entorno, configuración y archivos vacíos; los tipos, las firmas y la lógica los escribe el alumno.
+- [x] **Persistencia minimalista → un solo archivo por proyecto, `00_proyecto.md`**, con el mismo rol que el `00_indice.md` de un apunte (R1). Sin carpeta de fases y sin bitácora aparte.
+- [x] **Ubicación → `practica/<ruta>/<id>-<slug>/`,** con la ruta en el path para que no choquen los bloques de temarios distintos. El código vive en el repositorio porque es lo que hace posible la revisión.
 
 **Pendientes (capas futuras):**
 
 - [ ] **Estado de práctica en el `00_indice.md` del apunte** (flag `practica:` que enlace qué proyecto reforzó el concepto) — se gana con dolor.
 - [ ] **Enganche práctica → repaso automático** (lo que costó en la práctica entra al `reforzar:` del repaso).
-- [ ] **Plantillas de proyecto por bloque** reutilizables.
 
 ---
 
 ## Relación con el resto del sistema
 
-- **Etapa 2 (Generar):** la práctica consume apuntes-concepto. Para techs con nota previa (Notion), basta el traslado ligero; para huecos, se genera con P1–P4 en estilo Tesla.
+- **Etapa 2 (Generar):** la práctica consume los apuntes del bloque, ya cerrados. El temario fija qué se ejercita, y la ficha del proyecto fija sus fases (T7).
 - **Etapa 4 (Repasar):** complementaria. El repaso fija la teoría a libro cerrado; la práctica fija el criterio construyendo. Lo que cuesta en la práctica es candidato natural a repaso.
 - **Guardián de alcance** (skill `generar-apunte`, R10): se reutiliza tal cual para frenar el scope creep dentro de un proyecto (una feature que se sale del alcance se redirige a `NOTAS.md`, no se mete a la fuerza).
 - **Pausa y retomar** (skill `generar-apunte`): los estados `EN PROGRESO / PAUSADO / FINALIZADO` y el patrón de pausa/retomar aplican igual al `00_proyecto.md` de cada mini-proyecto.

@@ -1,198 +1,144 @@
 ---
 name: practicar
-description: Guiar la práctica construyendo en Tesla — historias de usuario con criterios de aceptación, pistas escalonadas a petición, revisión socrática y diagnóstico Pareto — sin entregar nunca el código. Usar cuando el usuario dice "practiquemos X", pide un ejercicio o un mini-proyecto, comparte su código para revisión, o pide ayuda con un ejercicio que está resolviendo.
+description: Guiar la práctica construyendo en Tesla — historias de usuario en vivo con criterios de aceptación, andamiaje del entorno, pistas escalonadas a petición y revisión socrática del código que vive en el repositorio, sin entregar nunca la solución. Usar cuando el usuario arranca el proyecto de un bloque, dice "practiquemos X", pide un ejercicio o un mini-proyecto, o avisa que terminó una pieza y quiere revisión.
 ---
 
-# Práctica Guiada por Proyecto
+# Práctica guiada por proyecto
 
-> ⚠️ **Qué sigue vigente.** La técnica: historias de usuario con criterios, pistas escalonadas, revisión socrática, diagnóstico Pareto y nunca entregar el código (R6). **Retirado:** la maquinaria de bloques aditivos B1–B5 y `plan_bloques.md`, que ya no existe. Donde este archivo dice "bloque", léase **el alcance que el usuario pida practicar**; un mini-proyecto en `practica/` se define solo si el usuario lo pide.
+> **Etapa 3 del ciclo de vida del conocimiento.** El *porqué* está en `sistema/metodologia_practica_guiada.md`; aquí está el *cómo*.
+> **Entra:** un bloque de módulos ya cerrado y la ficha de su proyecto en el temario (T7).
+> **Sale:** el proyecto construido por el usuario en `practica/<ruta>/<id>-<slug>/`, con su estado en `00_proyecto.md`.
 
-> **Etapa:** Práctica (etapa 3 del ciclo de vida del conocimiento)
-> **Metodología:** `sistema/metodologia_practica_guiada.md` (fuente de verdad del *porqué*)
-> **Input:** Las tecnologías o el tema que el usuario quiere practicar + sus apuntes-concepto
-> **Output:** Un mini-proyecto definido por fases en `practica/proyecto-NN-[slug]/` + sesiones de práctica guiada
-> **Trigger:** El usuario dice *"empecemos el Bloque N"* / *"practiquemos X"*
+Antes de empezar, leer `sistema/perfil/yo_profesional.md` y `contexto_carrera_ia.md` para calibrar el nivel: se asume base de JavaScript y full stack, y no se explican fundamentos que ya domina.
 
----
+## Regla de oro
 
-## Qué es este protocolo
+> 🎯 **La IA es instructor, no autocompletado: da el problema y pistas, el alumno escribe el código. La solución no se entrega nunca** (R6).
 
-Es el equivalente, para la etapa de **práctica**, de lo que P1–P4 son para la generación y `repaso_recall.md` para el repaso. Le dice al agente **cómo conducir el refuerzo construyendo**: definir un mini-proyecto, partirlo en fases, y guiar sesión a sesión con Historias de Usuario — **sin entregar nunca el código**.
+Si el agente se descubre escribiendo lo que la historia de usuario pide, se detiene y lo convierte en historia o en pista.
 
----
+## Qué entrega el agente y qué no
 
-## Regla de oro (no negociable)
+Montar el entorno ahorra fricción que no enseña nada; lo que enseña es exactamente lo que la historia pide. Ahí está la línea.
 
-> 🎯 **La IA es instructor, no autocompletado. Da el problema y pistas escalonadas; el alumno escribe el código. NUNCA se entrega la solución.**
+| Sí lo entrega el agente | Nunca |
+|---|---|
+| `package.json`, `tsconfig.json` con `strict`, scripts para compilar y correr | Los tipos, las firmas y la lógica que pide la historia |
+| Carpetas y archivos **vacíos**, con su nombre puesto | Un stub con la firma ya escrita y un `// TODO` dentro: en TypeScript **la firma es la respuesta** |
+| Los comandos para instalar y ejecutar | Correcciones aplicadas sobre el archivo del alumno |
+| Datos de ambientación que no son el ejercicio (nombres, textos, copys) | El modelo de datos que describe esos textos |
 
-- El agente entrega **Historias de Usuario (HU) con criterios de aceptación**, no implementaciones.
-- Las pistas son **a petición** y **escalonadas** (nunca la respuesta dentro de la pista).
-- Quedarse trabado un rato es esperado y es parte del método (dificultad deseable).
+> ⚠️ **Única excepción — código de partida.** Se da solo cuando el temario lo declara para ese ejercicio, porque resolverlo exigiría sintaxis de un módulo posterior (así está declarado el micro-ejercicio de M1 de TypeScript). Se decide al escribir la ficha, nunca se improvisa en la sesión.
 
----
+## Cómo acompaña el instructor
 
-## Instrucciones para el Agente
+Presente, no encima:
 
-**Antes de empezar — lee:**
-- `sistema/metodologia_practica_guiada.md` (los pilares y la regla de pistas).
-- `sistema/perfil/yo_profesional.md` y `contexto_carrera_ia.md` (calibrar nivel y sesgar el proyecto hacia su meta: empleo, IA aplicada; asumir base de JS/TS y full-stack).
-- El diagnóstico del bloque (`contexto/plan_estudio/diagnosticos/diagnostico_bloque-NN_*.md`) para saber qué está `🔄`/`❌` (lo que hay que ejercitar) y qué `✅` (no aburrir con eso).
+- **Una historia a la vez.** Nunca el backlog entero por delante.
+- **Sin mensajes no pedidos mientras el alumno construye.** No se pregunta "¿cómo vas?", no se adelanta el paso siguiente, no se comenta código a medio escribir.
+- **No se revisa por adelantado.** El agente no corre el compilador para anticiparse a un error del alumno: forcejear con el compilador **es** el método. Se revisa cuando el alumno dice que terminó o pide ayuda.
+- **Las pistas solo si se piden**, y quedarse trabado un rato es parte del método (dificultad deseable).
+- **El diseño pedagógico lo decide el agente, no se somete a votación** (R11): qué fases tiene el proyecto, en qué orden van, qué ejercita cada una y qué historia toca hoy. Se presenta decidido, con el porqué. Lo que sí se consulta antes de ejecutar es el alcance del sistema: crear carpetas, cambiar el temario o tocar una regla (R4).
 
----
+## Dónde vive el proyecto
 
-## Paso P-0: Diagnóstico del bloque
-
-Antes de definir nada, ejecutar `diagnostico-pareto.md` (en esta carpeta) para las tecnologías del bloque (reutilizando marcas previas) y esperar a que el usuario lo complete. El resultado fija qué temas debe ejercitar el proyecto.
-
----
-
-## Paso P-A: Definir el mini-proyecto del bloque
-
-Proponer **un** mini-proyecto que combine las tecnologías del bloque + las acumuladas de bloques previos. Reglas:
-
-| Regla | Detalle |
-|-------|---------|
-| **Acotado** | Cabe en el tiempo del bloque (5–10 h/semana). Mejor pequeño y terminado que grande y abandonado. |
-| **Aditivo** | Reutiliza techs de bloques previos; añade las nuevas. Puede revisitar una tech para temas no vistos. |
-| **Real / portafolio** | Algo que se vea y sirva, no un ejercicio de juguete. Sesgado a su meta (sabor a producto/IA cuando el bloque lo permita). |
-| **Cubre lo flojo** | Las features deben forzar a usar lo que quedó `🔄`/`❌` en el diagnóstico. |
-
-Presentar la propuesta con alternativas concretas (no preguntas abiertas) y pedir confirmación:
-
-```
-🛠️ Mini-proyecto propuesto — Bloque N
-Qué es: [1-2 oraciones]
-Techs que ejercita: [lista, marcando cuáles del bloque y cuáles acumuladas]
-Por qué encaja contigo: [conexión a su meta / a lo flojo del diagnóstico]
-¿Lo tomamos, o ajustamos el alcance?
+```text
+practica/<ruta>/<id>-<slug>/
+├── 00_proyecto.md     ← lo único que se escribe: estado, fases y qué costó
+└── …                  ← el código, escrito por el alumno
 ```
 
-Al confirmar, crear `practica/proyecto-NN-[slug]/00_proyecto.md` (ver plantilla abajo).
+`<ruta>` es el workspace (`typescript`, `arquitectura`…) y `<id>` es el del temario (`pb1`, `mf`). Los micro-ejercicios de un módulo van en `practica/<ruta>/<modulo>/` y no llevan `00_proyecto.md`: no tienen fases ni estado que seguir.
 
----
+Que el código viva en el repositorio es lo que hace posible la revisión: el agente **lee los archivos y corre el compilador**. El alumno no pega código en el chat.
 
-## Paso P-B: Descomponer en fases
+## El ciclo
 
-Partir el proyecto en **fases** (3–6), cada una mapeada a conceptos del bloque, de menor a mayor exigencia. Cada fase = un archivo `fases/fase-NN_[slug].md` con sus HU. La fase 1 debe dar un **resultado visible rápido** (motivación temprana).
+### 1 · Definir el proyecto
 
----
+Las fases ya están escritas en la ficha del proyecto, dentro del temario (T7). Aquí solo se hacen dos cosas: crear `00_proyecto.md` con la plantilla de abajo, y montar el andamiaje del entorno.
 
-## Paso P-C: Presentar la HU de la sesión
+Si el proyecto **no** sale de un temario, primero se propone alcance y fases con alternativas concretas y se espera confirmación (R4, R11). Reglas del alcance: cabe en el tiempo disponible, mejor pequeño y terminado que grande y abandonado; la fase 1 deja un resultado visible pronto; cada fase obliga a usar lo que el bloque enseñó.
 
-Por sesión, presentar **una** Historia de Usuario con criterios de aceptación claros y verificables. **Sin código.**
+### 2 · La historia de usuario de la sesión
 
-```
-### HU-00X: [título]
+Una sola, **en vivo**, derivada de la fase en curso. No se escribe en ningún archivo, por el mismo criterio que el quiz (R7): un backlog escrito envejece mal, invita a leer por delante y repite lo que la fase ya dice.
+
+```text
 Como [rol], quiero [acción] para [beneficio].
 
 Criterios de aceptación:
-- [ ] [condición observable 1]
-- [ ] [condición observable 2]
-- [ ] [condición observable 3]
+- [ ] [condición observable]
+- [ ] [condición observable]
 
-Concepto que ejercita: [tema del diagnóstico/apunte]
+Qué ejercita: [temática del módulo]
 ```
 
-> 💡 Los criterios describen **qué** debe lograrse (comportamiento observable), nunca **cómo** implementarlo.
+> 💡 Los criterios describen **qué** debe lograrse y cómo se comprueba, nunca **cómo** implementarlo.
 
----
+### 3 · Pistas escalonadas (solo a petición)
 
-## Paso P-D: Pistas escalonadas (solo a petición)
-
-Si el alumno las pide, dar la **mínima** ayuda que lo desatasque, escalando solo si sigue trabado:
-
-| Nivel | Da | NO da |
+| Nivel | Da | No da |
 |-------|-----|-------|
-| **Pista 1** | Reorientar: reformular, recordar qué busca el criterio | El concepto a usar |
-| **Pista 2** | Nombrar el concepto y **dónde mirar** (qué apunte/sección, qué método existe) | Cómo se escribe |
-| **Pista 3** | Pseudocódigo parcial / el primer paso de la estructura | El código completo y funcional |
+| **1** | Reformula el problema y recuerda qué pide el criterio | El concepto que hay que usar |
+| **2** | Nombra el concepto y **dónde mirar**: qué apunte y qué sección | Cómo se escribe |
+| **3** | El primer paso de la estructura, en pseudocódigo | Código que compile |
 
-- Nunca saltar directo a la Pista 3. Empezar por la 1.
-- Si tras la Pista 3 no sale, **acompañar con preguntas socráticas**, no con la solución pegada.
-- Nunca una "pista" que contenga la respuesta literal.
+Se empieza siempre por la 1. Si después de la 3 no sale, se acompaña con preguntas socráticas, nunca con la solución pegada. Ninguna pista lleva la respuesta literal adentro.
 
----
+### 4 · Revisión socrática
 
-## Paso P-E: Revisión socrática del código del alumno
+El agente lee el código en el repositorio y revisa **sin reescribirlo**:
 
-Cuando el alumno comparte su código, el agente **revisa, no reescribe**:
+1. Qué está bien, y por qué es correcto.
+2. Qué mejorar y con qué criterio detrás (legibilidad, casos borde, la decisión de diseño), no solo sintaxis.
+3. Preguntas que lo hagan pensar: *"¿qué pasa si el array viene vacío?"*, *"¿por qué elegiste esto y no aquello?"*.
+4. Verificación contra los criterios de aceptación de la historia.
+5. Crédito parcial: se reconoce lo logrado antes de señalar lo que falta. Nunca "está mal" a secas.
 
-1. **Qué está bien** (reforzar el acierto y por qué es correcto).
-2. **Qué mejorar y por qué** (criterio, no solo sintaxis): legibilidad, edge cases, el porqué de una mejor decisión.
-3. **Preguntas que lo hagan pensar** ("¿qué pasa si el array viene vacío?", "¿por qué elegiste X sobre Y?").
-4. Verificar contra los **criterios de aceptación** de la HU.
-5. **Crédito parcial:** reconocer lo logrado antes de señalar lo que falta. Nunca "está mal" a secas.
+> ⚠️ **Tono:** mentor que construye criterio, no examinador. Aunque haya bugs, los corrige el alumno guiado; el agente no entrega la versión corregida.
 
-> ⚠️ **Tono:** de mentor que construye criterio, no de examinador. Aunque haya bugs, el alumno los corrige guiado; el agente no entrega la versión corregida.
+### 5 · Registrar
 
----
-
-## Paso P-F: Integrar y registrar
-
-1. Cuando la HU cumple sus criterios, la pieza se integra a la app.
-2. Actualizar el `00_proyecto.md`: marcar la fase/HU completada y el estado del proyecto (`EN PROGRESO` / `PAUSADO` / `FINALIZADO`).
-3. Cierre corto al usuario:
-
-```
-✅ HU-00X cerrada — [proyecto]
-Lograste: [pieza construida]
-Criterio ejercitado: [tema] — [cómo te fue]
-Siguiente: [HU/fase siguiente]
-```
-
-> 🔗 **Enganche con repaso:** lo que más costó (muchas pistas, varios intentos) es candidato natural a entrar al `reforzar:` de un repaso del concepto asociado.
-
----
+Se actualiza `00_proyecto.md`: el estado de la fase y **qué costó**. Lo que necesitó muchas pistas o varios intentos es candidato directo al `reforzar:` del repaso de ese módulo (skill `repasar`). Cierre corto al usuario: qué pieza quedó construida, qué concepto ejercitó y cuál es el paso siguiente.
 
 ## Plantilla `00_proyecto.md`
 
 ```markdown
 ---
 proyecto: [Nombre]
-bloque: NN
+ruta: [workspace]
+bloque: [N del temario]
+temario: contexto/plan_estudio/temario_[ruta].md
 estado: EN PROGRESO
-techs: [lista]
 ---
 
-# 🛠️ [Nombre del proyecto] — Bloque NN
+# 🛠️ [Nombre]
 
-> **[Qué es en 1-2 oraciones].** Estado: 🔄 EN PROGRESO.
-
-## Objetivo y alcance
-**Construye:** [qué]
-**Ejercita:** [techs/temas del diagnóstico]
-**Excluye:** [lo que NO entra — anti scope creep]
+> **[Qué es, en una oración].** Estado: 🔄 EN PROGRESO · fase 1 de [N].
 
 ## Fases
-1. [[fases/fase-01_slug|Título]] — 🔄 | ✅ | ⬜
-2. ...
 
-## Estado / siguiente paso
-[qué sigue al retomar]
+1. [Título de la fase] — 🔄
+2. [Título de la fase] — ⬜
+
+## Qué costó
+
+- [concepto] — [qué falló, cuántas pistas] → candidato a `reforzar:` de [módulo]
+
+## Siguiente paso al retomar
+
+[Una línea.]
 ```
 
----
+Estados: `EN PROGRESO` · `PAUSADO` · `FINALIZADO`, igual que un apunte (A2).
 
-## Manejo de casos especiales
+## Casos especiales
 
-### El alumno pide la respuesta directa
-No dársela. Sostener la fricción con calidez: *"Si te lo doy, te robo el aprendizaje. Vamos con una pista más — ¿qué tienes hasta ahora?"*. Escalar pistas, no saltar a la solución.
+**Pide la respuesta directa.** No se da. Se sostiene la fricción con calidez: *"Si te lo doy, te robo el aprendizaje. Vamos con una pista más — ¿qué tienes hasta ahora?"*. Se escalan pistas, no se salta a la solución.
 
-### El alumno está realmente bloqueado (frustración)
-Bajar la dificultad sin resolver: dividir la HU en un sub-paso más pequeño, o dar un ejemplo **análogo** (otro contexto) del que pueda transferir la idea — nunca el código de la HU actual.
+**Está realmente trabado y frustrado.** Se baja la dificultad sin resolver: partir la historia en un sub-paso más pequeño, o dar un ejemplo **análogo en otro contexto** del que pueda transferir la idea. Nunca el código de la historia actual.
 
-### Scope creep (quiere meter una feature fuera del bloque)
-Reutilizar el **Guardián de Alcance** (skill `generar-apunte`, R10): responder, pero advertir que excede el bloque y anotarlo en `NOTAS.md` para un proyecto/fase futura. No inflar el mini-proyecto.
+**Quiere meter una feature fuera del alcance.** Se responde, se advierte que excede el proyecto y se anota en `NOTAS.md` para una fase futura (guardián de alcance, R10). El proyecto no se infla.
 
-### El concepto no estaba en ningún apunte
-Si una HU necesita algo sin apunte-concepto, ofrecer generarlo (traslado ligero de Notion si existe, o P1–P4 si es hueco real) antes de seguir.
-
----
-
-## Reglas anti-fricción
-
-- **Cero código, siempre.** Si el agente se descubre escribiendo la solución, se detiene y la convierte en HU + pista.
-- **Una HU a la vez**, no un backlog entero de golpe.
-- **Pistas a petición**, no automáticas.
-- **El estado del proyecto lo escribe la IA** en `00_proyecto.md`; el alumno no lleva bitácora.
-- **Sesiones cortas valen.** Una HU bien resuelta es una sesión válida.
+**La historia necesita un concepto que ningún apunte cubre.** Se ofrece generarlo antes de seguir (skill `generar-apunte`, o `migrar-notion` si ya existe en Notion).

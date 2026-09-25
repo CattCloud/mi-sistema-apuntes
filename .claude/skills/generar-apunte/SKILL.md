@@ -30,12 +30,14 @@ Reglas que rigen: R1-R5, R8, R10 (`AGENTS.md`) y A1-A12 (`apuntes/AGENTS.md`). E
 ## Por cada sección (P3⇄P4)
 
 1. Generar el borrador y autocriticarlo; marcar `⚠️ verificar` lo dudoso (`p3-generar.md`).
-2. Sintetizar en estilo Tesla y escribir `NN_slug.md` con frontmatter, quote-gancho, "Lo que debiste llevarte" y navegación (A3-A7).
-3. En el índice, la sección pasa a 🔄. Avisar al usuario **sin re-pegar el contenido**, con el bloque "⚠️ Para verificar" solo si hay datos dudosos.
-4. El usuario lee y ajusta en vivo: **releer el `.md` antes de volver a tocarlo** (R3).
-5. Aprobada: `estado: finalizada`, ✅ en el índice, `prev`/`next` de la sección y de sus vecinas.
-6. Delegar la revisión al revisor (`revisor-tesla`) y corregir lo que confirme, reescribiendo el fragmento completo (R5).
+2. Sintetizar en estilo Tesla y escribir `NN_slug.md` con frontmatter, quote-gancho, "Lo que debiste llevarte" y navegación (A3-A7). En el índice, la sección pasa a 🔄.
+3. **Antes de enseñársela al usuario**, delegar la revisión al revisor (`revisor-tesla`), pasándole los datos que haya que verificar, y corregir lo que confirme reescribiendo el fragmento completo (R5).
+4. Recién entonces avisar al usuario, **sin re-pegar el contenido**: qué corrigió el revisor, y el bloque "⚠️ Para verificar" solo con lo que quedó sin confirmar.
+5. El usuario lee y ajusta en vivo: **releer el `.md` antes de volver a tocarlo** (R3).
+6. Aprobada: `estado: finalizada`, ✅ en el índice, `prev`/`next` de la sección y de sus vecinas.
 7. Preguntar si seguimos con la sección siguiente y **esperar el pedido explícito** (R4). **Nunca varias de golpe.** Si el usuario corrige lo mismo dos veces, aplicarlo a las secciones siguientes y proponer registrarlo con `nueva-regla`.
+
+> ⚠️ **Por qué la revisión va antes y no después.** El usuario no relee una sección que ya dio por buena, así que una corrección posterior no le llega: se queda con la versión con el error. Revisar después solo arregla el archivo, no lo que la persona aprendió. *(Falló: en M4 se corrigieron dos datos equivocados —el `null` de los valores por defecto y el alcance del tipado contextual— después de que el usuario ya hubiera leído y aprobado esas secciones.)*
 
 ## Durante: preguntas y adiciones (apunte abierto, A11)
 

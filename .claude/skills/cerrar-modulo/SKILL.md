@@ -19,7 +19,7 @@ Por eso un cierre no es un resumen ni un cuestionario de repaso. Es la primera v
 
 ---
 
-## Las cuatro reglas
+## Las seis reglas
 
 ### 1. Solo lo visto hasta ese punto
 
@@ -51,6 +51,27 @@ Todo cierre dice **qué está midiendo y por qué esa forma**. Si no se puede es
 Con la cuenta, el equipo y el nivel que hay **en ese momento**. Un cierre que empieza con *"primero levanta una base de datos"* cuando eso es tres módulos más adelante no es exigente: está mal puesto.
 
 Y siempre que se pueda, **conectado al proyecto real de la persona** en lugar de a un ejemplo genérico. La misma pregunta sobre *su* producto se responde con más atención que sobre una tienda inventada.
+
+### 5. El enunciado dice el problema, no el camino
+
+Un enunciado de ejercicio tiene **cuatro bloques, y ninguno más**:
+
+| Bloque | Qué lleva |
+|---|---|
+| **Qué se construye** | Una o dos frases: qué hace aquello que hay que escribir |
+| **Entrada y salida exactas** | Los datos concretos y el resultado literal que debe producir |
+| **Restricciones** | Lo que no se vale: `any`, tocar la lógica dada, cambiar cierta firma |
+| **Hecho cuando** | El criterio de terminado, comprobable **por una máquina** |
+
+Todo el detalle va en el problema; **ninguno en el camino**. Los pasos numerados (*"primero tipa X, después mira Y"*), los punteros a qué módulo consultar y el nombre de la herramienta que hay que usar **son pistas**, y las pistas se dan a petición y escaladas (R6). Escribirlas en el enunciado es entregar la pista 2 antes de que la persona intente nada.
+
+> ⚠️ **"Hecho cuando" no puede ser una frase que juzgue el agente.** *"Puedes decir en una línea qué tipo infirió"* obliga a escribir prosa sobre código y convierte al agente en corrector; *"`tsc --noEmit` no reporta nada"* lo comprueba la máquina. En una ruta de programación, el juez es el compilador o la ejecución. *(Falló: el cierre de M4 daba cinco pasos guiados y cuatro criterios en prosa; el usuario preguntó "¿qué pide el microejercicio?" y después "¿anota en un cuaderno?".)*
+
+### 6. Resolverlo antes de entregarlo
+
+Antes de dárselo al usuario, **el agente resuelve el ejercicio usando solo lo que el temario cubrió hasta ese punto**. No para entregar la solución, sino para saber tres cosas: si es hacible, cuál es la fricción real con la que va a chocar, y si esa fricción es la que se buscaba. Un ejercicio sin resolver es una suposición.
+
+*(Falló: el micro-ejercicio de M4 se anunció como "imposible a propósito, necesita genéricos". Al resolverlo se comprobó que compila con `Record`, de M3, y que la fricción real era otra: indexar un objeto con una variable de tipo texto.)*
 
 ---
 

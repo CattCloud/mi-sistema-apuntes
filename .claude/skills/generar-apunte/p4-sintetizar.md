@@ -272,7 +272,8 @@ El output final para cada sección sigue este patrón:
 > 🎯 **Bloque de cierre obligatorio:** toda sección termina con `## 🎯 Lo que debiste llevarte` — 3-7 ideas **afirmadas como oración completa** (no títulos), sin enlaces, justo antes del `---` de navegación. Es el piso de retención de esa lectura: si el usuario olvida el resto, esas líneas deben quedar. Ver `apuntes/AGENTS.md` A7.
 
 2. Marcar su entrada en `## Secciones` del `00_indice.md` como `🔄 en progreso`.
-3. Avisar al usuario en el chat **sin re-pegar todo el contenido**:
+3. **Pasarla por el revisor antes de enseñársela al usuario** y corregir lo que confirme (paso 3 del `SKILL.md` de esta carpeta). Lo que el revisor deja verificado sale del bloque `⚠️ Para verificar`; solo queda ahí lo que nadie pudo confirmar.
+4. Avisar al usuario en el chat **sin re-pegar todo el contenido**:
 
 ```
 ✍️ Escribí la Sección [N] — [Título] → `NN_slug.md`
